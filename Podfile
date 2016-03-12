@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'notable' do
-
+  pod 'Parse'
 end
 
 target 'notableTests' do
