@@ -8,6 +8,8 @@
     <customFonts key="customFonts">
         <mutableArray key="BELLABOO-Regular.otf">
             <string>BELLABOO-Regular</string>
+            <string>BELLABOO-Regular</string>
+            <string>BELLABOO-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -26,44 +28,45 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvF-ib-xId">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-wp-ddO">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-wp-ddO">
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="667"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="9" reuseIdentifier="ListsCell" id="Fec-O5-GUe" customClass="ListsCell" customModule="notable" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="105"/>
+                                                <rect key="frame" x="0.0" y="28" width="379" height="105"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fec-O5-GUe" id="zjj-4B-wrc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="379" height="104.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-wv-b4O" userLabel="Title Label">
-                                                            <rect key="frame" x="28" y="33" width="319" height="29"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-wv-b4O" userLabel="Title Label">
+                                                            <rect key="frame" x="28" y="33" width="262" height="29"/>
                                                             <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
                                                             <color key="textColor" red="0.46666666666666667" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fi-XB-5Cc">
-                                                            <rect key="frame" x="28" y="67" width="319" height="19.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fi-XB-5Cc">
+                                                            <rect key="frame" x="28" y="67" width="262" height="19.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                             <color key="textColor" red="0.40784313725490196" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrl-d6-aql" userLabel="Number Label">
+                                                            <rect key="frame" x="298" y="33.5" width="67" height="53.5"/>
+                                                            <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                            <color key="textColor" red="0.46666666670000001" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="2Fi-XB-5Cc" secondAttribute="bottom" constant="15" id="79e-KD-uNI"/>
-                                                        <constraint firstItem="LxV-wv-b4O" firstAttribute="top" secondItem="zjj-4B-wrc" secondAttribute="topMargin" constant="25" id="JqN-0a-hiN"/>
-                                                        <constraint firstItem="LxV-wv-b4O" firstAttribute="leading" secondItem="zjj-4B-wrc" secondAttribute="leadingMargin" constant="20" id="Z4S-dU-Mse"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="2Fi-XB-5Cc" secondAttribute="trailing" constant="20" id="nWn-5c-fHp"/>
-                                                        <constraint firstItem="2Fi-XB-5Cc" firstAttribute="top" secondItem="LxV-wv-b4O" secondAttribute="bottom" constant="5" id="pHN-5I-uIR"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="LxV-wv-b4O" secondAttribute="trailing" constant="20" id="ysw-Gn-fd4"/>
-                                                        <constraint firstItem="2Fi-XB-5Cc" firstAttribute="leading" secondItem="zjj-4B-wrc" secondAttribute="leadingMargin" constant="20" id="zI8-4Z-U4S"/>
+                                                        <constraint firstItem="Yrl-d6-aql" firstAttribute="leading" secondItem="LxV-wv-b4O" secondAttribute="trailing" constant="8" id="D6k-eP-KKV"/>
+                                                        <constraint firstItem="Yrl-d6-aql" firstAttribute="leading" secondItem="2Fi-XB-5Cc" secondAttribute="trailing" constant="8" id="YN4-0d-Ty8"/>
+                                                        <constraint firstItem="2Fi-XB-5Cc" firstAttribute="leading" secondItem="zjj-4B-wrc" secondAttribute="leadingMargin" constant="20" id="d3O-AY-toW"/>
+                                                        <constraint firstItem="LxV-wv-b4O" firstAttribute="top" secondItem="zjj-4B-wrc" secondAttribute="topMargin" constant="25" id="dhV-6Y-kpF"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="2Fi-XB-5Cc" secondAttribute="bottom" constant="10" id="tgT-hk-mLP"/>
+                                                        <constraint firstItem="LxV-wv-b4O" firstAttribute="leading" secondItem="zjj-4B-wrc" secondAttribute="leadingMargin" constant="20" id="uCV-GL-sBo"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Yrl-d6-aql" secondAttribute="trailing" constant="30" id="vzN-29-Vns"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="79e-KD-uNI"/>
-                                                        </mask>
-                                                    </variation>
                                                 </tableViewCellContentView>
                                                 <gestureRecognizers/>
                                                 <connections>
@@ -146,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="1144.5" y="374.5"/>
         </scene>
-        <!--List View Controller-->
+        <!--List Title-->
         <scene sceneID="n71-3F-DcF">
             <objects>
                 <viewController id="hSi-uR-vZZ" customClass="ListViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,16 +164,35 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y3a-N9-2cs">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-Li-Nkk">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-Li-Nkk">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Wj0-Qv-1yC">
-                                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Wj0-Qv-1yC">
+                                                <rect key="frame" x="0.0" y="92" width="375" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wj0-Qv-1yC" id="80b-Yx-3FS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-S2-u9a" userLabel="Title Label">
+                                                            <rect key="frame" x="28" y="33" width="319" height="29"/>
+                                                            <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                            <color key="textColor" red="0.46666666670000001" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-Fb-n6T">
+                                                            <rect key="frame" x="28" y="68" width="319" height="20"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                            <color key="textColor" red="0.40784313729999999" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="NvQ-S2-u9a" firstAttribute="centerX" secondItem="80b-Yx-3FS" secondAttribute="centerX" id="5e8-CF-R5b"/>
+                                                        <constraint firstItem="NvQ-S2-u9a" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="25" id="Hmy-99-gNS"/>
+                                                        <constraint firstItem="NvQ-S2-u9a" firstAttribute="leading" secondItem="80b-Yx-3FS" secondAttribute="leadingMargin" constant="20" id="rPC-av-SCc"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
@@ -181,7 +203,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eib-YI-1Xs"/>
+                    <navigationItem key="navigationItem" title="List Title" id="eib-YI-1Xs"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahN-15-ubi" userLabel="First Responder" sceneMemberID="firstResponder"/>
