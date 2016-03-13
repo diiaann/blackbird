@@ -49,9 +49,10 @@ class ListsCell: UITableViewCell {
         let bounds = self.bounds
         
         var whiteRoundedCornerViewFrame = CGRect()
-        whiteRoundedCornerViewFrame.origin.x = 7
-        whiteRoundedCornerViewFrame.origin.y = 10
-        whiteRoundedCornerViewFrame.size.width = bounds.width - 7 - whiteRoundedCornerViewFrame.origin.x
+        whiteRoundedCornerViewFrame.origin.x = 15
+        whiteRoundedCornerViewFrame.origin.y = 15
+        
+        whiteRoundedCornerViewFrame.size.width = bounds.width - 20 - whiteRoundedCornerViewFrame.origin.x
         whiteRoundedCornerViewFrame.size.height = bounds.height - whiteRoundedCornerViewFrame.origin.y
         whiteRoundedCornerView.frame = whiteRoundedCornerViewFrame
     }

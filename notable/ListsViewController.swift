@@ -42,7 +42,7 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // set background color 
         tableView.backgroundColor = UIColor.clearColor()
         
-        tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
+//        tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
 
         initAppearance()
         
