@@ -43,7 +43,19 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // set background color 
         tableView.backgroundColor = UIColor.clearColor()
         
-//        tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "BELLABOO-Regular", size: 20.0)!,
+            NSForegroundColorAttributeName: UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.3)
+        ]
+        
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.translucent = true
+        
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
+        
+        tableView.contentInset = UIEdgeInsetsMake(68, 0, 0, 0)
 
         initAppearance()
         
@@ -65,7 +77,7 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ListsCell") as! ListsCell
         
-        cell.backgroundColor=UIColor.clearColor()
+        cell.backgroundColor = UIColor.clearColor()
         
         cell.titleLabel.text = "Restaurants"
         cell.subtitleLabel.text = "Restos in NYC that I want to go to"
