@@ -49,11 +49,13 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         ]
         
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.translucent = true
         
-        tableView.contentInset = UIEdgeInsetsMake(60, 0, 0, 0)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
+        
+        tableView.contentInset = UIEdgeInsetsMake(68, 0, 0, 0)
 
         initAppearance()
         
