@@ -95,6 +95,17 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXn-0I-nba">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="plus"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QOy-ze-lYI" kind="presentation" modalTransitionStyle="crossDissolve" id="7xJ-K1-yif"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -125,6 +136,7 @@
                     <navigationItem key="navigationItem" id="H3x-hl-XEB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addButton" destination="mXn-0I-nba" id="97N-H3-8Qu"/>
                         <outlet property="backgroundView" destination="lvF-ib-xId" id="Adu-f9-y7a"/>
                         <outlet property="tableView" destination="Boa-wp-ddO" id="8Ls-ZT-98S"/>
                     </connections>
@@ -152,5 +164,80 @@
             </objects>
             <point key="canvasLocation" x="332" y="374"/>
         </scene>
+        <!--Add View Controller-->
+        <scene sceneID="lud-Mf-hfy">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="QOy-ze-lYI" customClass="AddViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1V-sq-qk5"/>
+                        <viewControllerLayoutGuide type="bottom" id="CpE-k7-bTI"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8JC-Ev-rfT" userLabel="Add View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFu-HK-ooh">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.47843137250000001" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x7-wP-QTC">
+                                <rect key="frame" x="219" y="553" width="44" height="44"/>
+                                <state key="normal" image="photo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-Wq-IqR">
+                                <rect key="frame" x="206" y="599" width="60" height="60"/>
+                                <state key="normal" image="text"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-ta-jrA">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="plus"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAddButton:" destination="QOy-ze-lYI" eventType="touchUpInside" id="Lj0-vq-NpW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-DT-6BS">
+                                <rect key="frame" x="314" y="511" width="44" height="44"/>
+                                <state key="normal" image="list"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-n9-5le">
+                                <rect key="frame" x="262" y="517" width="44" height="44"/>
+                                <state key="normal" image="location"/>
+                            </button>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HSh-fA-wze" appends="YES" id="XKU-dP-TbM"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addButton" destination="Dak-ta-jrA" id="fYw-p5-qqF"/>
+                        <outlet property="addContainer" destination="PFu-HK-ooh" id="cI5-RW-Zj4"/>
+                        <outlet property="addListButton" destination="PNS-DT-6BS" id="Dzx-FQ-Ccn"/>
+                        <outlet property="addLocationButton" destination="d1Y-n9-5le" id="va6-gW-HiT"/>
+                        <outlet property="addPhotoButton" destination="7x7-wP-QTC" id="7Wu-ZE-5uA"/>
+                        <outlet property="addTextButton" destination="e1M-Wq-IqR" id="ELL-2h-Qh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usB-1j-PtJ" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HSh-fA-wze">
+                    <connections>
+                        <action selector="onTapBackground:" destination="QOy-ze-lYI" id="QZF-Vz-baV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1614.5" y="374.5"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="list" width="24" height="17"/>
+        <image name="location" width="20" height="30"/>
+        <image name="photo" width="32" height="25"/>
+        <image name="plus" width="22" height="22"/>
+        <image name="text" width="29" height="31"/>
+    </resources>
 </document>

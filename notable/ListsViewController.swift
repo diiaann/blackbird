@@ -28,8 +28,9 @@ extension CAGradientLayer {
 class ListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
-    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,8 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
 
         initAppearance()
+        
+        addButton.layer.cornerRadius = addButton.frame.height/2
         
     }
     

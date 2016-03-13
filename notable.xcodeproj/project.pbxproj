@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B88D581C95F64F008DA6C6 /* AddViewController.swift */; };
 		7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D19351C8F58A700A76EDC /* ListsCell.swift */; };
 		7F5A1F481C8F643700FA8CE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F471C8F643700FA8CE6 /* MapKit.framework */; };
 		7F5A1F4A1C8F643D00FA8CE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61B88D581C95F64F008DA6C6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BELLABOO-Regular.otf"; sourceTree = "<group>"; };
 		7F0D19301C8F56D300A76EDC /* Moon Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Light.otf"; sourceTree = "<group>"; };
 		7F0D19311C8F56D300A76EDC /* Moon Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Bold.otf"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
+				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -264,7 +267,7 @@
 				TargetAttributes = {
 					7F79DA9C1C8E8B190047B115 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 32CJHKMB28;
+						DevelopmentTeam = 37T3T3U98A;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 1;
@@ -345,6 +348,7 @@
 			files = (
 				7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */,
 				7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */,
+				61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */,
 				7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */,
 				7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */,
 				7F79DAD21C8E8E860047B115 /* ListsViewController.swift in Sources */,
@@ -495,7 +499,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = notable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = plainspace.notable;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tinachen.notable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -510,7 +514,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = notable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = plainspace.notable;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tinachen.notable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
