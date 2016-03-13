@@ -43,7 +43,13 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // set background color 
         tableView.backgroundColor = UIColor.clearColor()
         
-//        tableView.contentInset = UIEdgeInsetsMake(0, 0, 10, 0);
+        self.navigationController!.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "BELLABOO-Regular", size: 20.0)!];
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        
+        tableView.contentInset = UIEdgeInsetsMake(70, 0, 0, 0)
 
         initAppearance()
         
