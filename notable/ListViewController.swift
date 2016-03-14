@@ -19,8 +19,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func didPressBack(sender: AnyObject) {
                 
         navigationController?.popToRootViewControllerAnimated(true)
-        
-        print("did")
     }
     
     override func viewDidLoad() {

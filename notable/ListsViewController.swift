@@ -68,7 +68,7 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.backgroundColor = UIColor.clearColor()
         
         cell.titleLabel.text = "Restaurants"
-        cell.subtitleLabel.text = "Restos in NYC that I want to go to"
+        cell.subtitleLabel.text = "New places to try in SF"
         
         print(self.tableView.rowHeight)
 
