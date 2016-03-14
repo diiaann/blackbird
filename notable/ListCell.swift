@@ -1,14 +1,14 @@
 //
-//  ListsCell.swift
+//  ListCell.swift
 //  notable
 //
-//  Created by Jared on 3/8/16.
+//  Created by Jared on 3/13/16.
 //  Copyright © 2016 plainspace. All rights reserved.
 //
 
 import UIKit
 
-class ListsCell: UITableViewCell {
+class ListCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -26,9 +26,9 @@ class ListsCell: UITableViewCell {
         let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
         recognizer.delegate = self
         addGestureRecognizer(recognizer)
-        
+
     }
-    
+
     //MARK: - white rounder corner tableViewCell methods
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -52,7 +52,7 @@ class ListsCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -114,5 +114,4 @@ class ListsCell: UITableViewCell {
         }
         return false
     }
-    
 }

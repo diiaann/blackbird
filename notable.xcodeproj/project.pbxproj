@@ -29,6 +29,7 @@
 		7F86E6231C909E0300EF660D /* Stellar-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61B1C90974200EF660D /* Stellar-light.otf */; };
 		7F86E6241C909E0A00EF660D /* Stellar-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61C1C90974200EF660D /* Stellar-Bold.otf */; };
 		7F86E6251C909E1800EF660D /* BELLABOO-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */; };
+		7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F886F6E1C965B3200E61FE1 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		7F86E61A1C90974200EF660D /* Stellar-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Medium.otf"; sourceTree = "<group>"; };
 		7F86E61B1C90974200EF660D /* Stellar-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-light.otf"; sourceTree = "<group>"; };
 		7F86E61C1C90974200EF660D /* Stellar-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Bold.otf"; sourceTree = "<group>"; };
+		7F886F6E1C965B3200E61FE1 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
+				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 			);
@@ -355,6 +358,7 @@
 				7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */,
 				7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */,
 				7F79DAD21C8E8E860047B115 /* ListsViewController.swift in Sources */,
+				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
