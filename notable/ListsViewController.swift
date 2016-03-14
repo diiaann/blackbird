@@ -28,9 +28,9 @@ extension CAGradientLayer {
 class ListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,22 +42,10 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // set background color 
         tableView.backgroundColor = UIColor.clearColor()
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "BELLABOO-Regular", size: 20.0)!,
-            NSForegroundColorAttributeName: UIColor(red: (0/255.0), green: (0/255.0), blue: (0/255.0), alpha: 0.3)
-        ]
-        
-        
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.translucent = true
-        
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
-        
-        tableView.contentInset = UIEdgeInsetsMake(68, 0, 0, 0)
 
         initAppearance()
+        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0)
         
         addButton.layer.cornerRadius = addButton.frame.height/2
         
@@ -80,7 +68,7 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.backgroundColor = UIColor.clearColor()
         
         cell.titleLabel.text = "Restaurants"
-        cell.subtitleLabel.text = "Restos in NYC that I want to go to"
+        cell.subtitleLabel.text = "New places to try in SF"
         
         print(self.tableView.rowHeight)
 
@@ -95,14 +83,19 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.backgroundView.layer.insertSublayer(background, atIndex: 0)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+        if segue.identifier == "listViewSegue", let destination = segue.destinationViewController as? ListViewController {
+            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) {
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

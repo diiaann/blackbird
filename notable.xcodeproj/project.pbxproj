@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B88D581C95F64F008DA6C6 /* AddViewController.swift */; };
 		7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D19351C8F58A700A76EDC /* ListsCell.swift */; };
+		7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E17931C961F800029F4E6 /* ListViewController.swift */; };
 		7F5A1F481C8F643700FA8CE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F471C8F643700FA8CE6 /* MapKit.framework */; };
 		7F5A1F4A1C8F643D00FA8CE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */; };
 		7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAA01C8E8B190047B115 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 		7F86E6231C909E0300EF660D /* Stellar-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61B1C90974200EF660D /* Stellar-light.otf */; };
 		7F86E6241C909E0A00EF660D /* Stellar-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61C1C90974200EF660D /* Stellar-Bold.otf */; };
 		7F86E6251C909E1800EF660D /* BELLABOO-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */; };
+		7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F886F6E1C965B3200E61FE1 /* ListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		7F0D19301C8F56D300A76EDC /* Moon Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Light.otf"; sourceTree = "<group>"; };
 		7F0D19311C8F56D300A76EDC /* Moon Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Bold.otf"; sourceTree = "<group>"; };
 		7F0D19351C8F58A700A76EDC /* ListsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsCell.swift; sourceTree = "<group>"; };
+		7F0E17931C961F800029F4E6 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7F5A1F471C8F643700FA8CE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7F5A1F4B1C8F643D00FA8CE6 /* notable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = notable.entitlements; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		7F86E61A1C90974200EF660D /* Stellar-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Medium.otf"; sourceTree = "<group>"; };
 		7F86E61B1C90974200EF660D /* Stellar-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-light.otf"; sourceTree = "<group>"; };
 		7F86E61C1C90974200EF660D /* Stellar-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Bold.otf"; sourceTree = "<group>"; };
+		7F886F6E1C965B3200E61FE1 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +138,9 @@
 		7F0D19341C8F56EE00A76EDC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
+				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 			);
@@ -352,8 +358,10 @@
 				7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */,
 				7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */,
 				7F79DAD21C8E8E860047B115 /* ListsViewController.swift in Sources */,
+				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
+				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
 				7F79DAD81C8F531B0047B115 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
