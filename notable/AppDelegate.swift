@@ -8,15 +8,32 @@
 
 import UIKit
 import CoreData
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var keys: NSDictionary?
+    
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if let path = NSBundle.mainBundle().pathForResource("keys", ofType: "plist") {
+            keys = NSDictionary(contentsOfFile: path)
+        }
+        
+        if let dict = keys {
+            let configuration = ParseClientConfiguration {
+                $0.applicationId = self.keys?["parseAppId"] as? String
+                $0.clientKey = self.keys?["parseClientKey"] as? String
+                $0.server = (self.keys?["parseServer"] as? String)!
+            }
+            Parse.initializeWithConfiguration(configuration)
+
+        }
+        
         return true
     }
 
