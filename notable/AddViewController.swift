@@ -8,11 +8,15 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var currentImage: UIImageView!
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addContainer: UIView!
     @IBOutlet weak var addPhotoButton: UIButton!
-    @IBOutlet weak var addListButton: UIButton!
+    @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var addLocationButton: UIButton!
     @IBOutlet weak var addTextButton: UIButton!
     
@@ -21,6 +25,8 @@ class AddViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         
         addContainerOriginalFrame = addContainer.frame
         
@@ -32,7 +38,7 @@ class AddViewController: UIViewController {
         addContainer.layer.shadowRadius = 2
         addContainer.layer.shadowOpacity = 0.3
         
-        addListButton.transform = CGAffineTransformMakeScale(0, 0)
+        addImageButton.transform = CGAffineTransformMakeScale(0, 0)
         addPhotoButton.transform = CGAffineTransformMakeScale(0, 0)
         addLocationButton.transform = CGAffineTransformMakeScale(0, 0)
         addTextButton.transform = CGAffineTransformMakeScale(0, 0)
@@ -80,11 +86,11 @@ class AddViewController: UIViewController {
             }, completion: nil)
         
         UIView.animateWithDuration(0.3, delay: 0.4, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: [], animations: { () -> Void in
-            self.addLocationButton.transform = CGAffineTransformIdentity
+            self.addImageButton.transform = CGAffineTransformIdentity
             }, completion: nil)
         
         UIView.animateWithDuration(0.3, delay: 0.5, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: [], animations: { () -> Void in
-            self.addListButton.transform = CGAffineTransformIdentity
+            self.addLocationButton.transform = CGAffineTransformIdentity
             }, completion: nil)
     }
     
@@ -98,14 +104,38 @@ class AddViewController: UIViewController {
         })
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-            self.addListButton.transform = CGAffineTransformMakeScale(0, 0)
+            self.addImageButton.transform = CGAffineTransformMakeScale(0, 0)
             self.addPhotoButton.transform = CGAffineTransformMakeScale(0, 0)
             self.addLocationButton.transform = CGAffineTransformMakeScale(0, 0)
             self.addTextButton.transform = CGAffineTransformMakeScale(0, 0)
             }, completion: nil)
     }
+    
+    
+    @IBAction func onAddPhoto(sender: AnyObject) {
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .Camera
+                imagePicker.cameraCaptureMode = .Photo
+                presentViewController(imagePicker, animated: true, completion: {})
+            }
+        } else {
+            print("nope")
+        }
+    }
 
-    /*
+    @IBAction func onAddImage(sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        currentImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+        /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

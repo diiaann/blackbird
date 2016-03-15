@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="end-at-XNE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tlK-Vh-2dX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -608,6 +608,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x7-wP-QTC">
                                 <rect key="frame" x="219" y="553" width="44" height="44"/>
                                 <state key="normal" image="photo"/>
+                                <connections>
+                                    <action selector="onAddPhoto:" destination="QOy-ze-lYI" eventType="touchUpInside" id="iiF-VC-ghp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1M-Wq-IqR">
                                 <rect key="frame" x="206" y="599" width="60" height="60"/>
@@ -625,13 +628,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNS-DT-6BS">
-                                <rect key="frame" x="314" y="511" width="44" height="44"/>
-                                <state key="normal" image="list"/>
+                                <rect key="frame" x="262" y="517" width="44" height="44"/>
+                                <state key="normal" image="image"/>
+                                <connections>
+                                    <action selector="onAddImage:" destination="QOy-ze-lYI" eventType="touchUpInside" id="EFj-7e-3Rs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-n9-5le">
-                                <rect key="frame" x="262" y="517" width="44" height="44"/>
+                                <rect key="frame" x="314" y="511" width="44" height="44"/>
                                 <state key="normal" image="location"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tr5-AW-SUy">
+                                <rect key="frame" x="67" y="233" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <gestureRecognizers/>
                         <connections>
@@ -642,10 +651,11 @@
                     <connections>
                         <outlet property="addButton" destination="Dak-ta-jrA" id="fYw-p5-qqF"/>
                         <outlet property="addContainer" destination="PFu-HK-ooh" id="cI5-RW-Zj4"/>
-                        <outlet property="addListButton" destination="PNS-DT-6BS" id="Dzx-FQ-Ccn"/>
+                        <outlet property="addImageButton" destination="PNS-DT-6BS" id="IaH-eT-DJh"/>
                         <outlet property="addLocationButton" destination="d1Y-n9-5le" id="va6-gW-HiT"/>
                         <outlet property="addPhotoButton" destination="7x7-wP-QTC" id="7Wu-ZE-5uA"/>
                         <outlet property="addTextButton" destination="e1M-Wq-IqR" id="ELL-2h-Qh9"/>
+                        <outlet property="currentImage" destination="Tr5-AW-SUy" id="wFF-Pe-lbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usB-1j-PtJ" sceneMemberID="firstResponder"/>
@@ -680,7 +690,7 @@
         <image name="icon-back" width="26" height="48"/>
         <image name="icon-edit" width="46" height="46"/>
         <image name="icon-share" width="48" height="46"/>
-        <image name="list" width="24" height="17"/>
+        <image name="image" width="32" height="22"/>
         <image name="location" width="20" height="30"/>
         <image name="photo" width="32" height="25"/>
         <image name="plus" width="22" height="22"/>
