@@ -10,7 +10,7 @@ import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var currentImage: UIImageView!
+    var currentImage: UIImageView!
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     @IBOutlet weak var addButton: UIButton!
@@ -27,6 +27,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        currentImage = UIImageView()
         
         addContainerOriginalFrame = addContainer.frame
         
@@ -96,14 +98,14 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func closeOptions() {
         addMode = false
-        UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
             self.addButton.transform = CGAffineTransformIdentity
             self.addContainer.transform = CGAffineTransformIdentity
             }, completion: { _ in
                 self.dismissViewControllerAnimated(true, completion: nil)
         })
         
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
             self.addImageButton.transform = CGAffineTransformMakeScale(0, 0)
             self.addPhotoButton.transform = CGAffineTransformMakeScale(0, 0)
             self.addLocationButton.transform = CGAffineTransformMakeScale(0, 0)
@@ -121,7 +123,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 presentViewController(imagePicker, animated: true, completion: {})
             }
         } else {
-            print("nope")
+            print("no camera found")
         }
     }
 
