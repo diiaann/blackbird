@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B88D581C95F64F008DA6C6 /* AddViewController.swift */; };
+		61B8D2911C99125900FC2CBF /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B8D2901C99125900FC2CBF /* NoteViewController.swift */; };
 		7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D19351C8F58A700A76EDC /* ListsCell.swift */; };
 		7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E17931C961F800029F4E6 /* ListViewController.swift */; };
 		7F5A1F481C8F643700FA8CE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F471C8F643700FA8CE6 /* MapKit.framework */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		61B88D581C95F64F008DA6C6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		61B8D2901C99125900FC2CBF /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		783D90D8AB7C07B86CF3A7AD /* Pods_notable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BELLABOO-Regular.otf"; sourceTree = "<group>"; };
 		7F0D19301C8F56D300A76EDC /* Moon Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Light.otf"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
+				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61B8D2911C99125900FC2CBF /* NoteViewController.swift in Sources */,
 				7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */,
 				7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */,
 				61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */,
