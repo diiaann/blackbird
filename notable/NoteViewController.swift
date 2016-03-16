@@ -14,12 +14,12 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var editControlsView: UIView!
     
     @IBOutlet weak var noteControlsView: UIView!
-    var editControlsViewOriginalCenter: CGPoint!
+    var editControlsViewOriginalY: CGFloat!
     var noteScrollViewOriginalCenter: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editControlsViewOriginalCenter = editControlsView.center
+        editControlsViewOriginalY = view.frame.height
         noteScrollViewOriginalCenter = noteScrollView.center
 
         // Do any additional setup after loading the view.
@@ -40,7 +40,7 @@ class NoteViewController: UIViewController {
             self.noteControlsView.alpha = 0
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
-            self.editControlsView.center.y = self.editControlsViewOriginalCenter.y - self.editControlsView.frame.size.height
+            self.editControlsView.frame.origin.y = self.editControlsViewOriginalY - self.editControlsView.frame.size.height
             self.noteScrollView.center.y = self.noteScrollViewOriginalCenter.y + 40
             self.view.backgroundColor = UIColor(hexString: "437B7F")
             }, completion: nil)
@@ -61,7 +61,7 @@ class NoteViewController: UIViewController {
             self.noteControlsView.alpha = 1
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
-            self.editControlsView.center.y = self.editControlsViewOriginalCenter.y
+            self.editControlsView.frame.origin.y = self.editControlsViewOriginalY
             self.noteScrollView.center.y = self.noteScrollViewOriginalCenter.y
             self.view.backgroundColor = UIColor(hexString: "A8C3C3")
             }, completion: nil)
