@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,9 +16,16 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var listTitle: UILabel!
+    @IBOutlet weak var listDesc: UILabel!
+    
+    var list: PFObject!
+    
+    var notes: [PFObject] = [PFObject]()
+
     
     @IBAction func didPressBack(sender: AnyObject) {
-                
+        print("does it get here")
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
@@ -33,6 +41,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.separatorStyle = .None
         
+        listTitle.text = list["title"] as? String
+        listDesc.text = list["desc"] as? String
+        
         // set background color
         tableView.backgroundColor = UIColor.clearColor()
                 
@@ -40,21 +51,32 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         addButton.layer.cornerRadius = addButton.frame.height/2
         
+        let query = PFQuery(className: "Note")
+        query.whereKey("parent", equalTo: list)
+        query.findObjectsInBackgroundWithBlock {
+            (notes: [PFObject]?, error: NSError?) -> Void in
+            print("notes", notes)
+            self.notes = notes!
+            self.tableView.reloadData()
+            
+        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         UITableViewCell.self
-        return 20
+        return notes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ListCell") as! ListCell
-        
+        let note = notes[indexPath.row]
+
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.titleLabel.text = "Kitchen Story"
-        cell.subtitleLabel.text = "Great place for brunch. Takes reservations."
+        cell.titleLabel.text = note["title"] as? String
+        cell.subtitleLabel.text = note["desc"] as? String
         
         print(self.tableView.rowHeight)
         

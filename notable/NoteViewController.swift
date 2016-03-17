@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class NoteViewController: UIViewController {
 
@@ -21,12 +22,17 @@ class NoteViewController: UIViewController {
     
     @IBOutlet weak var imagesView: UIView!
     
+    var user = PFUser.currentUser()
+    
     var editControlsViewOriginalY: CGFloat!
     var noteScrollViewOriginalCenter: CGPoint!
     var images: [UIImageView]!
     var newImage: UIImageView!
     var image: UIImage!
     var startInEditMode: Bool?
+    
+    var isNewNote = false
+    var note: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +51,7 @@ class NoteViewController: UIViewController {
 //        view.addSubview(newImage)
 //        testImage.image = image
 
-        // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -103,6 +109,31 @@ class NoteViewController: UIViewController {
         noteScrollView.center.y = self.noteScrollViewOriginalCenter.y + 40
         view.backgroundColor = UIColor(hexString: "437B7F")
     }
+
+    @IBAction func onSave(sender: UIButton) {
+        var note = PFObject(className:"Note")
+        note["title"] = noteTitleInput.text
+        note["desc"] = noteDescInput.text
+        note["user"] = user
+        
+        //TODO: this is hardcoded until we have a way to select a list
+        note["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
+        
+
+        note.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                self.exitEditMode()
+                //self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print(error!.description);
+            }
+        }
+        // send the information to server
+       
+        
+    }
+    
     
     func exitEditMode() {
         listTextField.userInteractionEnabled = false

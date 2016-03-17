@@ -115,6 +115,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             }, completion: nil)
     }
     
+    @IBAction func onAddText(sender: AnyObject) {
+        print("on add text")
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
+        
+        vc.isNewNote = true
+       presentViewController(vc, animated: true, completion: nil)
+    
+    }
     
     @IBAction func onAddPhoto(sender: AnyObject) {
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
