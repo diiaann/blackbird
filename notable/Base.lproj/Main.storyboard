@@ -14,6 +14,7 @@
             <string>BELLABOO-Regular</string>
             <string>BELLABOO-Regular</string>
             <string>BELLABOO-Regular</string>
+            <string>BELLABOO-Regular</string>
         </mutableArray>
         <mutableArray key="Moon Light.otf">
             <string>Moon-Light</string>
@@ -139,6 +140,16 @@
                                     <segue destination="QOy-ze-lYI" kind="presentation" modalTransitionStyle="crossDissolve" id="7xJ-K1-yif"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uz-B4-UPD">
+                                <rect key="frame" x="123" y="590" width="128" height="53"/>
+                                <color key="backgroundColor" red="0.1843137255" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add list">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ni2-HN-IGh" kind="presentation" id="ceh-aG-R1R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -164,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="912.5" y="373.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="Q4v-01-byN">
             <objects>
-                <viewController id="ni2-HN-IGh" sceneMemberID="viewController">
+                <viewController id="ni2-HN-IGh" customClass="EditViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YT7-je-4xf"/>
                         <viewControllerLayoutGuide type="bottom" id="0NF-hK-lga"/>
@@ -175,13 +186,52 @@
                     <view key="view" contentMode="scaleToFill" id="vkW-Ho-0J1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmJ-R6-NFf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myS-ze-6YU">
+                                        <rect key="frame" x="15" y="19" width="345" height="369"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AkT-94-ufa">
+                                                <rect key="frame" x="62" y="28" width="221" height="30"/>
+                                                <color key="textColor" red="0.2627450980392157" green="0.4823529411764706" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-TM-vpI">
+                                                <rect key="frame" x="29" y="76" width="262" height="105"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3J-7u-q02">
+                                                <rect key="frame" x="217" y="316" width="128" height="53"/>
+                                                <color key="backgroundColor" red="0.1843137255" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Save">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPressSave:" destination="ni2-HN-IGh" eventType="touchUpInside" id="9ci-n4-8Gu"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2627450980392157" green="0.4823529411764706" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="descInput" destination="Md1-TM-vpI" id="f0E-9e-WW3"/>
+                        <outlet property="titleInput" destination="AkT-94-ufa" id="a4t-vp-jG0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ2-ku-tWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="358"/>
+            <point key="canvasLocation" x="1510.5" y="317.5"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="kHF-Lj-qDo">
@@ -569,7 +619,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahN-15-ubi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="9wD-xD-9nA"/>
             </objects>
-            <point key="canvasLocation" x="1144.5" y="1251.5"/>
+            <point key="canvasLocation" x="1020.5" y="1387.5"/>
         </scene>
         <!--Your Lists-->
         <scene sceneID="m4o-wV-Mz1">
@@ -655,7 +705,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1752.5" y="373.5"/>
+            <point key="canvasLocation" x="1752.5" y="1207.5"/>
         </scene>
         <!--Your List Scene-->
         <scene sceneID="fcm-Gz-jDd">
@@ -673,7 +723,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lI-Md-gC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="1074"/>
+            <point key="canvasLocation" x="464" y="1304"/>
         </scene>
     </scenes>
     <resources>
@@ -687,8 +737,8 @@
         <image name="text" width="29" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HYf-Yd-9Fp"/>
-        <segue reference="cWP-is-mVy"/>
         <segue reference="5eg-aB-FV6"/>
+        <segue reference="7xJ-K1-yif"/>
+        <segue reference="HYf-Yd-9Fp"/>
     </inferredMetricsTieBreakers>
 </document>

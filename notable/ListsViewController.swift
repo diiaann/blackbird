@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 extension CAGradientLayer {
     
@@ -32,6 +33,11 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
+    //NSArray vs NSDictionary
+    
+    var notes: [PFObject] = [PFObject]()
+    var user = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +55,25 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         addButton.layer.cornerRadius = addButton.frame.height/2
         
+        var query = PFQuery(className:"Note")
+        query.whereKey("user", equalTo: user!)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved:", objects)
+                
+                self.notes = objects! as [PFObject]
+                self.tableView.reloadData()
+
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,7 +83,7 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         UITableViewCell.self
-        return 20
+        return notes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,8 +92,10 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.titleLabel.text = "Restaurants"
-        cell.subtitleLabel.text = "New places to try in SF"
+        let note = notes[indexPath.row]
+        
+        cell.titleLabel.text = note["title"] as? String
+        cell.subtitleLabel.text = note["desc"] as? String
         
         print(self.tableView.rowHeight)
 
