@@ -17,11 +17,21 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorMessage: UILabel!
+    
+    var currentUser = PFUser.currentUser()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         signUpButton.enabled = false
         errorMessage.hidden = true
+        
+        if currentUser != nil {
+            performSegueWithIdentifier("signInSegue", sender: self)
+        } else {
+            // Show the signup or login screen
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 extension CAGradientLayer {
     
@@ -32,6 +33,9 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
+    var lists: [PFObject] = [PFObject]()
+    var user = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +55,29 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        var query = PFQuery(className:"List")
+        
+        query.whereKey("user", equalTo: user!)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved:", objects)
+                
+                self.lists = objects! as [PFObject]
+                self.tableView.reloadData()
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,18 +85,23 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         UITableViewCell.self
-        return 20
+        return lists.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ListsCell") as! ListsCell
         
+        
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.titleLabel.text = "Restaurants"
-        cell.subtitleLabel.text = "New places to try in SF"
+        let list = lists[indexPath.row]
+
+        cell.titleLabel.text = list["title"] as? String
+
+        cell.subtitleLabel.text = list["desc"] as? String
         
+        //TODO: remove this print statement
         print(self.tableView.rowHeight)
 
         return cell
