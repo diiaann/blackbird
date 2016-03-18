@@ -46,3 +46,20 @@ extension UIColor {
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
 }
+
+extension UITextField
+{
+    func setBottomBorder(color:String)
+    {
+        self.borderStyle = UITextBorderStyle.None;
+        let border = CALayer()
+        let width = CGFloat(1.0)
+        border.borderColor = UIColor(hexString: color).CGColor
+        border.frame = CGRect(x: self.center.x - self.intrinsicContentSize().width/2 - 10, y: self.frame.size.height - width,   width:  self.intrinsicContentSize().width, height: self.frame.size.height)
+        
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+    
+}
