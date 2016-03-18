@@ -216,7 +216,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="onSave:" destination="ni2-HN-IGh" eventType="touchUpInside" id="ADk-hK-nRK"/>
+                                            <action selector="onSave:" destination="ni2-HN-IGh" eventType="touchUpInside" id="jLT-4u-pS2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -235,7 +235,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="579"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Uv-D2-Naa">
-
                                                 <rect key="frame" x="29" y="75" width="283" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="vSn-xZ-SMg"/>
@@ -445,7 +444,6 @@
                         <outlet property="listBottomBorder" destination="whb-yT-I0P" id="ZG9-df-vv9"/>
                         <outlet property="listTextField" destination="tgJ-QM-ygY" id="ml7-Jn-j77"/>
                         <outlet property="noteControlsView" destination="Y7P-q5-xWx" id="oVI-Nx-5h8"/>
-                        <outlet property="noteDescInput" destination="uiB-eo-mZ6" id="1w4-Dp-9xF"/>
                         <outlet property="noteScrollView" destination="oAF-4i-zKE" id="V98-FK-sCz"/>
                         <outlet property="titleTextField" destination="5Uv-D2-Naa" id="a3l-eA-bdn"/>
                     </connections>
@@ -1111,9 +1109,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5eg-aB-FV6"/>
-        <segue reference="7xJ-K1-yif"/>
-        <segue reference="HYf-Yd-9Fp"/>
-        <segue reference="r3C-3E-TE5"/>
         <segue reference="cWP-is-mVy"/>
+        <segue reference="r3C-3E-TE5"/>
     </inferredMetricsTieBreakers>
 </document>

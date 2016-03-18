@@ -29,7 +29,7 @@ class NoteViewController: UIViewController {
     var images: [UIImageView]!
     var newImage: UIImageView!
     var image: UIImage!
-    var startInEditMode: Bool?
+    var startInEditMode = false
     
     var isNewNote = false
     var note: PFObject!
@@ -45,7 +45,7 @@ class NoteViewController: UIViewController {
         images = []
         newImage = UIImageView(image: image)
         images.append(newImage)
-        renderImages()
+        //renderImages()
         
 
 //        view.addSubview(newImage)
@@ -55,7 +55,7 @@ class NoteViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        if startInEditMode! == true {
+        if startInEditMode == true {
             loadEditMode()
             print("loading editmode")
         }
@@ -80,10 +80,6 @@ class NoteViewController: UIViewController {
         exitEditMode()
     }
     
-
-    @IBAction func onSave(sender: UIButton) {
-        exitEditMode()
-    }
     
     func enterEditMode() {
         listTextField.userInteractionEnabled = true
@@ -112,14 +108,14 @@ class NoteViewController: UIViewController {
 
     @IBAction func onSave(sender: UIButton) {
         var note = PFObject(className:"Note")
-        note["title"] = noteTitleInput.text
-        note["desc"] = noteDescInput.text
+        note["title"] = titleTextField.text
+        note["desc"] = descriptionTextField.text
         note["user"] = user
         
         //TODO: this is hardcoded until we have a way to select a list
         note["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
         
-
+        
         note.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
