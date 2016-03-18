@@ -129,9 +129,6 @@ class NoteViewController: UIViewController {
                 print(error!.description);
             }
         }
-        // send the information to server
-       
-        
     }
     
     

@@ -24,10 +24,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var notes: [PFObject] = [PFObject]()
 
     
-    @IBAction func didPressBack(sender: AnyObject) {
-        print("does it get here")
+    @IBAction func didPressBack(sender: UIButton) {
         navigationController?.popToRootViewControllerAnimated(true)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,15 +88,17 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "noteDetailSegue" {
+            
+            let indexPath = tableView.indexPathForSelectedRow
+            // Get the Row of the Index Path and set as index
+            let note = notes[(indexPath?.row)!]
+            // Get in touch with the DetailViewController
+            let noteViewController = segue.destinationViewController as! NoteViewController
+            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            noteViewController.note = note
+        }
     }
-    */
-
 }

@@ -120,22 +120,17 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-        /*if segue.identifier == "listViewSegue", let destination = segue.destinationViewController as? ListViewController {
-            if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPathForCell(cell) {
-                
-                
-            }
-        }*/
         
-        let indexPath = tableView.indexPathForSelectedRow
-        // Get the Row of the Index Path and set as index
-        let list = lists[(indexPath?.row)!]
-        // Get in touch with the DetailViewController
-        let detailViewController = segue.destinationViewController as! ListViewController
-        // Pass on the data to the Detail ViewController by setting it's indexPathRow value
-        detailViewController.list = list
-        
+        if segue.identifier == "listViewSeque" {
+
+            let indexPath = tableView.indexPathForSelectedRow
+            // Get the Row of the Index Path and set as index
+            let list = lists[(indexPath?.row)!]
+            // Get in touch with the DetailViewController
+            let detailViewController = segue.destinationViewController as! ListViewController
+            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            detailViewController.list = list
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
