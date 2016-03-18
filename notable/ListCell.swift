@@ -23,9 +23,9 @@ class ListCell: UITableViewCell {
         // Initialization code
         
         // add a pan recognizer
-        let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
-        recognizer.delegate = self
-        addGestureRecognizer(recognizer)
+        //let recognizer = UIPanGestureRecognizer(target: self, action: "handlePan:")
+        //recognizer.delegate = self
+        //addGestureRecognizer(recognizer)
 
     }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,11 +16,18 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var listTitle: UILabel!
+    @IBOutlet weak var listDesc: UILabel!
     
-    @IBAction func didPressBack(sender: AnyObject) {
-                
+    var list: PFObject!
+    
+    var notes: [PFObject] = [PFObject]()
+
+    
+    @IBAction func didPressBack(sender: UIButton) {
         navigationController?.popToRootViewControllerAnimated(true)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +41,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.separatorStyle = .None
         
+        listTitle.text = list["title"] as? String
+        listDesc.text = list["desc"] as? String
+        
         // set background color
         tableView.backgroundColor = UIColor.clearColor()
                 
@@ -40,21 +51,32 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         addButton.layer.cornerRadius = addButton.frame.height/2
         
+        let query = PFQuery(className: "Note")
+        query.whereKey("parent", equalTo: list)
+        query.findObjectsInBackgroundWithBlock {
+            (notes: [PFObject]?, error: NSError?) -> Void in
+            print("notes", notes)
+            self.notes = notes!
+            self.tableView.reloadData()
+            
+        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         UITableViewCell.self
-        return 20
+        return notes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ListCell") as! ListCell
-        
+        let note = notes[indexPath.row]
+
         cell.backgroundColor = UIColor.clearColor()
         
-        cell.titleLabel.text = "Kitchen Story"
-        cell.subtitleLabel.text = "Great place for brunch. Takes reservations."
+        cell.titleLabel.text = note["title"] as? String
+        cell.subtitleLabel.text = note["desc"] as? String
         
         print(self.tableView.rowHeight)
         
@@ -66,15 +88,17 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "noteDetailSegue" {
+            
+            let indexPath = tableView.indexPathForSelectedRow
+            // Get the Row of the Index Path and set as index
+            let note = notes[(indexPath?.row)!]
+            // Get in touch with the DetailViewController
+            let noteViewController = segue.destinationViewController as! NoteViewController
+            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            noteViewController.note = note
+        }
     }
-    */
-
 }
