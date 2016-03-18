@@ -10,7 +10,8 @@ import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currentImage: UIImageView!
+//    @IBOutlet weak var currentImage: UIImageView!
+//    var currentImage: UIImageView!
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     @IBOutlet weak var addButton: UIButton!
@@ -22,6 +23,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     var addContainerOriginalFrame: CGRect!
     var addMode: Bool!
+    var currentImage: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +73,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     func openOptions() {
         addMode = true
-        UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+        UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: [UIViewAnimationOptions.AllowUserInteraction], animations: { () -> Void in
             self.addButton.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/Double(4)))
             }, completion: nil)
         
@@ -98,11 +100,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func closeOptions() {
         addMode = false
-        UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
+        UIView.animateWithDuration(0.3, delay: 0, options: [UIViewAnimationOptions.AllowUserInteraction], animations: { () -> Void in
             self.addButton.transform = CGAffineTransformIdentity
             self.addContainer.transform = CGAffineTransformIdentity
             }, completion: { _ in
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(false, completion: nil)
         })
         
         UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
@@ -136,15 +138,20 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         currentImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         dismissViewControllerAnimated(true, completion: nil)
+        performSegueWithIdentifier("editNoteSegue", sender: self)
     }
-        /*
+        
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationViewController = segue.destinationViewController as! NoteViewController
+        destinationViewController.image = self.currentImage.image
+        destinationViewController.startInEditMode = true
+
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
