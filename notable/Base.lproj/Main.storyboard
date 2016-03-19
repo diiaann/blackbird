@@ -43,7 +43,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvF-ib-xId">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nxk-Mi-vka" userLabel="Header View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxk-Mi-vka" userLabel="Header View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STy-Zc-D1F" userLabel="Title Label">
@@ -65,11 +65,12 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="centerX" secondItem="nxk-Mi-vka" secondAttribute="centerX" id="UL7-Bq-12X"/>
+                                            <constraint firstAttribute="height" constant="70" id="UpQ-hN-l2N"/>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="top" secondItem="nxk-Mi-vka" secondAttribute="top" constant="25" id="uwm-uh-sJV"/>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="leading" secondItem="nxk-Mi-vka" secondAttribute="leading" id="v9g-Cp-g1h"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-wp-ddO">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="105" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-wp-ddO">
                                         <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
@@ -773,7 +774,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXQ-zl-XrW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXQ-zl-XrW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBK-sZ-0vE" userLabel="Title Label">
@@ -822,6 +823,7 @@
                                             <constraint firstItem="Pqu-qy-60j" firstAttribute="top" secondItem="zBK-sZ-0vE" secondAttribute="bottom" constant="8" symbolic="YES" id="beJ-HZ-eDC"/>
                                             <constraint firstItem="WK0-x4-nqy" firstAttribute="top" secondItem="FC4-Ov-YM4" secondAttribute="top" constant="1" id="iws-Cg-MgC"/>
                                             <constraint firstAttribute="trailing" secondItem="zBK-sZ-0vE" secondAttribute="trailing" id="mk3-Dc-1cP"/>
+                                            <constraint firstAttribute="height" constant="160" id="rW4-gz-oHK"/>
                                             <constraint firstItem="zBK-sZ-0vE" firstAttribute="leading" secondItem="AXQ-zl-XrW" secondAttribute="leading" id="uA4-5R-lfp"/>
                                         </constraints>
                                     </view>
@@ -1109,7 +1111,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5eg-aB-FV6"/>
-        <segue reference="cWP-is-mVy"/>
-        <segue reference="r3C-3E-TE5"/>
+        <segue reference="7xJ-K1-yif"/>
+        <segue reference="vuh-fa-Rs8"/>
     </inferredMetricsTieBreakers>
 </document>
