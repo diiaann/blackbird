@@ -93,10 +93,10 @@ class NoteViewController: UIViewController {
         
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = scrollViewTop.constant + 40
-        noteControlsView.alpha = 0
+        
         
         UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
-            
+            self.noteControlsView.alpha = 0
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
             self.view.layoutIfNeeded()
@@ -113,7 +113,7 @@ class NoteViewController: UIViewController {
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
         editControlsBottomMargin.constant = 0
-        scrollViewTop.constant = scrollViewTop.constant + 40
+        scrollViewTop.constant = 17+40
     }
 
     @IBAction func onSave(sender: UIButton) {
@@ -144,9 +144,9 @@ class NoteViewController: UIViewController {
         
         editControlsBottomMargin.constant = -60
         scrollViewTop.constant = scrollViewTop.constant - 40
-        noteControlsView.alpha = 0
+        
         UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
-            
+           self.noteControlsView.alpha = 1
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
             self.view.layoutIfNeeded()
