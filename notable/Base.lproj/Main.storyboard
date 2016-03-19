@@ -192,10 +192,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAF-4i-zKE">
-                                <rect key="frame" x="16" y="8" width="343" height="599"/>
+                                <rect key="frame" x="16" y="8" width="343" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yi-LI-mA7">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="599"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="587"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whb-yT-I0P">
                                                 <rect key="frame" x="121" y="56" width="100" height="1"/>
@@ -289,10 +289,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-q5-xWx">
                                 <rect key="frame" x="-4" y="607" width="383" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-ja-dje">
-                                        <rect key="frame" x="115" y="8" width="44" height="44"/>
-                                        <state key="normal" image="icon-share"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4y1-PD-k2S">
                                         <rect key="frame" x="212" y="8" width="44" height="44"/>
                                         <state key="normal" image="reminder"/>
@@ -311,10 +307,13 @@
                                             <action selector="onBackButton:" destination="ni2-HN-IGh" eventType="touchUpInside" id="TAn-8X-Kpi"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-ja-dje">
+                                        <rect key="frame" x="115" y="8" width="44" height="44"/>
+                                        <state key="normal" image="icon-share"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="J58-dz-w2l"/>
                                     <constraint firstAttribute="height" constant="60" id="wy5-yS-WbG"/>
                                 </constraints>
                             </view>
@@ -401,6 +400,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Y7P-q5-xWx" secondAttribute="trailing" constant="-20" id="NqI-as-bxQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XY2-vo-79m" secondAttribute="trailing" constant="-20" id="UHt-SZ-V5X"/>
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="top" secondItem="YT7-je-4xf" secondAttribute="bottom" constant="-12" id="VdU-V2-GcE"/>
+                            <constraint firstItem="Y7P-q5-xWx" firstAttribute="top" secondItem="oAF-4i-zKE" secondAttribute="bottom" constant="12" id="ZMv-no-CUE"/>
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="trailing" secondItem="vkW-Ho-0J1" secondAttribute="trailingMargin" id="ZVe-8r-8B1"/>
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="trailing" secondItem="vkW-Ho-0J1" secondAttribute="trailingMargin" id="bLL-FO-206"/>
                             <constraint firstAttribute="bottomMargin" secondItem="XY2-vo-79m" secondAttribute="bottom" constant="-60" id="cIs-bK-0wf"/>
@@ -421,6 +421,7 @@
                                 <exclude reference="hHC-JT-dQe"/>
                                 <exclude reference="xfz-EJ-y6U"/>
                                 <exclude reference="42S-ah-t6M"/>
+                                <exclude reference="noX-ZU-rQ4"/>
                             </mask>
                         </variation>
                     </view>
@@ -700,7 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-Yy-vcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.5" y="-490.5"/>
+            <point key="canvasLocation" x="1439.5" y="-467.5"/>
         </scene>
         <!--Your List-->
         <scene sceneID="n71-3F-DcF">
@@ -1100,7 +1101,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5eg-aB-FV6"/>
-        <segue reference="cWP-is-mVy"/>
+        <segue reference="7xJ-K1-yif"/>
         <segue reference="r3C-3E-TE5"/>
     </inferredMetricsTieBreakers>
 </document>
