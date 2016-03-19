@@ -20,7 +20,11 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     
-    @IBOutlet weak var imagesView: UIView!
+    @IBOutlet weak var saveCancelContainer: UIView!
+    @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
+    @IBOutlet weak var editControlsBottomMargin: NSLayoutConstraint!
+    
+    //@IBOutlet weak var imagesView: UIView!
     
     var user = PFUser.currentUser()
     
@@ -36,12 +40,15 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        editControlsViewOriginalY = view.frame.height
-        noteScrollViewOriginalCenter = noteScrollView.center
-        listTextField.setBottomBorder("D5DFDF")
+        
         listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextField.userInteractionEnabled = false
+        saveCancelContainer.userInteractionEnabled = false
+        
+        listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
+        
+        
         images = []
         newImage = UIImageView(image: image)
         images.append(newImage)
@@ -57,10 +64,8 @@ class NoteViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         if startInEditMode == true {
             loadEditMode()
-            print("loading editmode")
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,17 +85,21 @@ class NoteViewController: UIViewController {
         exitEditMode()
     }
     
-    
     func enterEditMode() {
         listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextField.userInteractionEnabled = true
-        UIView.animateWithDuration(0.2, delay: 0, options: [], animations: { () -> Void in
-            self.noteControlsView.alpha = 0
+        saveCancelContainer.userInteractionEnabled = true
+        
+        editControlsBottomMargin.constant = 0
+        scrollViewTop.constant = scrollViewTop.constant + 40
+        noteControlsView.alpha = 0
+        
+        UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
+            
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
-            self.editControlsView.frame.origin.y = self.editControlsViewOriginalY - self.editControlsView.frame.size.height
-            self.noteScrollView.center.y = self.noteScrollViewOriginalCenter.y + 40
+            self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor(hexString: "437B7F")
             }, completion: nil)
     }
@@ -100,10 +109,11 @@ class NoteViewController: UIViewController {
         listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextField.userInteractionEnabled = true
+        saveCancelContainer.userInteractionEnabled = true
         noteControlsView.alpha = 0
-        editControlsView.frame.origin.y = editControlsViewOriginalY - editControlsView.frame.size.height
-        noteScrollView.center.y = self.noteScrollViewOriginalCenter.y + 40
         view.backgroundColor = UIColor(hexString: "437B7F")
+        editControlsBottomMargin.constant = 0
+        scrollViewTop.constant = scrollViewTop.constant + 40
     }
 
     @IBAction func onSave(sender: UIButton) {
@@ -114,7 +124,6 @@ class NoteViewController: UIViewController {
         
         //TODO: this is hardcoded until we have a way to select a list
         note["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
-        
         
         note.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -127,17 +136,20 @@ class NoteViewController: UIViewController {
         }
     }
     
-    
     func exitEditMode() {
         listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextField.userInteractionEnabled = false
-        UIView.animateWithDuration(0.2, delay: 0, options: [], animations: { () -> Void in
-            self.noteControlsView.alpha = 1
+        saveCancelContainer.userInteractionEnabled = false
+        
+        editControlsBottomMargin.constant = -60
+        scrollViewTop.constant = scrollViewTop.constant - 40
+        noteControlsView.alpha = 0
+        UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
+            
             }, completion: nil)
         UIView.animateWithDuration(0.3, delay: 0, options: [], animations: { () -> Void in
-            self.editControlsView.frame.origin.y = self.editControlsViewOriginalY
-            self.noteScrollView.center.y = self.noteScrollViewOriginalCenter.y
+            self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor(hexString: "A8C3C3")
             }, completion: nil)
     }
@@ -145,8 +157,8 @@ class NoteViewController: UIViewController {
     func renderImages() {
         for imageView in images {
             var currentY = 0
-            imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: imagesView.frame.size.width, height: imagesView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width)
-            imagesView.addSubview(imageView)
+//            imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: imagesView.frame.size.width, height: imagesView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width)
+//            imagesView.addSubview(imageView)
         }
     }
     
