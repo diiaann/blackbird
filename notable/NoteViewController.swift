@@ -142,14 +142,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
         } else {
             currentNote = note
         }
-        note["title"] = titleTextField.text
-        note["desc"] = descriptionTextField.text
-        note["user"] = user
+        currentNote["title"] = titleTextField.text
+        currentNote["desc"] = descriptionTextField.text
+        currentNote["user"] = user
         
         //TODO: this is hardcoded until we have a way to select a list
-        note["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
+        currentNote["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
         
-        note.saveInBackgroundWithBlock {
+        currentNote.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 self.exitEditMode()
