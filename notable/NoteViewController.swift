@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NoteViewController: UIViewController, UIAlertViewDelegate {
+class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
     @IBOutlet weak var editControlsView: UIView!
@@ -18,8 +18,8 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var listTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
-    
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextFieldHeight: NSLayoutConstraint!
     @IBOutlet weak var saveCancelContainer: UIView!
     @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     @IBOutlet weak var editControlsBottomMargin: NSLayoutConstraint!
@@ -47,9 +47,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        descriptionTextView.delegate = self
+        if descriptionTextView.text == "Add description" {
+            descriptionTextView.textColor = UIColor.lightGrayColor()
+        }
+        
         listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
-        descriptionTextField.userInteractionEnabled = false
+        descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
         
         listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
@@ -71,9 +76,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
         } else {
             loadNote()
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,7 +110,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     func enterEditMode() {
         listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
-        descriptionTextField.userInteractionEnabled = true
+        descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
         
         editControlsBottomMargin.constant = 0
@@ -127,7 +129,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     func loadEditMode() {
         listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
-        descriptionTextField.userInteractionEnabled = true
+        descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
@@ -143,7 +145,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
             currentNote = note
         }
         currentNote["title"] = titleTextField.text
-        currentNote["desc"] = descriptionTextField.text
+        currentNote["desc"] = descriptionTextView.text
         currentNote["user"] = user
         
         //TODO: this is hardcoded until we have a way to select a list
@@ -164,7 +166,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     func exitEditMode() {
         listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
-        descriptionTextField.userInteractionEnabled = false
+        descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
         
         editControlsBottomMargin.constant = -60
@@ -181,18 +183,36 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
     
     func loadNote() {
         titleTextField.text = note["title"] as! String
-        descriptionTextField.text = note["desc"] as! String
+        descriptionTextView.text = note["desc"] as! String
     }
     
     func renderImages() {
         for imageView in images {
             if imageView.frame.size.width != 0 {
-                var currentY = descriptionTextField.frame.origin.y + 62
+                var currentY = descriptionTextView.frame.origin.y + 62
                 var calculatedHeight = noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
                 imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: noteScrollView.frame.size.width, height: calculatedHeight)
                 noteScrollView.addSubview(imageView)
                 currentY += calculatedHeight
             }
+        }
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        descriptionTextFieldHeight.constant = textView.intrinsicContentSize().height
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if descriptionTextView.textColor == UIColor.lightGrayColor() {
+            descriptionTextView.text = nil
+            descriptionTextView.textColor = UIColor(hexString: "306161")
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if descriptionTextView.text.isEmpty {
+            descriptionTextView.text = "Add description"
+            descriptionTextView.textColor = UIColor.lightGrayColor()
         }
     }
     
@@ -208,6 +228,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate {
         deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
             self.note.deleteInBackground()
             self.dismissViewControllerAnimated(true, completion: nil)
+            
         }
         alertController.addAction(deleteAction)
     }
