@@ -33,7 +33,6 @@ class NoteViewController: UIViewController {
     var images: [UIImageView]!
     var newImage: UIImageView!
     var image: UIImage!
-    var startInEditMode = false
     
     var isNewNote = false
     var note: PFObject!
@@ -48,31 +47,32 @@ class NoteViewController: UIViewController {
         
         listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
         
-        
         images = []
         newImage = UIImageView(image: image)
         images.append(newImage)
-        //renderImages()
-        
-
-//        view.addSubview(newImage)
-//        testImage.image = image
-
-        
+        if images.count > 0 {
+            renderImages()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        if startInEditMode == true {
+        if isNewNote {
             loadEditMode()
+        } else {
+            loadNote()
         }
     }
+    
+    override func viewDidAppear(animated: Bool) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onBackButton(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -82,7 +82,13 @@ class NoteViewController: UIViewController {
     
 
     @IBAction func onCancel(sender: UIButton) {
-        exitEditMode()
+        if isNewNote {
+            dismissViewControllerAnimated(true, completion: { () -> Void in
+                self.exitEditMode()
+            })
+        } else {
+            exitEditMode()
+        }
     }
     
     func enterEditMode() {
@@ -93,7 +99,6 @@ class NoteViewController: UIViewController {
         
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = scrollViewTop.constant + 40
-        
         
         UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
             self.noteControlsView.alpha = 0
@@ -113,7 +118,7 @@ class NoteViewController: UIViewController {
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
         editControlsBottomMargin.constant = 0
-        scrollViewTop.constant = 17+40
+        scrollViewTop.constant = 43
     }
 
     @IBAction func onSave(sender: UIButton) {
@@ -154,11 +159,20 @@ class NoteViewController: UIViewController {
             }, completion: nil)
     }
     
+    func loadNote() {
+        titleTextField.text = note["title"] as! String
+        descriptionTextField.text = note["desc"] as! String
+    }
+    
     func renderImages() {
         for imageView in images {
-            var currentY = 0
-//            imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: imagesView.frame.size.width, height: imagesView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width)
-//            imagesView.addSubview(imageView)
+            if imageView.frame.size.width != 0 {
+                var currentY = descriptionTextField.frame.origin.y + 62
+                var calculatedHeight = noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
+                imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: noteScrollView.frame.size.width, height: calculatedHeight)
+                noteScrollView.addSubview(imageView)
+                currentY += calculatedHeight
+            }
         }
     }
     

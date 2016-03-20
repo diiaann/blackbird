@@ -147,7 +147,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         currentImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         dismissViewControllerAnimated(true, completion: nil)
-        performSegueWithIdentifier("editNoteSegue", sender: self)
+        dismissViewControllerAnimated(true, completion: nil)
+        performSegueWithIdentifier("noteSegue", sender: self)
     }
         
     // MARK: - Navigation
@@ -155,8 +156,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destinationViewController = segue.destinationViewController as! NoteViewController
-        destinationViewController.image = self.currentImage.image
-        destinationViewController.startInEditMode = true
+            destinationViewController.image = self.currentImage.image
+            destinationViewController.isNewNote = true
 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

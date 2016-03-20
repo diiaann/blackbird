@@ -192,10 +192,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAF-4i-zKE">
-                                <rect key="frame" x="16" y="8" width="343" height="587"/>
+                                <rect key="frame" x="16" y="23" width="343" height="572"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yi-LI-mA7">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="587"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="572"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whb-yT-I0P">
                                                 <rect key="frame" x="121" y="56" width="100" height="1"/>
@@ -399,7 +399,7 @@
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="leading" secondItem="vkW-Ho-0J1" secondAttribute="leadingMargin" id="FcB-lE-bXC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y7P-q5-xWx" secondAttribute="trailing" constant="-20" id="NqI-as-bxQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XY2-vo-79m" secondAttribute="trailing" constant="-20" id="UHt-SZ-V5X"/>
-                            <constraint firstItem="oAF-4i-zKE" firstAttribute="top" secondItem="YT7-je-4xf" secondAttribute="bottom" constant="-12" id="VdU-V2-GcE"/>
+                            <constraint firstItem="oAF-4i-zKE" firstAttribute="top" secondItem="YT7-je-4xf" secondAttribute="bottom" constant="3" id="VdU-V2-GcE"/>
                             <constraint firstItem="Y7P-q5-xWx" firstAttribute="top" secondItem="oAF-4i-zKE" secondAttribute="bottom" constant="12" id="ZMv-no-CUE"/>
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="trailing" secondItem="vkW-Ho-0J1" secondAttribute="trailingMargin" id="ZVe-8r-8B1"/>
                             <constraint firstItem="oAF-4i-zKE" firstAttribute="trailing" secondItem="vkW-Ho-0J1" secondAttribute="trailingMargin" id="bLL-FO-206"/>
@@ -425,6 +425,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="MiZ-ML-Mtu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="descriptionTextField" destination="uiB-eo-mZ6" id="MpV-e5-s0a"/>
@@ -441,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ2-ku-tWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.5" y="1179.5"/>
+            <point key="canvasLocation" x="1448.5" y="1171.5"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="kHF-Lj-qDo">
@@ -759,7 +760,7 @@
                                                     <outlet property="subtitleLabel" destination="E30-Fb-n6T" id="99Q-1X-DgV"/>
                                                     <outlet property="titleLabel" destination="NvQ-S2-u9a" id="Vsg-kC-0Jh"/>
                                                     <outletCollection property="gestureRecognizers" destination="9wD-xD-9nA" appends="YES" id="dle-sQ-Zdf"/>
-                                                    <segue destination="ni2-HN-IGh" kind="show" identifier="noteDetailSegue" id="vuh-fa-Rs8"/>
+                                                    <segue destination="ni2-HN-IGh" kind="presentation" identifier="noteDetailSegue" id="vuh-fa-Rs8"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -1056,7 +1057,7 @@
                         <outlet property="addLocationButton" destination="d1Y-n9-5le" id="va6-gW-HiT"/>
                         <outlet property="addPhotoButton" destination="7x7-wP-QTC" id="7Wu-ZE-5uA"/>
                         <outlet property="addTextButton" destination="e1M-Wq-IqR" id="ELL-2h-Qh9"/>
-                        <segue destination="ni2-HN-IGh" kind="presentation" identifier="editNoteSegue" id="r3C-3E-TE5"/>
+                        <segue destination="ni2-HN-IGh" kind="presentation" identifier="noteSegue" id="3uS-tT-nXY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usB-1j-PtJ" sceneMemberID="firstResponder"/>
@@ -1067,21 +1068,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1448.5" y="373.5"/>
-        </scene>
-        <!--Your List Scene-->
-        <scene sceneID="fcm-Gz-jDd">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="0hM-Wd-QB3" userLabel="Your List Scene" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bLZ-p6-XKe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4lI-Md-gC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="332" y="1074"/>
         </scene>
     </scenes>
     <resources>
@@ -1102,6 +1088,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="5eg-aB-FV6"/>
         <segue reference="7xJ-K1-yif"/>
-        <segue reference="r3C-3E-TE5"/>
+        <segue reference="3uS-tT-nXY"/>
     </inferredMetricsTieBreakers>
 </document>
