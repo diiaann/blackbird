@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NoteViewController: UIViewController {
+class NoteViewController: UIViewController, UIAlertViewDelegate {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
     @IBOutlet weak var editControlsView: UIView!
@@ -24,6 +24,8 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     @IBOutlet weak var editControlsBottomMargin: NSLayoutConstraint!
     
+    @IBOutlet weak var deleteButton: UIButton!
+    
     //@IBOutlet weak var imagesView: UIView!
     
     var user = PFUser.currentUser()
@@ -36,6 +38,11 @@ class NoteViewController: UIViewController {
     
     var isNewNote = false
     var note: PFObject!
+    
+    var alertController: UIAlertController!
+    var cancelAction: UIAlertAction!
+    var deleteAction: UIAlertAction!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +60,14 @@ class NoteViewController: UIViewController {
         if images.count > 0 {
             renderImages()
         }
+        
+        setupAlertControllers()
     }
     
     override func viewWillAppear(animated: Bool) {
         if isNewNote {
             loadEditMode()
+            deleteButton.enabled = false
         } else {
             loadNote()
         }
@@ -91,6 +101,10 @@ class NoteViewController: UIViewController {
         }
     }
     
+    @IBAction func onDeleteButton(sender: UIButton) {
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     func enterEditMode() {
         listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
@@ -122,7 +136,12 @@ class NoteViewController: UIViewController {
     }
 
     @IBAction func onSave(sender: UIButton) {
-        var note = PFObject(className:"Note")
+        var currentNote: PFObject
+        if isNewNote {
+            currentNote = PFObject(className:"Note")
+        } else {
+            currentNote = note
+        }
         note["title"] = titleTextField.text
         note["desc"] = descriptionTextField.text
         note["user"] = user
@@ -134,6 +153,7 @@ class NoteViewController: UIViewController {
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 self.exitEditMode()
+                print("Saved \(self.titleTextField.text)")
                 //self.dismissViewControllerAnimated(true, completion: nil)
             } else {
                 print(error!.description);
@@ -174,6 +194,22 @@ class NoteViewController: UIViewController {
                 currentY += calculatedHeight
             }
         }
+    }
+    
+    func setupAlertControllers() {
+        alertController = UIAlertController(title: nil, message: "Are you sure you want to delete this note?", preferredStyle: .ActionSheet)
+        
+        cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        
+        alertController.addAction(cancelAction)
+        
+        deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (action) in
+            self.note.deleteInBackground()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alertController.addAction(deleteAction)
     }
     
     /*
