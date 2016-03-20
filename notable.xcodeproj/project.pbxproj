@@ -163,12 +163,12 @@
 		7F0D19341C8F56EE00A76EDC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				DD3D6A9F1C955A7800068252 /* LoginViewController.swift */,
 				DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */,
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
+				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
 			);
