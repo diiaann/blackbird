@@ -136,6 +136,9 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         saveCancelContainer.userInteractionEnabled = true
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
+        if descriptionTextView.text == "Add description" {
+            descriptionTextView.textColor = UIColor.lightGrayColor()
+        }
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = 43
     }
@@ -205,17 +208,18 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
     }
     
+    //Manages placeholder text effect for description text view
     func textViewDidChange(textView: UITextView) {
         descriptionTextFieldHeight.constant = textView.intrinsicContentSize().height
     }
-    
+    //If text is placeholder, remove it when user starts editing
     func textViewDidBeginEditing(textView: UITextView) {
         if descriptionTextView.textColor == UIColor.lightGrayColor() {
             descriptionTextView.text = nil
             descriptionTextView.textColor = UIColor(hexString: "306161")
         }
     }
-    
+    //If field is empty when user exits editing, replace with placeholder
     func textViewDidEndEditing(textView: UITextView) {
         if descriptionTextView.text.isEmpty {
             descriptionTextView.text = "Add description"
