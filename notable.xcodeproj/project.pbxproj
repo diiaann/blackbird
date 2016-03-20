@@ -13,6 +13,8 @@
 		7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E17931C961F800029F4E6 /* ListViewController.swift */; };
 		7F5A1F481C8F643700FA8CE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F471C8F643700FA8CE6 /* MapKit.framework */; };
 		7F5A1F4A1C8F643D00FA8CE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */; };
+		7F719E351C9F4B7600046418 /* Moon Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D19301C8F56D300A76EDC /* Moon Light.otf */; };
+		7F719E361C9F4B7600046418 /* Moon Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D19311C8F56D300A76EDC /* Moon Bold.otf */; };
 		7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAA01C8E8B190047B115 /* AppDelegate.swift */; };
 		7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAA21C8E8B190047B115 /* ViewController.swift */; };
 		7F79DAA61C8E8B190047B115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F79DAA41C8E8B190047B115 /* Main.storyboard */; };
@@ -31,6 +33,10 @@
 		7F86E6241C909E0A00EF660D /* Stellar-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61C1C90974200EF660D /* Stellar-Bold.otf */; };
 		7F86E6251C909E1800EF660D /* BELLABOO-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */; };
 		7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F886F6E1C965B3200E61FE1 /* ListCell.swift */; };
+		7FE2ED8B1C9E5E5D000E7D4F /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE2ED8A1C9E5E5D000E7D4F /* Intro.storyboard */; };
+		7FE2EDA11C9E5F72000E7D4F /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9D1C9E5F72000E7D4F /* SigninViewController.swift */; };
+		7FE2EDA21C9E5F72000E7D4F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9E1C9E5F72000E7D4F /* CreateViewController.swift */; };
+		7FE2EDA31C9E5F72000E7D4F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9F1C9E5F72000E7D4F /* IntroViewController.swift */; };
 		DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */; };
 		DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9F1C955A7800068252 /* LoginViewController.swift */; };
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
@@ -90,6 +96,10 @@
 		7F86E61B1C90974200EF660D /* Stellar-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-light.otf"; sourceTree = "<group>"; };
 		7F86E61C1C90974200EF660D /* Stellar-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Bold.otf"; sourceTree = "<group>"; };
 		7F886F6E1C965B3200E61FE1 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		7FE2ED891C9E5E5D000E7D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
+		7FE2ED9D1C9E5F72000E7D4F /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		7FE2ED9E1C9E5F72000E7D4F /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		7FE2ED9F1C9E5F72000E7D4F /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		DD3D6A9A1C94D8EA00068252 /* notable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notable-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DD3D6A9F1C955A7800068252 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +219,8 @@
 				7F79DAA01C8E8B190047B115 /* AppDelegate.swift */,
 				7F79DAA21C8E8B190047B115 /* ViewController.swift */,
 				7F79DAA41C8E8B190047B115 /* Main.storyboard */,
+				7FE2ED8A1C9E5E5D000E7D4F /* Intro.storyboard */,
+				7FE2ED8C1C9E5EB6000E7D4F /* Intro View Controllers */,
 				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 				7F79DAAA1C8E8B190047B115 /* Assets.xcassets */,
 				7F79DAAC1C8E8B190047B115 /* LaunchScreen.storyboard */,
@@ -236,6 +248,16 @@
 				7F79DAC51C8E8B1A0047B115 /* Info.plist */,
 			);
 			path = notableUITests;
+			sourceTree = "<group>";
+		};
+		7FE2ED8C1C9E5EB6000E7D4F /* Intro View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FE2ED9D1C9E5F72000E7D4F /* SigninViewController.swift */,
+				7FE2ED9E1C9E5F72000E7D4F /* CreateViewController.swift */,
+				7FE2ED9F1C9E5F72000E7D4F /* IntroViewController.swift */,
+			);
+			name = "Intro View Controllers";
 			sourceTree = "<group>";
 		};
 		D1529681F910601DC6BC0DA0 /* Frameworks */ = {
@@ -317,7 +339,7 @@
 				TargetAttributes = {
 					7F79DA9C1C8E8B190047B115 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 37T3T3U98A;
+						DevelopmentTeam = 32CJHKMB28;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 1;
@@ -364,7 +386,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F719E351C9F4B7600046418 /* Moon Light.otf in Resources */,
+				7F719E361C9F4B7600046418 /* Moon Bold.otf in Resources */,
 				7F79DAAE1C8E8B190047B115 /* LaunchScreen.storyboard in Resources */,
+				7FE2ED8B1C9E5E5D000E7D4F /* Intro.storyboard in Resources */,
 				7F79DAAB1C8E8B190047B115 /* Assets.xcassets in Resources */,
 				7F79DAA61C8E8B190047B115 /* Main.storyboard in Resources */,
 				7F86E6211C909DFC00EF660D /* Stellar-Regular.otf in Resources */,
@@ -449,14 +474,17 @@
 				7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */,
 				7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */,
 				61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */,
+				7FE2EDA31C9E5F72000E7D4F /* IntroViewController.swift in Sources */,
 				7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */,
 				7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */,
 				7F79DAD21C8E8E860047B115 /* ListsViewController.swift in Sources */,
 				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
+				7FE2EDA21C9E5F72000E7D4F /* CreateViewController.swift in Sources */,
 				DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */,
 				DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
+				7FE2EDA11C9E5F72000E7D4F /* SigninViewController.swift in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
 				DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */,
 				7F79DAD81C8F531B0047B115 /* Common.swift in Sources */,
@@ -509,6 +537,15 @@
 				7F79DAAD1C8E8B190047B115 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7FE2ED8A1C9E5E5D000E7D4F /* Intro.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE2ED891C9E5E5D000E7D4F /* Base */,
+			);
+			name = Intro.storyboard;
+			path = "../../blackbird-intro/Carousel";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -606,7 +643,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = notable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.tinachen.notable;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jaredvolpe.notable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "notable/notable-Bridging-Header.h";
@@ -625,7 +662,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = notable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.tinachen.notable;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jaredvolpe.notable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "notable/notable-Bridging-Header.h";

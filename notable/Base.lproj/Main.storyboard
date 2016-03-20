@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="end-at-XNE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="end-at-XNE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -780,15 +780,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXQ-zl-XrW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBK-sZ-0vE" userLabel="Title Label">
-                                                <rect key="frame" x="0.0" y="61" width="375" height="49"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="aEs-2s-9Fl"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
-                                                <color key="textColor" red="0.16355353593826294" green="0.36912867426872253" blue="0.37424778938293457" alpha="0.80437677556818177" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New places to try in SF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-qy-60j">
                                                 <rect key="frame" x="0.0" y="118" width="375" height="22"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
@@ -811,6 +802,15 @@
                                                 <rect key="frame" x="15" y="32" width="13" height="24"/>
                                                 <gestureRecognizers/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBK-sZ-0vE" userLabel="Title Label">
+                                                <rect key="frame" x="0.0" y="61" width="375" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="49" id="aEs-2s-9Fl"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                                <color key="textColor" red="0.16355353593826294" green="0.36912867426872253" blue="0.37424778938293457" alpha="0.80437677556818177" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.6588235294117647" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1098,8 +1098,8 @@
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cWP-is-mVy"/>
-        <segue reference="5eg-aB-FV6"/>
+        <segue reference="eo2-pA-0hH"/>
+        <segue reference="7xJ-K1-yif"/>
         <segue reference="3uS-tT-nXY"/>
     </inferredMetricsTieBreakers>
 </document>
