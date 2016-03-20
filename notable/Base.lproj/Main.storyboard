@@ -238,6 +238,7 @@
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="whb-yT-I0P" firstAttribute="centerX" secondItem="1yi-LI-mA7" secondAttribute="centerX" id="0NX-v6-2Rr"/>
                                             <constraint firstItem="Lfu-fF-c30" firstAttribute="leading" secondItem="1yi-LI-mA7" secondAttribute="leading" constant="30" id="27j-SW-Jad"/>
@@ -270,6 +271,9 @@
                                                 <exclude reference="zhA-Si-dBl"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2F7-14-TSg" appends="YES" id="oIA-gT-yuc"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -444,6 +448,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pQ2-ku-tWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2F7-14-TSg">
+                    <connections>
+                        <action selector="onCardViewTap:" destination="ni2-HN-IGh" id="iTi-oI-nlD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1448.5" y="1171.5"/>
         </scene>

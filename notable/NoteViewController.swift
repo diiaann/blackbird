@@ -43,6 +43,8 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     var cancelAction: UIAlertAction!
     var deleteAction: UIAlertAction!
     
+    var keyboardHeight: CGFloat!
+    var editControlsOriginalBottomMargin: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +69,10 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
         
         setupAlertControllers()
+        editControlsOriginalBottomMargin = editControlsBottomMargin.constant
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -216,6 +222,31 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
     }
     
+    func keyboardWillShow(notification: NSNotification!) {
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        keyboardHeight = keyboardRectangle.height
+        editControlsBottomMargin.constant = editControlsOriginalBottomMargin + keyboardHeight + 60
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification!) {
+        let userInfo:NSDictionary = notification.userInfo!
+        let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.CGRectValue()
+        let keyboardHeight = keyboardRectangle.height
+        editControlsBottomMargin.constant = 0
+        UIView.animateWithDuration(0.3) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func onCardViewTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     func setupAlertControllers() {
         alertController = UIAlertController(title: nil, message: "Are you sure you want to delete this note?", preferredStyle: .ActionSheet)
         
@@ -232,6 +263,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
         alertController.addAction(deleteAction)
     }
+
     
     /*
     // MARK: - Navigation
