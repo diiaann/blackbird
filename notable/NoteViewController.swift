@@ -16,7 +16,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     @IBOutlet weak var noteControlsView: UIView!
     @IBOutlet weak var listBottomBorder: UIView!
     
-    @IBOutlet weak var listTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionTextFieldHeight: NSLayoutConstraint!
@@ -52,7 +51,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         
         descriptionTextView.delegate = self
         
-        listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
@@ -115,7 +113,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
     
     func enterEditMode() {
-        listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
@@ -134,7 +131,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     
     
     func loadEditMode() {
-        listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
@@ -171,7 +167,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
     
     func exitEditMode() {
-        listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
@@ -249,10 +244,16 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             self.view.layoutIfNeeded()
         }
     }
+
+    @IBAction func onSelectListButton(sender: UIButton) {
+        print("tapped")
+        performSegueWithIdentifier("selectListSegue", sender: self)
+    }
     
     @IBAction func onCardViewTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
     func setupAlertControllers() {
         alertController = UIAlertController(title: nil, message: "Are you sure you want to delete this note?", preferredStyle: .ActionSheet)
         
