@@ -119,10 +119,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         print("on add text")
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
-        
         vc.isNewNote = true
-       presentViewController(vc, animated: true, completion: nil)
-    
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     @IBAction func onAddPhoto(sender: AnyObject) {

@@ -339,6 +339,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKA-bm-T6f">
                                         <rect key="frame" x="20" y="7" width="44" height="44"/>
                                         <state key="normal" image="trash_light"/>
+                                        <connections>
+                                            <action selector="onDeleteButton:" destination="ni2-HN-IGh" eventType="touchUpInside" id="71E-g2-kc0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.4823529412" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -428,6 +431,7 @@
                     <navigationItem key="navigationItem" id="MiZ-ML-Mtu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="deleteButton" destination="vKA-bm-T6f" id="Ql5-8D-f3h"/>
                         <outlet property="descriptionTextField" destination="uiB-eo-mZ6" id="MpV-e5-s0a"/>
                         <outlet property="editControlsBottomMargin" destination="cIs-bK-0wf" id="eLq-ts-nza"/>
                         <outlet property="editControlsView" destination="XY2-vo-79m" id="DFB-it-xf3"/>

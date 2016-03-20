@@ -20,8 +20,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var listDesc: UILabel!
     
     var list: PFObject!
-    
     var notes: [PFObject] = [PFObject]()
+    var query: AnyObject!
 
     
     @IBAction func didPressBack(sender: UIButton) {
@@ -31,11 +31,12 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
-        
         backgroundView.backgroundColor = UIColor(red: 168/255, green: 195/255, blue: 195/255, alpha: 1)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -46,21 +47,20 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // set background color
         tableView.backgroundColor = UIColor.clearColor()
-                
+        
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0)
         
         addButton.layer.cornerRadius = addButton.frame.height/2
         
-        let query = PFQuery(className: "Note")
+        query = PFQuery(className: "Note")
         query.whereKey("parent", equalTo: list)
         query.findObjectsInBackgroundWithBlock {
             (notes: [PFObject]?, error: NSError?) -> Void in
             print("notes", notes)
             self.notes = notes!
             self.tableView.reloadData()
-            
         }
-        
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
