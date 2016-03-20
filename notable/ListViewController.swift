@@ -18,6 +18,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var listTitle: UILabel!
     @IBOutlet weak var listDesc: UILabel!
+    @IBOutlet weak var smallTitle: UILabel!
+    @IBOutlet weak var titleTop: NSLayoutConstraint!
     
     var list: PFObject!
     var notes: [PFObject] = [PFObject]()
@@ -32,7 +34,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 240/255, green: 231/255, blue: 235/255, alpha: 1)
         backgroundView.backgroundColor = UIColor(red: 168/255, green: 195/255, blue: 195/255, alpha: 1)
     }
     
@@ -43,7 +45,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.separatorStyle = .None
         
         listTitle.text = list["title"] as? String
+        smallTitle.text = list["title"] as? String
         listDesc.text = list["desc"] as? String
+        
+        smallTitle.alpha = 0
+        smallTitle.transform = CGAffineTransformMakeScale(0.2, 0.2)
         
         // set background color
         tableView.backgroundColor = UIColor.clearColor()
@@ -99,6 +105,23 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let noteViewController = segue.destinationViewController as! NoteViewController
             // Pass on the data to the Detail ViewController by setting it's indexPathRow value
             noteViewController.note = note
+        }
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = tableView.contentOffset.y
+        let min = titleTop.constant
+        let max = titleTop.constant - headerView.frame.height
+        if (offset < min && offset > max) {
+            let scale = convertValue(offset, r1Min: min, r1Max: max, r2Min: 1, r2Max: 0.2)
+            let opacity = convertValue(offset, r1Min: min, r1Max: max, r2Min: 1, r2Max: 0)
+            smallTitle.transform = CGAffineTransformMakeScale(scale, scale)
+            smallTitle.alpha = opacity
+        } else if offset < min {
+            smallTitle.alpha = 0
+        } else if offset > max {
+            smallTitle.alpha = 1
+            smallTitle.transform = CGAffineTransformMakeScale(1, 1)
         }
     }
 }

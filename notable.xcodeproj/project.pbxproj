@@ -58,10 +58,9 @@
 /* Begin PBXFileReference section */
 		61B88D581C95F64F008DA6C6 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		61B8D2901C99125900FC2CBF /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		61DF4C761C9F167800100BCF /* Moon-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon-Light.otf"; sourceTree = "<group>"; };
 		783D90D8AB7C07B86CF3A7AD /* Pods_notable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BELLABOO-Regular.otf"; sourceTree = "<group>"; };
-		7F0D19301C8F56D300A76EDC /* Moon Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Light.otf"; sourceTree = "<group>"; };
-		7F0D19311C8F56D300A76EDC /* Moon Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Bold.otf"; sourceTree = "<group>"; };
 		7F0D19351C8F58A700A76EDC /* ListsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsCell.swift; sourceTree = "<group>"; };
 		7F0E17931C961F800029F4E6 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7F5A1F471C8F643700FA8CE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -143,9 +142,8 @@
 				7F86E61A1C90974200EF660D /* Stellar-Medium.otf */,
 				7F86E61B1C90974200EF660D /* Stellar-light.otf */,
 				7F86E61C1C90974200EF660D /* Stellar-Bold.otf */,
+				61DF4C761C9F167800100BCF /* Moon-Light.otf */,
 				7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */,
-				7F0D19301C8F56D300A76EDC /* Moon Light.otf */,
-				7F0D19311C8F56D300A76EDC /* Moon Bold.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -165,9 +163,9 @@
 			children = (
 				DD3D6A9F1C955A7800068252 /* LoginViewController.swift */,
 				DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */,
-				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
+				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,

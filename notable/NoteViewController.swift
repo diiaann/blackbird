@@ -51,9 +51,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         super.viewDidLoad()
         
         descriptionTextView.delegate = self
-        if descriptionTextView.text == "Add description" {
-            descriptionTextView.textColor = UIColor.lightGrayColor()
-        }
         
         listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
@@ -194,6 +191,11 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     func loadNote() {
         titleTextField.text = note["title"] as! String
         descriptionTextView.text = note["desc"] as! String
+        if descriptionTextView.text == "Add description" {
+            descriptionTextView.textColor = UIColor.lightGrayColor()
+        } else {
+            descriptionTextView.textColor = UIColor(hexString: "306161")
+        }
     }
     
     func renderImages() {
