@@ -37,6 +37,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     var image: UIImage!
     
     var isNewNote = false
+    var keyboardOpen = false
     var note: PFObject!
     
     var alertController: UIAlertController!
@@ -79,6 +80,9 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         if isNewNote {
             loadEditMode()
             deleteButton.enabled = false
+            if keyboardOpen {
+                titleTextField.becomeFirstResponder()
+            }
         } else {
             loadNote()
         }

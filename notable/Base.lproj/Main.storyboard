@@ -1098,8 +1098,8 @@
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5eg-aB-FV6"/>
         <segue reference="cWP-is-mVy"/>
-        <segue reference="vuh-fa-Rs8"/>
+        <segue reference="5eg-aB-FV6"/>
+        <segue reference="3uS-tT-nXY"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -119,7 +119,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         var vc = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
         vc.isNewNote = true
-//        presentViewController(vc, animated: true, completion: nil)
+        vc.keyboardOpen = true
         presentViewController(vc, animated: true, completion: nil)
     }
     
