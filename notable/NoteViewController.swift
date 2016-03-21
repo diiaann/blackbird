@@ -16,7 +16,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     @IBOutlet weak var noteControlsView: UIView!
     @IBOutlet weak var listBottomBorder: UIView!
     
-    @IBOutlet weak var listTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionTextFieldHeight: NSLayoutConstraint!
@@ -51,11 +50,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         super.viewDidLoad()
         
         descriptionTextView.delegate = self
-        if descriptionTextView.text == "Add description" {
-            descriptionTextView.textColor = UIColor.lightGrayColor()
-        }
         
-        listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
@@ -118,7 +113,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
     
     func enterEditMode() {
-        listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
@@ -137,12 +131,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     
     
     func loadEditMode() {
-        listTextField.userInteractionEnabled = true
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
+        if descriptionTextView.text == "Add description" {
+            descriptionTextView.textColor = UIColor.lightGrayColor()
+        }
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = 43
     }
@@ -174,7 +170,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
     
     func exitEditMode() {
-        listTextField.userInteractionEnabled = false
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
         saveCancelContainer.userInteractionEnabled = false
@@ -194,6 +189,11 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     func loadNote() {
         titleTextField.text = note["title"] as! String
         descriptionTextView.text = note["desc"] as! String
+        if descriptionTextView.text == "Add description" {
+            descriptionTextView.textColor = UIColor.lightGrayColor()
+        } else {
+            descriptionTextView.textColor = UIColor(hexString: "306161")
+        }
     }
     
     func renderImages() {
@@ -208,17 +208,18 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
     }
     
+    //Manages placeholder text effect for description text view
     func textViewDidChange(textView: UITextView) {
         descriptionTextFieldHeight.constant = textView.intrinsicContentSize().height
     }
-    
+    //If text is placeholder, remove it when user starts editing
     func textViewDidBeginEditing(textView: UITextView) {
         if descriptionTextView.textColor == UIColor.lightGrayColor() {
             descriptionTextView.text = nil
             descriptionTextView.textColor = UIColor(hexString: "306161")
         }
     }
-    
+    //If field is empty when user exits editing, replace with placeholder
     func textViewDidEndEditing(textView: UITextView) {
         if descriptionTextView.text.isEmpty {
             descriptionTextView.text = "Add description"
@@ -247,10 +248,16 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             self.view.layoutIfNeeded()
         }
     }
+
+    @IBAction func onSelectListButton(sender: UIButton) {
+        print("tapped")
+        performSegueWithIdentifier("selectListSegue", sender: self)
+    }
     
     @IBAction func onCardViewTap(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
     func setupAlertControllers() {
         alertController = UIAlertController(title: nil, message: "Are you sure you want to delete this note?", preferredStyle: .ActionSheet)
         
