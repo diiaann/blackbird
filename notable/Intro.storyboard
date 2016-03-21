@@ -234,6 +234,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="sIE-wl-Va8"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                                 <connections>
@@ -249,6 +250,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="P6s-f0-adi"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
@@ -414,6 +416,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Gos-OW-YbV"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                             </textField>
@@ -430,6 +433,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="deK-4E-Ff7"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
