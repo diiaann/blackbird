@@ -44,9 +44,22 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.separatorStyle = .None
         
-        listTitle.text = list["title"] as? String
-        smallTitle.text = list["title"] as? String
-        listDesc.text = list["desc"] as? String
+        list.fetchInBackground()
+        
+        self.listTitle.text = list["title"] as? String
+        self.smallTitle.text = list["title"] as? String
+        self.listDesc.text = list["desc"] as? String
+        
+        
+        list.fetchInBackgroundWithBlock({ (object: PFObject?, error: NSError?) -> Void in
+            if error == nil {
+                self.listTitle.text = self.list["title"] as? String
+                self.smallTitle.text = self.list["title"] as? String
+                self.listDesc.text = self.list["desc"] as? String
+
+            }
+        })
+        
         
         smallTitle.alpha = 0
         smallTitle.transform = CGAffineTransformMakeScale(0.2, 0.2)
@@ -105,6 +118,10 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let noteViewController = segue.destinationViewController as! NoteViewController
             // Pass on the data to the Detail ViewController by setting it's indexPathRow value
             noteViewController.note = note
+        }
+        else if segue.identifier == "editListSegue" {
+            let editListViewController = segue.destinationViewController as! EditListViewController
+            editListViewController.list = list
         }
     }
     

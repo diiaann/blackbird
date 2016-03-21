@@ -7,21 +7,37 @@
 //
 
 import UIKit
+import Parse
 
 class SelectListViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let data = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX",
-        "Philadelphia, PA", "Phoenix, AZ", "San Diego, CA", "San Antonio, TX",
-        "Dallas, TX", "Detroit, MI", "San Jose, CA", "Indianapolis, IN",
-        "Jacksonville, FL", "San Francisco, CA", "Columbus, OH", "Austin, TX",
-        "Memphis, TN", "Baltimore, MD", "Charlotte, ND", "Fort Worth, TX"]
+    var lists: [PFObject] = [PFObject]()
+    var user = PFUser.currentUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-
+        
+        var query = PFQuery(className:"List")
+        
+        query.whereKey("user", equalTo: user!)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                
+                self.lists = objects! as [PFObject]
+                self.tableView.reloadData()
+                
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -32,12 +48,15 @@ class SelectListViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-        cell.textLabel?.text = data[indexPath.row]
+        let list = lists[indexPath.row]
+        
+        cell.textLabel?.text = list["title"] as? String
+        
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return lists.count
     }
     
     @IBAction func onCancel(sender: UIButton) {

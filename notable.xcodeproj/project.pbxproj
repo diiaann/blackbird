@@ -36,6 +36,7 @@
 		DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9F1C955A7800068252 /* LoginViewController.swift */; };
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
 		DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */; };
+		DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */; };
 		E2D8F2FF6C65306D0D277A11 /* Pods_notable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783D90D8AB7C07B86CF3A7AD /* Pods_notable.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		DD3D6A9F1C955A7800068252 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD3D6AA11C9691AB00068252 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
 		DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
+		DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
 		DE41875DE3EC2EB274AAAF8E /* Pods-notable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notable/Pods-notable.debug.xcconfig"; sourceTree = "<group>"; };
 		E10185E356CC0E459949C290 /* Pods-notable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notable.release.xcconfig"; path = "Pods/Target Support Files/Pods-notable/Pods-notable.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +213,8 @@
 				7F79DAA01C8E8B190047B115 /* AppDelegate.swift */,
 				7F79DAA21C8E8B190047B115 /* ViewController.swift */,
 				7F79DAA41C8E8B190047B115 /* Main.storyboard */,
+				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
+				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 				7F79DAAA1C8E8B190047B115 /* Assets.xcassets */,
 				7F79DAAC1C8E8B190047B115 /* LaunchScreen.storyboard */,
 				7F79DAAF1C8E8B190047B115 /* Info.plist */,
@@ -447,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61B8D2911C99125900FC2CBF /* NoteViewController.swift in Sources */,
+				DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */,
 				7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */,
 				7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */,
 				61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */,
