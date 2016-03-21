@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CreateViewController: UIViewController, UIScrollViewDelegate {
 
@@ -19,14 +20,14 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var signupButtonBackground: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     
+    var currentUser = PFUser.currentUser()
+    
     @IBAction func didTouchBackButton(sender: AnyObject) {
         performSegueWithIdentifier("signupIntroSegue", sender:self)
-        
     }
     
     @IBAction func didTouchNeedSigninButton(sender: AnyObject) {
         performSegueWithIdentifier("needSignInSegue", sender:self)
-        
     }
     
     var initialYtitleLabel: CGFloat!
@@ -40,10 +41,25 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
+    func validateForm(){
+        if (emailField.text != "" && passwordField.text != "") {
+            signUpButton.enabled = true
+            print("sign up button enabled")
+        }
+    }
+    
+    @IBAction func onEmailChange(sender: AnyObject) {
+        validateForm()
+    }
+    
+    @IBAction func onPasswordChange(sender: AnyObject) {
+        validateForm()
+    }
+
     @IBAction func didPressSignup(sender: AnyObject) {
+        
         if emailField.text == "asdf" && passwordField.text == "asdf" {
-            self.performSegueWithIdentifier("signupSegue", sender:self)
-            
+            // self.performSegueWithIdentifier("signUpSegue", sender:self)
             
         } else if emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
@@ -52,20 +68,19 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
             presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
             
-        } else if passwordField.text!.isEmpty {
+        } else if passwordField.text!.isEmpty || passwordField.text?.characters.count < 6 {
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
         } else {
-            delay(2) {
-                let alertController = UIAlertController(title: "Whoops!", message: "We're sorry, but we couldn't find an account with those credentials.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                self.presentViewController(alertController, animated: true) {}
-                alertController.addAction(okAction)
+            
+            let alertController = UIAlertController(title: "Whoops!", message: "We're sorry, but we couldn't find an account with those credentials.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
+            self.presentViewController(alertController, animated: true) {}
+            alertController.addAction(okAction)
         }
     }
     
@@ -75,6 +90,15 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // signUpButton.enabled = false
+        // errorMessage.hidden = true
+        
+        if currentUser != nil {
+            // performSegueWithIdentifier("signUpSegue", sender: self)
+        } else {
+            // Show the signup or login screen
+        }
         
         signupScrollView.delegate = self
         signupScrollView.contentSize = signupScrollView.frame.size

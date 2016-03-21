@@ -96,10 +96,21 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     //
     
     @IBAction func didPressSignin(sender: AnyObject) {
-    
+  
+//        PFUser.logInWithUsernameInBackground(emailInput.text!, password: passwordInput.text!) {
+//            (user: PFUser?, error: NSError?) -> Void in
+//            if user != nil {
+//                self.performSegueWithIdentifier("loginSegue", sender: self)
+//            } else {
+//                print(error)
+//            }
+//        }
+        
+        // if emailField.text == "asdf" && passwordField.text == "asdf"
+        
         PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
+            if (self.emailField.text != "" && self.passwordField.text != "") {
                 self.signInButton.enabled = true
                 self.performSegueWithIdentifier("signinSegue", sender: self)
             } else if self.emailField.text!.isEmpty {
