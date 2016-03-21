@@ -12,6 +12,7 @@ import Parse
 class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
+    @IBOutlet weak var noteCardView: UIView!
     @IBOutlet weak var editControlsView: UIView!
     @IBOutlet weak var noteControlsView: UIView!
     @IBOutlet weak var listBottomBorder: UIView!
@@ -31,13 +32,12 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     
     var editControlsViewOriginalY: CGFloat!
     var noteScrollViewOriginalCenter: CGPoint!
-    var images: [UIImageView]!
-    var newImage: UIImageView!
-    var image: UIImage!
     
     var isNewNote = false
     var keyboardOpen = false
     var note: PFObject!
+    var images: [PFFile]!
+    var image: UIImage!
     
     var alertController: UIAlertController!
     var cancelAction: UIAlertAction!
@@ -57,13 +57,6 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         
         listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
         
-        images = []
-        newImage = UIImageView(image: image)
-        images.append(newImage)
-        if images.count > 0 {
-            renderImages()
-        }
-        
         setupAlertControllers()
         editControlsOriginalBottomMargin = editControlsBottomMargin.constant
         
@@ -73,7 +66,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     
     override func viewWillAppear(animated: Bool) {
         if isNewNote {
-            loadEditMode()
+            loadNewNote()
             deleteButton.enabled = false
             if keyboardOpen {
                 titleTextField.becomeFirstResponder()
@@ -112,6 +105,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    //animate into edit mode from view mode
     func enterEditMode() {
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
@@ -129,8 +123,8 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             }, completion: nil)
     }
     
-    
-    func loadEditMode() {
+    //go directly into edit mode without animations
+    func loadNewNote() {
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
         saveCancelContainer.userInteractionEnabled = true
@@ -141,6 +135,10 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = 43
+        images = [PFFile]()
+        var newImageData = UIImageJPEGRepresentation(image!, 0.5)
+        images.append(PFFile(name: "image.jpg", data: newImageData!)!)
+        renderImages()
     }
 
     @IBAction func onSave(sender: UIButton) {
@@ -153,12 +151,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         currentNote["title"] = titleTextField.text
         currentNote["desc"] = descriptionTextView.text
         currentNote["user"] = user
+        currentNote["images"] = images
         
         //TODO: this is hardcoded until we have a way to select a list
         currentNote["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
         
         currentNote.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
+            print("saving note")
             if (success) {
                 self.exitEditMode()
                 print("Saved \(self.titleTextField.text)")
@@ -169,6 +169,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         }
     }
     
+    //animates from edit mode to view mode
     func exitEditMode() {
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
@@ -194,16 +195,28 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         } else {
             descriptionTextView.textColor = UIColor(hexString: "306161")
         }
+        images = note["images"] as! [PFFile]
+        if images?.count > 0 {
+            renderImages()
+        }
     }
     
     func renderImages() {
-        for imageView in images {
-            if imageView.frame.size.width != 0 {
-                var currentY = descriptionTextView.frame.origin.y + 62
-                var calculatedHeight = noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
-                imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: noteScrollView.frame.size.width, height: calculatedHeight)
-                noteScrollView.addSubview(imageView)
-                currentY += calculatedHeight
+        print("rendering images")
+        print("number of images \(images?.count)")
+        for imageFile in images {
+            print("iterating 1")
+            var image: NSData!
+            imageFile.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
+                let imageView = UIImageView(image: UIImage(data: imageData!))
+                if imageView.frame.size.width != 0 {
+                    var currentY = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.height + 20
+                    var calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
+                    imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
+                    self.noteCardView.addSubview(imageView)
+                    currentY += calculatedHeight
+                }
             }
         }
     }

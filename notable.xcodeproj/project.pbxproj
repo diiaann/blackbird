@@ -172,6 +172,7 @@
 				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
 				61D3C3DD1C9F5B0500270619 /* SelectListViewController.swift */,
+				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -210,7 +211,6 @@
 				7F79DAA01C8E8B190047B115 /* AppDelegate.swift */,
 				7F79DAA21C8E8B190047B115 /* ViewController.swift */,
 				7F79DAA41C8E8B190047B115 /* Main.storyboard */,
-				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 				7F79DAAA1C8E8B190047B115 /* Assets.xcassets */,
 				7F79DAAC1C8E8B190047B115 /* LaunchScreen.storyboard */,
 				7F79DAAF1C8E8B190047B115 /* Info.plist */,
