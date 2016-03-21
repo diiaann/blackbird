@@ -143,19 +143,25 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        currentImage.image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        dismissViewControllerAnimated(true, completion: nil)
-        dismissViewControllerAnimated(true, completion: nil)
-        performSegueWithIdentifier("noteSegue", sender: self)
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var vc = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
+        vc.isNewNote = true
+        vc.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        dismissViewControllerAnimated(false, completion: nil)
+        presentViewController(vc, animated: true, completion: nil)
+
+//        dismissViewControllerAnimated(true, completion: nil)
+//        dismissViewControllerAnimated(true, completion: nil)
+//        performSegueWithIdentifier("noteSegue", sender: self)
     }
         
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destinationViewController = segue.destinationViewController as! NoteViewController
-            destinationViewController.image = self.currentImage.image
-            destinationViewController.isNewNote = true
+//        var destinationViewController = segue.destinationViewController as! NoteViewController
+//            destinationViewController.image = self.currentImage.image
+//            destinationViewController.isNewNote = true
 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

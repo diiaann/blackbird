@@ -455,6 +455,7 @@
                         <outlet property="editControlsBottomMargin" destination="cIs-bK-0wf" id="eLq-ts-nza"/>
                         <outlet property="editControlsView" destination="XY2-vo-79m" id="DFB-it-xf3"/>
                         <outlet property="listBottomBorder" destination="whb-yT-I0P" id="ZG9-df-vv9"/>
+                        <outlet property="noteCardView" destination="1yi-LI-mA7" id="IUz-m7-yxu"/>
                         <outlet property="noteControlsView" destination="Y7P-q5-xWx" id="oVI-Nx-5h8"/>
                         <outlet property="noteScrollView" destination="oAF-4i-zKE" id="V98-FK-sCz"/>
                         <outlet property="saveCancelContainer" destination="3AA-jB-63Y" id="CwX-Xu-QKA"/>
