@@ -235,7 +235,7 @@
                                                 </variation>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Add description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lfu-fF-c30">
-                                                <rect key="frame" x="30" y="115" width="280" height="40"/>
+                                                <rect key="frame" x="30" y="110" width="280" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="FCa-Mt-ycM"/>
@@ -274,7 +274,7 @@
                                             <constraint firstItem="whb-yT-I0P" firstAttribute="top" secondItem="tzU-94-nrJ" secondAttribute="bottom" constant="6" id="m3q-5f-4Iy"/>
                                             <constraint firstItem="5Uv-D2-Naa" firstAttribute="top" secondItem="whb-yT-I0P" secondAttribute="bottom" constant="18" id="o47-U1-9nl"/>
                                             <constraint firstItem="5Uv-D2-Naa" firstAttribute="centerX" secondItem="1yi-LI-mA7" secondAttribute="centerX" id="qOZ-ap-sTA"/>
-                                            <constraint firstItem="Lfu-fF-c30" firstAttribute="top" secondItem="5Uv-D2-Naa" secondAttribute="bottom" constant="10" id="xIO-E3-fyX"/>
+                                            <constraint firstItem="Lfu-fF-c30" firstAttribute="top" secondItem="5Uv-D2-Naa" secondAttribute="bottom" constant="5" id="xIO-E3-fyX"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -339,21 +339,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XY2-vo-79m">
                                 <rect key="frame" x="-4" y="667" width="383" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsm-Eh-WXy">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsm-Eh-WXy" userLabel="Archive">
                                         <rect key="frame" x="95" y="8" width="44" height="44"/>
                                         <state key="normal" image="archive_light"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-N6-VuT">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDy-N6-VuT" userLabel="Image">
                                         <rect key="frame" x="237" y="8" width="44" height="44"/>
                                         <state key="normal" image="image"/>
+                                        <connections>
+                                            <action selector="AddImageButton:" destination="ni2-HN-IGh" eventType="touchUpInside" id="VIb-PG-FVd"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soh-5h-MJG">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Soh-5h-MJG" userLabel="Location">
                                         <rect key="frame" x="164" y="8" width="44" height="44"/>
                                         <state key="normal" image="location"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StE-5c-SNV">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StE-5c-SNV" userLabel="Photo">
                                         <rect key="frame" x="312" y="8" width="44" height="44"/>
                                         <state key="normal" image="photo"/>
+                                        <connections>
+                                            <action selector="onPhotoButton:" destination="ni2-HN-IGh" eventType="touchUpInside" id="Vkv-WV-eGY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKA-bm-T6f">
                                         <rect key="frame" x="20" y="7" width="44" height="44"/>
