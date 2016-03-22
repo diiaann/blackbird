@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate {
+class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
     @IBOutlet weak var noteCardView: UIView!
@@ -26,7 +26,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     
     @IBOutlet weak var deleteButton: UIButton!
     
-    //@IBOutlet weak var imagesView: UIView!
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     var user = PFUser.currentUser()
     
@@ -50,6 +50,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         super.viewDidLoad()
         
         descriptionTextView.delegate = self
+        imagePicker.delegate = self
         
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
@@ -62,9 +63,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+        
         if isNewNote {
             loadNewNote()
             deleteButton.enabled = false
@@ -74,6 +73,10 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         } else {
             loadNote()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -195,27 +198,27 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         } else {
             descriptionTextView.textColor = UIColor(hexString: "306161")
         }
-        images = note["images"] as! [PFFile]
+        images = note["images"] as? [PFFile]
         if images?.count > 0 {
             renderImages()
         }
     }
     
     func renderImages() {
-        print("rendering images")
-        print("number of images \(images?.count)")
+        print("rendering with array count: \(images?.count)")
+        var startingY = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.height + 20
         for imageFile in images {
-            print("iterating 1")
-            var image: NSData!
+            print("Starting y is \(startingY)")
+            var calculatedHeight: CGFloat!
             imageFile.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
                 let imageView = UIImageView(image: UIImage(data: imageData!))
+                print("\(self.images?.count) width is \(imageView.frame.size.width)")
                 if imageView.frame.size.width != 0 {
-                    var currentY = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.height + 20
-                    var calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
-                    imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(currentY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
+                    calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
+                    imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(startingY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
                     self.noteCardView.addSubview(imageView)
-                    currentY += calculatedHeight
+                    startingY = startingY + calculatedHeight + 2
                 }
             }
         }
@@ -289,6 +292,44 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
 
     
+    @IBAction func AddImageButton(sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    
+    @IBAction func onPhotoButton(sender: UIButton) {
+        if (UIImagePickerController.isSourceTypeAvailable(.Camera)) {
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                imagePicker.allowsEditing = false
+                imagePicker.sourceType = .Camera
+                imagePicker.cameraCaptureMode = .Photo
+                presentViewController(imagePicker, animated: true, completion: {})
+            }
+        } else {
+            print("no camera found")
+        }
+
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        if images != nil {
+            print("images exists with \(images.count) images")
+        } else {
+            images = [PFFile]()
+            print("created new pffile array")
+        }
+        var newImageData = UIImageJPEGRepresentation(image, 0.5)
+        print("number of images before appending \(images.count)")
+        images.append(PFFile(name: "image.jpg", data: newImageData!)!)
+        print("number of images after appending \(images.count)")
+        print("images is \(images)")
+        renderImages()
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     /*
     // MARK: - Navigation
 

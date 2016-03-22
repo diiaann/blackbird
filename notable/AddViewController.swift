@@ -10,8 +10,6 @@ import UIKit
 
 class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-//    @IBOutlet weak var currentImage: UIImageView!
-//    var currentImage: UIImageView!
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     @IBOutlet weak var addButton: UIButton!
@@ -24,6 +22,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var addContainerOriginalFrame: CGRect!
     var addMode: Bool!
     var currentImage: UIImageView!
+    
+    var isFirstAppearance: Bool! = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             self.openOptions()
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if isFirstAppearance == true {
+            isFirstAppearance = false
+        } else {
+            closeOptions()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -147,25 +156,17 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         var vc = storyboard.instantiateViewControllerWithIdentifier("NoteViewController") as! NoteViewController
         vc.isNewNote = true
         vc.image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        dismissViewControllerAnimated(false, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
         presentViewController(vc, animated: true, completion: nil)
 
-//        dismissViewControllerAnimated(true, completion: nil)
-//        dismissViewControllerAnimated(true, completion: nil)
-//        performSegueWithIdentifier("noteSegue", sender: self)
     }
         
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var destinationViewController = segue.destinationViewController as! NoteViewController
-//            destinationViewController.image = self.currentImage.image
-//            destinationViewController.isNewNote = true
 
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    
-
+    */
 }
