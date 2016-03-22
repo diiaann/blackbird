@@ -1,30 +1,23 @@
 //
-//  EditListViewController.swift
+//  NewListViewController.swift
 //  notable
 //
-//  Created by Diandian Xiao on 3/16/16.
+//  Created by Diandian Xiao on 3/20/16.
 //  Copyright © 2016 plainspace. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class EditListViewController: UIViewController {
-    
+class NewListViewController: UIViewController {
+
     @IBOutlet weak var listTitleInput: UITextField!
     @IBOutlet weak var listDescInput: UITextField!
     
     var user = PFUser.currentUser()
-    
-    var list: PFObject!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if (list != nil) {
-            listTitleInput.text = list["title"] as? String
-            listDescInput.text = list["desc"] as? String
-        }
 
         // Do any additional setup after loading the view.
     }
@@ -34,24 +27,21 @@ class EditListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapSave(sender: AnyObject) {
+    @IBAction func didTapSave(sender: UIButton) {
         
-        //Update the existing list
-        var query = PFQuery(className:"List")
-        query.getObjectInBackgroundWithId(list.objectId!) {
-            (list: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let list = list {
-                list["title"] = self.listTitleInput.text
-                list["desc"] = self.listDescInput.text
-                list.saveInBackground()
+        var list = PFObject(className:"List")
+        list["title"] = listTitleInput.text
+        list["desc"] = listDescInput.text
+        list["user"] = user
+        
+        list.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
                 self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                print(error!.description);
             }
         }
-        
-        
-    
     }
 
     /*

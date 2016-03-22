@@ -129,7 +129,9 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
             // Get in touch with the DetailViewController
             let detailViewController = segue.destinationViewController as! ListViewController
             // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+                        
             detailViewController.list = list
+            
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
