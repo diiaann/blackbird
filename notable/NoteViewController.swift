@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, communicationNoteView {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
     @IBOutlet weak var noteCardView: UIView!
@@ -17,6 +17,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     @IBOutlet weak var noteControlsView: UIView!
     @IBOutlet weak var listBottomBorder: UIView!
     
+    @IBOutlet weak var selectListButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionTextFieldHeight: NSLayoutConstraint!
@@ -29,6 +30,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
     var user = PFUser.currentUser()
+    var list: PFObject!
     
     var editControlsViewOriginalY: CGFloat!
     var noteScrollViewOriginalCenter: CGPoint!
@@ -159,7 +161,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         currentNote["images"] = images
         
         //TODO: this is hardcoded until we have a way to select a list
-        currentNote["parent"] = PFObject(withoutDataWithClassName:"List", objectId:"K7VRojcMCR")
+        currentNote["parent"] = list
         
         currentNote.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
@@ -203,6 +205,12 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         images = note["images"] as? [PFFile]
         if images?.count > 0 {
             renderImages()
+        }
+        
+        list = note["parent"] as! PFObject
+        list.fetchIfNeededInBackgroundWithBlock {
+            (post: PFObject?, error: NSError?) -> Void in
+            self.selectListButton.setTitle(self.list["title"] as? String, forState: .Normal)
         }
     }
     
@@ -269,8 +277,15 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     }
 
     @IBAction func onSelectListButton(sender: UIButton) {
-        print("tapped")
         performSegueWithIdentifier("selectListSegue", sender: self)
+    }
+    
+    func backToNote(list: PFObject) {
+        
+        self.list = list
+        //TODO: this might incur weird behavior for empty states
+        selectListButton.setTitle(list["title"] as! String, forState: .Normal)
+                
     }
     
     @IBAction func onCardViewTap(sender: UITapGestureRecognizer) {
@@ -333,14 +348,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         dismissViewControllerAnimated(true, completion: nil)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "selectListSegue") {
+            
+            let destViewController = segue.destinationViewController as! SelectListViewController
+            destViewController.delegate = self
+            
+        }
     }
-    */
+
 
 }
