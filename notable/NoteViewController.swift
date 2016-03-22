@@ -23,7 +23,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     @IBOutlet weak var saveCancelContainer: UIView!
     @IBOutlet weak var scrollViewTop: NSLayoutConstraint!
     @IBOutlet weak var editControlsBottomMargin: NSLayoutConstraint!
-    
+    @IBOutlet weak var noteCardViewHeight: NSLayoutConstraint!
     @IBOutlet weak var deleteButton: UIButton!
     
     let imagePicker: UIImagePickerController! = UIImagePickerController()
@@ -139,9 +139,11 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = 43
         images = [PFFile]()
-        var newImageData = UIImageJPEGRepresentation(image!, 0.5)
-        images.append(PFFile(name: "image.jpg", data: newImageData!)!)
-        renderImages()
+        if image != nil {
+            var newImageData = UIImageJPEGRepresentation(image!, 0.5)
+            images.append(PFFile(name: "image.jpg", data: newImageData!)!)
+            renderImages()
+        }
     }
 
     @IBAction func onSave(sender: UIButton) {
@@ -218,7 +220,8 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
                     calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
                     imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(startingY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
                     self.noteCardView.addSubview(imageView)
-                    startingY = startingY + calculatedHeight + 2
+                    startingY = startingY + calculatedHeight + 1
+                    self.noteCardViewHeight.constant = startingY - 1
                 }
             }
         }
