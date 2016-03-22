@@ -12,6 +12,7 @@
 		61D3C3DE1C9F5B0500270619 /* SelectListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D3C3DD1C9F5B0500270619 /* SelectListViewController.swift */; };
 		7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D19351C8F58A700A76EDC /* ListsCell.swift */; };
 		7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E17931C961F800029F4E6 /* ListViewController.swift */; };
+		7F2AA60F1CA0F769007B3D6D /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F2AA60E1CA0F769007B3D6D /* Intro.storyboard */; };
 		7F5A1F481C8F643700FA8CE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F471C8F643700FA8CE6 /* MapKit.framework */; };
 		7F5A1F4A1C8F643D00FA8CE6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */; };
 		7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAA01C8E8B190047B115 /* AppDelegate.swift */; };
@@ -26,14 +27,18 @@
 		7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD31C8F531B0047B115 /* BaseTransition.swift */; };
 		7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD41C8F531B0047B115 /* FadeTransition.swift */; };
 		7F79DAD81C8F531B0047B115 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD51C8F531B0047B115 /* Common.swift */; };
+		7F84671C1CA1028900CE6EE8 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8467191CA1028900CE6EE8 /* CreateViewController.swift */; };
+		7F84671D1CA1028900CE6EE8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84671A1CA1028900CE6EE8 /* IntroViewController.swift */; };
+		7F84671E1CA1028900CE6EE8 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F84671B1CA1028900CE6EE8 /* SigninViewController.swift */; };
 		7F86E6211C909DFC00EF660D /* Stellar-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E6191C90974200EF660D /* Stellar-Regular.otf */; };
 		7F86E6221C909E0000EF660D /* Stellar-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61A1C90974200EF660D /* Stellar-Medium.otf */; };
 		7F86E6231C909E0300EF660D /* Stellar-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61B1C90974200EF660D /* Stellar-light.otf */; };
 		7F86E6241C909E0A00EF660D /* Stellar-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61C1C90974200EF660D /* Stellar-Bold.otf */; };
 		7F86E6251C909E1800EF660D /* BELLABOO-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */; };
 		7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F886F6E1C965B3200E61FE1 /* ListCell.swift */; };
-		DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */; };
-		DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9F1C955A7800068252 /* LoginViewController.swift */; };
+		7FB4CF4A1C9FA6B200775EA2 /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61DF4C761C9F167800100BCF /* Moon-Light.otf */; };
+		7FB4CF4B1C9FA6B200775EA2 /* Moon Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4CF491C9FA6A700775EA2 /* Moon Bold.otf */; };
+		7FE2EDA21C9E5F72000E7D4F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
 		DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */; };
 		DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */; };
@@ -66,6 +71,7 @@
 		7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BELLABOO-Regular.otf"; sourceTree = "<group>"; };
 		7F0D19351C8F58A700A76EDC /* ListsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsCell.swift; sourceTree = "<group>"; };
 		7F0E17931C961F800029F4E6 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7F2AA60E1CA0F769007B3D6D /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		7F5A1F471C8F643700FA8CE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7F5A1F491C8F643D00FA8CE6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7F5A1F4B1C8F643D00FA8CE6 /* notable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = notable.entitlements; sourceTree = "<group>"; };
@@ -87,14 +93,16 @@
 		7F79DAD31C8F531B0047B115 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		7F79DAD41C8F531B0047B115 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		7F79DAD51C8F531B0047B115 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		7F8467191CA1028900CE6EE8 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateViewController.swift; path = notable/CreateViewController.swift; sourceTree = SOURCE_ROOT; };
+		7F84671A1CA1028900CE6EE8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntroViewController.swift; path = notable/IntroViewController.swift; sourceTree = SOURCE_ROOT; };
+		7F84671B1CA1028900CE6EE8 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SigninViewController.swift; path = notable/SigninViewController.swift; sourceTree = SOURCE_ROOT; };
 		7F86E6191C90974200EF660D /* Stellar-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Regular.otf"; sourceTree = "<group>"; };
 		7F86E61A1C90974200EF660D /* Stellar-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Medium.otf"; sourceTree = "<group>"; };
 		7F86E61B1C90974200EF660D /* Stellar-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-light.otf"; sourceTree = "<group>"; };
 		7F86E61C1C90974200EF660D /* Stellar-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Bold.otf"; sourceTree = "<group>"; };
 		7F886F6E1C965B3200E61FE1 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		7FB4CF491C9FA6A700775EA2 /* Moon Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Bold.otf"; sourceTree = "<group>"; };
 		DD3D6A9A1C94D8EA00068252 /* notable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notable-Bridging-Header.h"; sourceTree = "<group>"; };
-		DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		DD3D6A9F1C955A7800068252 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD3D6AA11C9691AB00068252 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
 		DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +155,7 @@
 				7F86E61B1C90974200EF660D /* Stellar-light.otf */,
 				7F86E61C1C90974200EF660D /* Stellar-Bold.otf */,
 				61DF4C761C9F167800100BCF /* Moon-Light.otf */,
+				7FB4CF491C9FA6A700775EA2 /* Moon Bold.otf */,
 				7F0D192F1C8F56D300A76EDC /* BELLABOO-Regular.otf */,
 			);
 			name = Fonts;
@@ -165,16 +174,13 @@
 		7F0D19341C8F56EE00A76EDC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD3D6A9F1C955A7800068252 /* LoginViewController.swift */,
-				DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */,
+				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
+				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
-				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
-				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
-				61B88D581C95F64F008DA6C6 /* AddViewController.swift */,
+				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
 				61D3C3DD1C9F5B0500270619 /* SelectListViewController.swift */,
-				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -212,8 +218,10 @@
 				7F0D19341C8F56EE00A76EDC /* View Controllers */,
 				7F79DAA01C8E8B190047B115 /* AppDelegate.swift */,
 				7F79DAA21C8E8B190047B115 /* ViewController.swift */,
+				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				7F79DAA41C8E8B190047B115 /* Main.storyboard */,
-				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
+				7F2AA60E1CA0F769007B3D6D /* Intro.storyboard */,
+				7FE42A061CA1051B0096A111 /* Intro View Controllers */,
 				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 				7F79DAAA1C8E8B190047B115 /* Assets.xcassets */,
 				7F79DAAC1C8E8B190047B115 /* LaunchScreen.storyboard */,
@@ -241,6 +249,16 @@
 				7F79DAC51C8E8B1A0047B115 /* Info.plist */,
 			);
 			path = notableUITests;
+			sourceTree = "<group>";
+		};
+		7FE42A061CA1051B0096A111 /* Intro View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F8467191CA1028900CE6EE8 /* CreateViewController.swift */,
+				7F84671A1CA1028900CE6EE8 /* IntroViewController.swift */,
+				7F84671B1CA1028900CE6EE8 /* SigninViewController.swift */,
+			);
+			name = "Intro View Controllers";
 			sourceTree = "<group>";
 		};
 		D1529681F910601DC6BC0DA0 /* Frameworks */ = {
@@ -369,6 +387,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB4CF4A1C9FA6B200775EA2 /* Moon-Light.otf in Resources */,
+				7FB4CF4B1C9FA6B200775EA2 /* Moon Bold.otf in Resources */,
 				7F79DAAE1C8E8B190047B115 /* LaunchScreen.storyboard in Resources */,
 				7F79DAAB1C8E8B190047B115 /* Assets.xcassets in Resources */,
 				7F79DAA61C8E8B190047B115 /* Main.storyboard in Resources */,
@@ -378,6 +398,7 @@
 				7F86E6241C909E0A00EF660D /* Stellar-Bold.otf in Resources */,
 				7F86E6251C909E1800EF660D /* BELLABOO-Regular.otf in Resources */,
 				DD3D6AA21C9691AB00068252 /* keys.plist in Resources */,
+				7F2AA60F1CA0F769007B3D6D /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +474,21 @@
 				61B8D2911C99125900FC2CBF /* NoteViewController.swift in Sources */,
 				DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */,
 				7F79DAA31C8E8B190047B115 /* ViewController.swift in Sources */,
+				7F84671C1CA1028900CE6EE8 /* CreateViewController.swift in Sources */,
 				7F0D19361C8F58A700A76EDC /* ListsCell.swift in Sources */,
 				61B88D591C95F64F008DA6C6 /* AddViewController.swift in Sources */,
 				61D3C3DE1C9F5B0500270619 /* SelectListViewController.swift in Sources */,
 				7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */,
 				7F79DAA11C8E8B190047B115 /* AppDelegate.swift in Sources */,
+				7F84671D1CA1028900CE6EE8 /* IntroViewController.swift in Sources */,
+				7F84671E1CA1028900CE6EE8 /* SigninViewController.swift in Sources */,
 				7F79DAD21C8E8E860047B115 /* ListsViewController.swift in Sources */,
 				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
-				DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */,
+				7FE2EDA21C9E5F72000E7D4F /* (null) in Sources */,
 				DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
-				DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */,
 				7F79DAD81C8F531B0047B115 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

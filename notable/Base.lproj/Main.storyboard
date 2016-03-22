@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="end-at-XNE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tlK-Vh-2dX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -16,17 +16,8 @@
             <string>BELLABOO-Regular</string>
             <string>BELLABOO-Regular</string>
             <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
         </mutableArray>
         <mutableArray key="Moon-Light.otf">
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
-            <string>Moon-Light</string>
             <string>Moon-Light</string>
         </mutableArray>
     </customFonts>
@@ -34,7 +25,7 @@
         <!--Your Lists-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ListsViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListsViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ListsViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -564,207 +555,6 @@
             </objects>
             <point key="canvasLocation" x="1925.5" y="1171.5"/>
         </scene>
-        <!--Sign Up View Controller-->
-        <scene sceneID="kHF-Lj-qDo">
-            <objects>
-                <viewController id="end-at-XNE" customClass="SignUpViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zJm-g2-jap"/>
-                        <viewControllerLayoutGuide type="bottom" id="8SE-Ib-Sjk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wxf-7X-WQc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUG-Bz-n5M">
-                                <rect key="frame" x="0.0" y="-65" width="600" height="731"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-JE-Dny">
-                                        <rect key="frame" x="20" y="275" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <connections>
-                                            <action selector="onPasswordChange:" destination="end-at-XNE" eventType="editingChanged" id="ZaC-HD-chf"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSv-Nr-GeJ">
-                                        <rect key="frame" x="20" y="117" width="73" height="29"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
-                                        <color key="textColor" red="0.64313725489999995" green="0.62745098040000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-qa-JT7">
-                                        <rect key="frame" x="20" y="322" width="335" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an acccount? Log in." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nov-22-lZk">
-                                        <rect key="frame" x="20" y="516" width="217" height="20"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCs-rF-9b6">
-                                        <rect key="frame" x="20" y="429" width="335" height="53"/>
-                                        <color key="backgroundColor" red="0.1843137255" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-1" maxY="0.0"/>
-                                        <state key="normal" title="Sign up">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressButton:" destination="end-at-XNE" eventType="touchUpInside" id="pRQ-lc-Zms"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-d8-iT2">
-                                        <rect key="frame" x="20" y="262" width="335" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pA-r2-4DV">
-                                        <rect key="frame" x="20" y="216" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="onEmailChange:" destination="end-at-XNE" eventType="editingChanged" id="0bu-XT-Nan"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kLI-eq-cvT">
-                                        <rect key="frame" x="20" y="337" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <connections>
-                                            <action selector="onConfirmPasswordChange:" destination="end-at-XNE" eventType="editingChanged" id="iup-3S-umF"/>
-                                        </connections>
-                                    </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oQ-2Z-bDT">
-                                        <rect key="frame" x="20" y="386" width="335" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sT-fh-rjj">
-                                        <rect key="frame" x="20" y="180" width="362" height="22"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <color key="textColor" red="0.92941176469999998" green="0.32549019610000002" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmQ-bn-DYn">
-                                        <rect key="frame" x="191" y="515" width="56" height="21"/>
-                                        <connections>
-                                            <segue destination="Zgn-h1-1Lv" kind="presentation" id="ezb-U8-YXp"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.95686274509803915" green="0.92156862745098034" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="emailInput" destination="6pA-r2-4DV" id="Th0-WC-HaS"/>
-                        <outlet property="errorMessage" destination="0sT-fh-rjj" id="pcZ-EY-IS8"/>
-                        <outlet property="passwordConfirmInput" destination="kLI-eq-cvT" id="mhM-eB-TTP"/>
-                        <outlet property="passwordInput" destination="xLQ-JE-Dny" id="Xi3-YH-PRT"/>
-                        <outlet property="signUpButton" destination="cCs-rF-9b6" id="RZ8-Xp-bic"/>
-                        <segue destination="tlK-Vh-2dX" kind="presentation" identifier="signInSegue" id="5eg-aB-FV6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eha-Fu-I7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="325.5" y="-461.5"/>
-        </scene>
-        <!--Login View Controller-->
-        <scene sceneID="0xt-zm-VOD">
-            <objects>
-                <viewController id="Zgn-h1-1Lv" customClass="LoginViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XzQ-TS-Sih"/>
-                        <viewControllerLayoutGuide type="bottom" id="gqW-kh-hcd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SLw-W8-nyF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Mk-i7-rFS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="731"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0m-UD-xnR">
-                                        <rect key="frame" x="20" y="45" width="222" height="48"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
-                                        <color key="textColor" red="0.64313725489999995" green="0.62745098040000002" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YyO-dq-z4N">
-                                        <rect key="frame" x="20" y="124" width="362" height="22"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <color key="textColor" red="0.92941176469999998" green="0.32549019610000002" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IR5-M3-ubc">
-                                        <rect key="frame" x="20" y="240" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <connections>
-                                            <action selector="onPasswordChange:" destination="Zgn-h1-1Lv" eventType="editingChanged" id="ZMO-jo-egD"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tbk-9f-MPP">
-                                        <rect key="frame" x="20" y="171" width="335" height="44"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="onInputChange:" destination="Zgn-h1-1Lv" eventType="editingChanged" id="vDm-m5-hTd"/>
-                                        </connections>
-                                    </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-9Y-prm">
-                                        <rect key="frame" x="20" y="216" width="335" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j2U-RR-TQh">
-                                        <rect key="frame" x="20" y="280" width="335" height="4"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Need an account? Sign up." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZT-bb-3E8">
-                                        <rect key="frame" x="20" y="389" width="302" height="21"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLh-d9-gKJ">
-                                        <rect key="frame" x="20" y="313" width="335" height="53"/>
-                                        <color key="backgroundColor" red="0.1843137255" green="0.25882352939999997" blue="0.33725490200000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Moon-Light" family="Moon" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-1" maxY="0.0"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressLogin:" destination="Zgn-h1-1Lv" eventType="touchUpInside" id="rsj-5T-Wkt"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUr-fN-2V1">
-                                        <rect key="frame" x="157" y="385" width="48" height="30"/>
-                                        <connections>
-                                            <segue destination="end-at-XNE" kind="presentation" id="P3Y-B1-yWs"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.95686274510000002" green="0.92156862750000001" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="emailInput" destination="tbk-9f-MPP" id="YYF-se-JNq"/>
-                        <outlet property="errorMessage" destination="YyO-dq-z4N" id="fuC-m0-Xmp"/>
-                        <outlet property="loginButton" destination="xLh-d9-gKJ" id="2wj-mt-4k6"/>
-                        <outlet property="passwordInput" destination="IR5-M3-ubc" id="sMk-mm-hAM"/>
-                        <segue destination="tlK-Vh-2dX" kind="presentation" identifier="loginSegue" id="eo2-pA-0hH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d23-Fh-hRW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="912.5" y="-467.5"/>
-        </scene>
         <!--Edit List View Controller-->
         <scene sceneID="TwY-zz-1tW">
             <objects>
@@ -1284,8 +1074,7 @@
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vuh-fa-Rs8"/>
-        <segue reference="5eg-aB-FV6"/>
+        <segue reference="3uS-tT-nXY"/>
         <segue reference="7xJ-K1-yif"/>
     </inferredMetricsTieBreakers>
 </document>
