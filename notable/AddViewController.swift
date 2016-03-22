@@ -22,6 +22,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var addContainerOriginalFrame: CGRect!
     var addMode: Bool!
     var currentImage: UIImageView!
+    
+    var isFirstAppearance: Bool! = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             self.openOptions()
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if isFirstAppearance == true {
+            isFirstAppearance = false
+        } else {
+            closeOptions()
+        }
     }
 
     override func didReceiveMemoryWarning() {
