@@ -6,17 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="BELLABOO-Regular.otf">
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-        </mutableArray>
         <mutableArray key="Moon-Light.otf">
             <string>Moon-Light</string>
         </mutableArray>
@@ -45,7 +34,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="33" id="shG-P6-aaa"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                 <color key="textColor" red="0.64313725490196072" green="0.62745098039215685" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -85,9 +74,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-wv-b4O" userLabel="Title Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="List Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxV-wv-b4O" userLabel="Title Label">
                                                             <rect key="frame" x="28" y="33" width="234" height="29"/>
-                                                            <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                                             <color key="textColor" red="0.46666666666666667" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -257,7 +246,7 @@
                                                     <constraint firstAttribute="width" constant="280" id="YQM-Yw-hOa"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.18823529410000001" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -468,7 +457,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="dAP-he-kz3"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="f6z-Pl-QaR"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -542,7 +531,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="List tile" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-c9-OKR">
                                         <rect key="frame" x="18" y="98" width="339" height="76"/>
                                         <color key="textColor" red="0.1803921568627451" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="32"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Add your list description here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzL-s2-b81">
@@ -601,7 +590,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="List tile" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-56-8BL">
                                         <rect key="frame" x="18" y="98" width="339" height="76"/>
                                         <color key="textColor" red="0.18039215689999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="32"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="32"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Add your list description here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPX-42-Obu">
@@ -669,7 +658,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="8rQ-wY-vRW"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                     <color key="textColor" red="0.16355353593826294" green="0.36912867426872253" blue="0.37424778938293457" alpha="0.80437677556818177" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -701,13 +690,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-S2-u9a" userLabel="Title Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-S2-u9a" userLabel="Title Label">
                                                             <rect key="frame" x="28" y="33" width="319" height="29"/>
-                                                            <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="24"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                                             <color key="textColor" red="0.46666666670000001" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-Fb-n6T">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Note Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-Fb-n6T">
                                                             <rect key="frame" x="28" y="68" width="319" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="h6Q-Sp-wrA"/>
@@ -769,7 +758,7 @@
                                                     <constraint firstAttribute="width" constant="260" id="VGf-7N-Fs9"/>
                                                     <constraint firstAttribute="height" constant="33" id="VTa-j2-8zD"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                                 <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
@@ -1044,6 +1033,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vuh-fa-Rs8"/>
-        <segue reference="cWP-is-mVy"/>
+        <segue reference="7xJ-K1-yif"/>
     </inferredMetricsTieBreakers>
 </document>
