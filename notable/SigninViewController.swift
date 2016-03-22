@@ -71,8 +71,6 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func didPressSignin(sender: AnyObject) {
         
-        print("touch")
-        
         if self.emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -127,12 +125,14 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     func keyboardWillShow(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel + offsettitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(0.8, 0.8)
         fieldParentView.frame.origin.y = initialYfieldParentView + offsetfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView + offsetbuttonParentView
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
         fieldParentView.frame.origin.y = initialYfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView
     }

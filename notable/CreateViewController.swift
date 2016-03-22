@@ -79,13 +79,11 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
                     alertController.addAction(okAction)
                     
                 } else {
-                    print("success")
                     self.performSegueWithIdentifier("signedUpSegue", sender: self)
                 }
             }
         }
     }
-    
     
     @IBAction func didTap(sender: AnyObject) {
         view.endEditing(true)
@@ -115,14 +113,6 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
-        // user_email = defaults.objectForKey("email") as! String
-        // user_password = defaults.objectForKey("password") as! String
-        
-        // print(user_email)
-        // print(user_password)
-        
-        // definesPresentationContext = true        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -149,12 +139,14 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     func keyboardWillShow(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel + offsettitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(0.8, 0.8)
         fieldParentView.frame.origin.y = initialYfieldParentView + offsetfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView + offsetbuttonParentView
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
         fieldParentView.frame.origin.y = initialYfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView
     }
