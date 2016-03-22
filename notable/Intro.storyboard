@@ -603,9 +603,9 @@
         <image name="icon-back" width="13" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ady-1p-FeO"/>
-        <segue reference="MIw-Fg-de7"/>
         <segue reference="vRg-vh-n3h"/>
-        <segue reference="koh-DE-we8"/>
+        <segue reference="yrR-ct-YZW"/>
+        <segue reference="aR8-Ft-Y57"/>
+        <segue reference="ady-1p-FeO"/>
     </inferredMetricsTieBreakers>
 </document>
