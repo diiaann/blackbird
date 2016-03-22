@@ -26,7 +26,6 @@
 		7F79DAD61C8F531B0047B115 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD31C8F531B0047B115 /* BaseTransition.swift */; };
 		7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD41C8F531B0047B115 /* FadeTransition.swift */; };
 		7F79DAD81C8F531B0047B115 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79DAD51C8F531B0047B115 /* Common.swift */; };
-		7F7DED631C9FB60B005ED6C2 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F7DED621C9FB60B005ED6C2 /* Intro.storyboard */; };
 		7F86E6211C909DFC00EF660D /* Stellar-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E6191C90974200EF660D /* Stellar-Regular.otf */; };
 		7F86E6221C909E0000EF660D /* Stellar-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61A1C90974200EF660D /* Stellar-Medium.otf */; };
 		7F86E6231C909E0300EF660D /* Stellar-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7F86E61B1C90974200EF660D /* Stellar-light.otf */; };
@@ -39,8 +38,6 @@
 		7FE2EDA11C9E5F72000E7D4F /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9D1C9E5F72000E7D4F /* SigninViewController.swift */; };
 		7FE2EDA21C9E5F72000E7D4F /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9E1C9E5F72000E7D4F /* CreateViewController.swift */; };
 		7FE2EDA31C9E5F72000E7D4F /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2ED9F1C9E5F72000E7D4F /* IntroViewController.swift */; };
-		DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */; };
-		DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3D6A9F1C955A7800068252 /* LoginViewController.swift */; };
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
 		DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */; };
 		DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */; };
@@ -94,7 +91,6 @@
 		7F79DAD31C8F531B0047B115 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		7F79DAD41C8F531B0047B115 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		7F79DAD51C8F531B0047B115 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		7F7DED621C9FB60B005ED6C2 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		7F86E6191C90974200EF660D /* Stellar-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Regular.otf"; sourceTree = "<group>"; };
 		7F86E61A1C90974200EF660D /* Stellar-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Medium.otf"; sourceTree = "<group>"; };
 		7F86E61B1C90974200EF660D /* Stellar-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-light.otf"; sourceTree = "<group>"; };
@@ -106,8 +102,6 @@
 		7FE2ED9E1C9E5F72000E7D4F /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		7FE2ED9F1C9E5F72000E7D4F /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		DD3D6A9A1C94D8EA00068252 /* notable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notable-Bridging-Header.h"; sourceTree = "<group>"; };
-		DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		DD3D6A9F1C955A7800068252 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD3D6AA11C9691AB00068252 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
 		DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
@@ -179,8 +173,6 @@
 		7F0D19341C8F56EE00A76EDC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD3D6A9F1C955A7800068252 /* LoginViewController.swift */,
-				DD3D6A9D1C9550A800068252 /* SignUpViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
@@ -229,7 +221,6 @@
 				7F79DAA41C8E8B190047B115 /* Main.storyboard */,
 				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
 				7FE2ED8A1C9E5E5D000E7D4F /* Intro.storyboard */,
-				7F7DED621C9FB60B005ED6C2 /* Intro.storyboard */,
 				7FE2ED8C1C9E5EB6000E7D4F /* Intro View Controllers */,
 				DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */,
 				7F79DAAA1C8E8B190047B115 /* Assets.xcassets */,
@@ -389,7 +380,6 @@
 				7FB4CF4A1C9FA6B200775EA2 /* Moon-Light.otf in Resources */,
 				7FB4CF4B1C9FA6B200775EA2 /* Moon Bold.otf in Resources */,
 				7F79DAAE1C8E8B190047B115 /* LaunchScreen.storyboard in Resources */,
-				7F7DED631C9FB60B005ED6C2 /* Intro.storyboard in Resources */,
 				7FE2ED8B1C9E5E5D000E7D4F /* Intro.storyboard in Resources */,
 				7F79DAAB1C8E8B190047B115 /* Assets.xcassets in Resources */,
 				7F79DAA61C8E8B190047B115 /* Main.storyboard in Resources */,
@@ -483,10 +473,10 @@
 				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
 				DD3D6A9E1C9550A900068252 /* SignUpViewController.swift in Sources */,
+				7FE2EDA21C9E5F72000E7D4F /* CreateViewController.swift in Sources */,
 				DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
-				DD3D6AA01C955A7800068252 /* LoginViewController.swift in Sources */,
 				7F79DAD81C8F531B0047B115 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

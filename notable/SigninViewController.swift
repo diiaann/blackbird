@@ -20,10 +20,14 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var signinButtonBackground: UIView!
     @IBOutlet weak var signInButton: UIButton!
     
+    var currentUser = PFUser.currentUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // signInButton.enabled = false
+        if currentUser != nil {
+            performSegueWithIdentifier("signedInSegue", sender: self)
+        }
         
         loginScrollView.delegate = self
         loginScrollView.contentSize = loginScrollView.frame.size
@@ -42,14 +46,6 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
-        // user_email = defaults.objectForKey("email") as! String
-        // user_password = defaults.objectForKey("password") as! String
-        
-        // print(user_email)
-        // print(user_password)
-        
-        // definesPresentationContext = true
         
     }
     
@@ -73,66 +69,32 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     var defaults = NSUserDefaults.standardUserDefaults()
     
-    func showError(error: String) {
-        // errorMessage.hidden = false
-        // errorMessage.text = error
-        
-    }
-    
-    @IBAction func onEmailChange(sender: AnyObject) {
-        //        validateForm()
-    }
-    
-    @IBAction func onPasswordChange(sender: AnyObject) {
-        //        validateForm()
-    }
-    
-    //    func validateForm(){
-    //        if (passwordInput.text != "" && emailInput.text != "") {
-    //            loginButton.enabled = true
-    //            print("loginButton enabled")
-    //        }
-    //    }
-    //
-    
     @IBAction func didPressSignin(sender: AnyObject) {
-  
-//        PFUser.logInWithUsernameInBackground(emailInput.text!, password: passwordInput.text!) {
-//            (user: PFUser?, error: NSError?) -> Void in
-//            if user != nil {
-//                self.performSegueWithIdentifier("loginSegue", sender: self)
-//            } else {
-//                print(error)
-//            }
-//        }
         
-        // if emailField.text == "asdf" && passwordField.text == "asdf"
+        print("touch")
         
-        PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
-            (user: PFUser?, error: NSError?) -> Void in
-            if (self.emailField.text != "" && self.passwordField.text != "") {
-                self.signInButton.enabled = true
-                self.performSegueWithIdentifier("signinSegue", sender: self)
-            } else if self.emailField.text!.isEmpty {
-                let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                self.presentViewController(alertController, animated: true) {}
-                alertController.addAction(okAction)
-            } else if self.passwordField.text!.isEmpty {
-                let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                self.presentViewController(alertController, animated: true) {}
-                alertController.addAction(okAction)
-            } else {
-                let alertController = UIAlertController(title: "Whoops!", message: "We're sorry, but we couldn't find an account with those credentials.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-                }
-                self.presentViewController(alertController, animated: true) {}
-                alertController.addAction(okAction)
+        if self.emailField.text!.isEmpty {
+            let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            }
+            self.presentViewController(alertController, animated: true) {}
+            alertController.addAction(okAction)
+            
+        } else if self.passwordField.text!.isEmpty {
+            let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            }
+            self.presentViewController(alertController, animated: true) {}
+            alertController.addAction(okAction)
+        } else {
+            PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
+                (user: PFUser?, error: NSError?) -> Void in
                 
-                print(error)
+                if user != nil {
+                    self.performSegueWithIdentifier("signedInSegue", sender: self)
+                } else {
+                    print(error)
+                }
             }
         }
     }

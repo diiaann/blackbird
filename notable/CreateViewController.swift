@@ -40,49 +40,52 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     var offsetbuttonParentView: CGFloat!
     
     var defaults = NSUserDefaults.standardUserDefaults()
-    
-    func validateForm(){
-        if (emailField.text != "" && passwordField.text != "") {
-            signUpButton.enabled = true
-            print("sign up button enabled")
-        }
-    }
-    
-    @IBAction func onEmailChange(sender: AnyObject) {
-        validateForm()
-    }
-    
-    @IBAction func onPasswordChange(sender: AnyObject) {
-        validateForm()
-    }
 
     @IBAction func didPressSignup(sender: AnyObject) {
         
-        if emailField.text == "asdf" && passwordField.text == "asdf" {
-            // self.performSegueWithIdentifier("signUpSegue", sender:self)
-            
-        } else if emailField.text!.isEmpty {
+        if emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
             
-        } else if passwordField.text!.isEmpty || passwordField.text?.characters.count < 6 {
+        } else if passwordField.text!.isEmpty {
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
-        } else {
-            
-            let alertController = UIAlertController(title: "Whoops!", message: "We're sorry, but we couldn't find an account with those credentials.", preferredStyle: .Alert)
+        } else if passwordField.text?.characters.count < 6 {
+            let alertController = UIAlertController(title: "Password Required", message: "Please enter a password longer than 6 characters", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
-            self.presentViewController(alertController, animated: true) {}
+            presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
+        } else {
+            var user = PFUser()
+            user.username = emailField.text
+            user.password = passwordField.text
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    let errorString = error.userInfo["error"] as? NSString
+                    
+                    let alertController = UIAlertController(title: "Whoops!", message: (String(errorString)), preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                    }
+                    self.presentViewController(alertController, animated: true) {}
+                    alertController.addAction(okAction)
+                    
+                } else {
+                    print("success")
+                    self.performSegueWithIdentifier("signedUpSegue", sender: self)
+                }
+            }
         }
     }
+    
     
     @IBAction func didTap(sender: AnyObject) {
         view.endEditing(true)
@@ -91,13 +94,8 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // signUpButton.enabled = false
-        // errorMessage.hidden = true
-        
         if currentUser != nil {
-            // performSegueWithIdentifier("signUpSegue", sender: self)
-        } else {
-            // Show the signup or login screen
+            performSegueWithIdentifier("signedUpSegue", sender: self)
         }
         
         signupScrollView.delegate = self
