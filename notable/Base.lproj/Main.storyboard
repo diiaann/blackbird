@@ -426,6 +426,7 @@
                         <outlet property="noteScrollView" destination="oAF-4i-zKE" id="V98-FK-sCz"/>
                         <outlet property="saveCancelContainer" destination="3AA-jB-63Y" id="CwX-Xu-QKA"/>
                         <outlet property="scrollViewTop" destination="VdU-V2-GcE" id="6TJ-v2-0vx"/>
+                        <outlet property="selectListButton" destination="tzU-94-nrJ" id="DPw-Kn-HGM"/>
                         <outlet property="titleTextField" destination="5Uv-D2-Naa" id="a3l-eA-bdn"/>
                         <segue destination="FLd-pk-Bz1" kind="presentation" identifier="selectListSegue" id="t0L-bc-Gem"/>
                     </connections>
@@ -442,7 +443,7 @@
         <!--Select List View Controller-->
         <scene sceneID="SRa-hf-QjA">
             <objects>
-                <viewController id="FLd-pk-Bz1" customClass="SelectListViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectListViewController" id="FLd-pk-Bz1" customClass="SelectListViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEn-pw-eyh"/>
                         <viewControllerLayoutGuide type="bottom" id="tsE-gh-OfA"/>
@@ -1042,7 +1043,7 @@
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3uS-tT-nXY"/>
-        <segue reference="7xJ-K1-yif"/>
+        <segue reference="vuh-fa-Rs8"/>
+        <segue reference="cWP-is-mVy"/>
     </inferredMetricsTieBreakers>
 </document>
