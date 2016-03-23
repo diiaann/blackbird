@@ -67,7 +67,7 @@ class SelectListViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("SelectListCell") as! SelectListCell
         
         let list = lists[indexPath.row]
-        if (currentList.objectId == list.objectId) {
+        if (currentList != nil && currentList.objectId == list.objectId) {
             cell.checkedImage.hidden = false
         } else {
             cell.checkedImage.hidden = true
