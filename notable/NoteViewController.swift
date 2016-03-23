@@ -9,14 +9,14 @@
 import UIKit
 import Parse
 
-class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, communicationNoteView {
+class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, communicationNoteView {
 
     @IBOutlet weak var noteScrollView: UIScrollView!
     @IBOutlet weak var noteCardView: UIView!
     @IBOutlet weak var editControlsView: UIView!
     @IBOutlet weak var noteControlsView: UIView!
     @IBOutlet weak var listBottomBorder: UIView!
-    
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var selectListButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -52,11 +52,13 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         super.viewDidLoad()
         
         descriptionTextView.delegate = self
+        titleTextField.delegate = self
         imagePicker.delegate = self
+        titleTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
-        saveCancelContainer.userInteractionEnabled = false
+        saveCancelContainer.hidden = true
         
         listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
         
@@ -69,6 +71,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         if isNewNote {
             loadNewNote()
             deleteButton.enabled = false
+            saveButton.enabled = false
             if keyboardOpen {
                 titleTextField.becomeFirstResponder()
             }
@@ -114,7 +117,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     func enterEditMode() {
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
-        saveCancelContainer.userInteractionEnabled = true
+        saveCancelContainer.hidden = false
         
         editControlsBottomMargin.constant = 0
         scrollViewTop.constant = scrollViewTop.constant + 40
@@ -132,7 +135,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     func loadNewNote() {
         titleTextField.userInteractionEnabled = true
         descriptionTextView.userInteractionEnabled = true
-        saveCancelContainer.userInteractionEnabled = true
+        saveCancelContainer.hidden = false
         noteControlsView.alpha = 0
         view.backgroundColor = UIColor(hexString: "437B7F")
         if descriptionTextView.text == "Add description" {
@@ -180,7 +183,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     func exitEditMode() {
         titleTextField.userInteractionEnabled = false
         descriptionTextView.userInteractionEnabled = false
-        saveCancelContainer.userInteractionEnabled = false
+        saveCancelContainer.hidden = true
         
         editControlsBottomMargin.constant = -60
         scrollViewTop.constant = scrollViewTop.constant - 40
@@ -245,7 +248,24 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     //Manages placeholder text effect for description text view
     func textViewDidChange(textView: UITextView) {
         descriptionTextFieldHeight.constant = textView.intrinsicContentSize().height
+        updateSaveButton()
     }
+    
+    func textFieldDidChange(textField: UITextField) {
+        updateSaveButton()
+    }
+    
+    func updateSaveButton() {
+        if images.count > 0 {
+            saveButton.enabled = true
+        } else if titleTextField.text?.isEmpty == true && (descriptionTextView.text.isEmpty == true || descriptionTextView.textColor == UIColor.lightGrayColor()) {
+            saveButton.enabled = false
+        } else  {
+            saveButton.enabled = true
+        }
+    }
+    
+    
     //If text is placeholder, remove it when user starts editing
     func textViewDidBeginEditing(textView: UITextView) {
         if descriptionTextView.textColor == UIColor.lightGrayColor() {
