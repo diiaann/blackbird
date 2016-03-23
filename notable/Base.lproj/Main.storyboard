@@ -1220,7 +1220,6 @@
         <image name="cancel_icon_dark" width="26" height="26"/>
         <image name="cancel_light" width="93" height="26"/>
         <image name="cancel_light_transparent" width="93" height="26"/>
-        <image name="cancel" width="26" height="26"/>
         <image name="check" width="18" height="13"/>
         <image name="icon-back" width="13" height="24"/>
         <image name="icon-edit" width="23" height="23"/>
