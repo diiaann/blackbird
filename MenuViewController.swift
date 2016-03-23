@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
+    var currentUser = PFUser.currentUser()
+    
+    @IBAction func didTouchSignoutButton(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock({(error) -> Void in
+            self.performSegueWithIdentifier("signOutSegue", sender: self);
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

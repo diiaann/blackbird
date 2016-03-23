@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tlK-Vh-2dX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tlK-Vh-2dX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -38,8 +38,17 @@
                                                 <color key="textColor" red="0.64313725490196072" green="0.62745098039215685" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+<<<<<<< 75a33d43b9f957226d153a8465ff325bcc36d4d4
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-T1-ORV">
+                                                <rect key="frame" x="302" y="25" width="62" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="62" id="eXk-jU-hE5"/>
+                                                    <constraint firstAttribute="height" constant="27" id="sNJ-Ge-GVJ"/>
+                                                </constraints>
+=======
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-T1-ORV" userLabel="Add List Button">
                                                 <rect key="frame" x="293" y="23" width="62" height="27"/>
+>>>>>>> Rough in menu
                                                 <state key="normal" image="add">
                                                     <color key="titleColor" red="0.6588235294117647" green="0.6470588235294118" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -58,6 +67,14 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Je0-T1-ORV" secondAttribute="trailing" constant="11" id="4C0-4u-giD"/>
                                             <constraint firstAttribute="trailing" secondItem="STy-Zc-D1F" secondAttribute="trailing" id="6K5-It-utb"/>
+<<<<<<< 75a33d43b9f957226d153a8465ff325bcc36d4d4
+                                            <constraint firstAttribute="trailing" secondItem="Je0-T1-ORV" secondAttribute="trailing" constant="11" id="LPo-ks-2ph"/>
+                                            <constraint firstItem="STy-Zc-D1F" firstAttribute="centerX" secondItem="nxk-Mi-vka" secondAttribute="centerX" id="UL7-Bq-12X"/>
+                                            <constraint firstAttribute="height" constant="60" id="UpQ-hN-l2N"/>
+                                            <constraint firstItem="STy-Zc-D1F" firstAttribute="leading" secondItem="nxk-Mi-vka" secondAttribute="leading" id="XCe-6N-jOj"/>
+                                            <constraint firstItem="Je0-T1-ORV" firstAttribute="top" secondItem="nxk-Mi-vka" secondAttribute="top" constant="25" id="Zb3-0t-52O"/>
+                                            <constraint firstItem="STy-Zc-D1F" firstAttribute="top" secondItem="nxk-Mi-vka" secondAttribute="top" constant="22" id="uwm-uh-sJV"/>
+=======
                                             <constraint firstItem="Je0-T1-ORV" firstAttribute="centerY" secondItem="STy-Zc-D1F" secondAttribute="centerY" id="Bd9-Iy-8xL"/>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="centerX" secondItem="nxk-Mi-vka" secondAttribute="centerX" id="UL7-Bq-12X"/>
                                             <constraint firstAttribute="height" constant="60" id="UpQ-hN-l2N"/>
@@ -66,6 +83,7 @@
                                             <constraint firstItem="L7a-ZU-AFp" firstAttribute="centerY" secondItem="STy-Zc-D1F" secondAttribute="centerY" id="jbM-KO-brY"/>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="leading" secondItem="L7a-ZU-AFp" secondAttribute="trailing" constant="-41" id="m2Y-6C-yUi"/>
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="top" secondItem="nxk-Mi-vka" secondAttribute="top" constant="20" id="uwm-uh-sJV"/>
+>>>>>>> Rough in menu
                                             <constraint firstItem="STy-Zc-D1F" firstAttribute="leading" secondItem="nxk-Mi-vka" secondAttribute="leading" id="v9g-Cp-g1h"/>
                                             <constraint firstItem="L7a-ZU-AFp" firstAttribute="leading" secondItem="nxk-Mi-vka" secondAttribute="leading" constant="15" id="ywa-a1-bsy"/>
                                         </constraints>
@@ -203,7 +221,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AA-jB-63Y">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49K-lM-qQW" userLabel="Cancel">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49K-lM-qQW">
                                         <rect key="frame" x="20" y="20" width="100" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Hwk-Uo-iOn"/>
@@ -218,7 +236,7 @@
                                             <action selector="onCancel:" destination="ni2-HN-IGh" eventType="touchUpInside" id="dKh-6L-o8p"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5E-XK-dTp" userLabel="Save">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5E-XK-dTp">
                                         <rect key="frame" x="284" y="20" width="82" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="2J9-Wb-ZRL"/>
@@ -436,7 +454,6 @@
                         <outlet property="noteCardViewHeight" destination="kRy-NY-6vh" id="gIJ-CY-3zm"/>
                         <outlet property="noteControlsView" destination="Y7P-q5-xWx" id="oVI-Nx-5h8"/>
                         <outlet property="noteScrollView" destination="oAF-4i-zKE" id="V98-FK-sCz"/>
-                        <outlet property="saveButton" destination="U5E-XK-dTp" id="tdb-tU-CbA"/>
                         <outlet property="saveCancelContainer" destination="3AA-jB-63Y" id="CwX-Xu-QKA"/>
                         <outlet property="scrollViewTop" destination="VdU-V2-GcE" id="6TJ-v2-0vx"/>
                         <outlet property="selectListButton" destination="tzU-94-nrJ" id="DPw-Kn-HGM"/>
@@ -465,34 +482,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-WR-xaV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8dq-WR-xaV">
                                 <rect key="frame" x="-4" y="60" width="383" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectListCell" id="JN2-xk-L9c" customClass="SelectListCell" customModule="notable" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JN2-xk-L9c" id="6CC-Kx-ccK">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-Hc-Dl3">
-                                                    <rect key="frame" x="14" y="11" width="297" height="21"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                    <color key="textColor" red="0.46666666666666667" green="0.66274509803921566" blue="0.66274509803921566" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="3Rh-3S-rgg">
-                                                    <rect key="frame" x="341" y="15" width="18" height="13"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="checkedImage" destination="3Rh-3S-rgg" id="8IV-wY-pFq"/>
-                                            <outlet property="titleLabel" destination="xN7-Hc-Dl3" id="zNw-H5-nrw"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gp0-Qt-1TX">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="60"/>
@@ -578,14 +570,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Zb-Sp-8J2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1925.5" y="1171.5"/>
-        </scene>
-        <!--Intro-->
-        <scene sceneID="irx-Nh-OON">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="IntroViewController" storyboardName="Intro" id="qZ1-Oj-3wD" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="53W-UM-yeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="888.5" y="-905"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="O1n-pk-CCx">
@@ -702,33 +686,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-IH-FjG">
                                         <rect key="frame" x="0.0" y="193" width="375" height="50"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                        <state key="normal" title="Alphabetical">
-                                            <color key="titleColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foq-IH-FjG">
-                                        <rect key="frame" x="0.0" y="287" width="375" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="UmG-px-ExM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                        <state key="normal" title="Archived lists">
-                                            <color key="titleColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag2-rv-Bn5">
-                                        <rect key="frame" x="0.0" y="536" width="375" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="biM-8H-NmY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
-                                        <state key="normal" title="Sign out">
-                                            <color key="titleColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTouchSignoutButton:" destination="16J-R9-Jid" eventType="touchUpInside" id="A5Q-pr-29G"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -861,7 +818,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="backgroundView" destination="ECp-3N-riC" id="KKu-cA-LlS"/>
-                        <segue destination="qZ1-Oj-3wD" kind="presentation" identifier="signOutSegue" id="uG7-Ll-l5o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qey-yO-8Nr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -883,8 +839,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsp-jT-8uf">
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="List tile" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-c9-OKR">
-                                        <rect key="frame" x="51.5" y="99" width="280" height="76"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="List tile" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsM-c9-OKR">
+                                        <rect key="frame" x="47" y="99" width="280" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="749-Nj-uQr"/>
                                             <constraint firstAttribute="width" constant="280" id="Cpf-TM-7q4"/>
@@ -899,8 +855,18 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Add your list description here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzL-s2-b81">
-                                        <rect key="frame" x="51" y="161" width="280" height="108"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-TO-SM3">
+                                        <rect key="frame" x="238" y="20" width="82" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapSave:" destination="B5w-ci-WA3" eventType="touchUpInside" id="xuX-p2-Dgw"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="Add your list description here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzL-s2-b81">
+                                        <rect key="frame" x="47" y="161" width="280" height="108"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="280" id="EbA-wP-2oq"/>
                                             <constraint firstAttribute="width" constant="280" id="QzW-4A-dEU"/>
@@ -920,20 +886,26 @@
                                 <constraints>
                                     <constraint firstItem="jsM-c9-OKR" firstAttribute="leading" secondItem="Jsp-jT-8uf" secondAttribute="leading" constant="18" id="6ye-cP-O4G"/>
                                     <constraint firstAttribute="trailing" secondItem="hzL-s2-b81" secondAttribute="trailing" constant="45" id="7Lh-JI-L6g"/>
+                                    <constraint firstItem="hzL-s2-b81" firstAttribute="top" secondItem="Wfe-TO-SM3" secondAttribute="bottom" constant="107" id="CrG-G7-S94"/>
                                     <constraint firstItem="jsM-c9-OKR" firstAttribute="centerX" secondItem="Jsp-jT-8uf" secondAttribute="centerX" id="Du9-am-Oaa"/>
-                                    <constraint firstItem="jsM-c9-OKR" firstAttribute="top" secondItem="Jsp-jT-8uf" secondAttribute="top" constant="99" id="KTj-rr-dtq"/>
-                                    <constraint firstItem="hzL-s2-b81" firstAttribute="top" secondItem="Jsp-jT-8uf" secondAttribute="top" constant="161" id="QL5-0t-TtC"/>
+                                    <constraint firstItem="jsM-c9-OKR" firstAttribute="top" secondItem="Wfe-TO-SM3" secondAttribute="bottom" constant="45" id="Fze-y9-k8q"/>
                                     <constraint firstItem="hzL-s2-b81" firstAttribute="centerX" secondItem="Jsp-jT-8uf" secondAttribute="centerX" id="Qpb-uw-azU"/>
+                                    <constraint firstItem="hzL-s2-b81" firstAttribute="top" secondItem="Wfe-TO-SM3" secondAttribute="bottom" constant="107" id="a1A-Ye-UND"/>
                                     <constraint firstAttribute="bottom" secondItem="jsM-c9-OKR" secondAttribute="bottom" constant="493" id="adi-TR-Oxv"/>
+                                    <constraint firstItem="jsM-c9-OKR" firstAttribute="top" secondItem="Wfe-TO-SM3" secondAttribute="bottom" constant="44" id="gfV-mg-p58"/>
                                     <constraint firstAttribute="trailing" secondItem="jsM-c9-OKR" secondAttribute="trailing" constant="18" id="rbe-AX-CjR"/>
+                                    <constraint firstItem="jsM-c9-OKR" firstAttribute="top" secondItem="Wfe-TO-SM3" secondAttribute="bottom" constant="44" id="vc0-6D-YS3"/>
                                     <constraint firstItem="hzL-s2-b81" firstAttribute="leading" secondItem="Jsp-jT-8uf" secondAttribute="leading" constant="44" id="wv3-Z2-AKZ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="6ye-cP-O4G"/>
                                         <exclude reference="adi-TR-Oxv"/>
+                                        <exclude reference="gfV-mg-p58"/>
                                         <exclude reference="rbe-AX-CjR"/>
+                                        <exclude reference="vc0-6D-YS3"/>
                                         <exclude reference="7Lh-JI-L6g"/>
+                                        <exclude reference="CrG-G7-S94"/>
                                         <exclude reference="wv3-Z2-AKZ"/>
                                     </mask>
                                 </variation>
@@ -1531,15 +1503,24 @@
     <resources>
         <image name="add" width="62" height="27"/>
         <image name="archive_light" width="24" height="24"/>
-        <image name="cancel" width="26" height="26"/>
-        <image name="close" width="17" height="17"/>
+<<<<<<< 75a33d43b9f957226d153a8465ff325bcc36d4d4
         <image name="archive_transparent" width="24" height="24"/>
         <image name="cancel_dark" width="93" height="26"/>
         <image name="cancel_icon_dark" width="26" height="26"/>
         <image name="cancel_light" width="93" height="26"/>
         <image name="cancel_light_transparent" width="93" height="26"/>
+        <image name="icon-back" width="13" height="24"/>
+        <image name="icon-edit" width="23" height="23"/>
+        <image name="icon-share" width="24" height="23"/>
+        <image name="image" width="31" height="22"/>
+        <image name="image_transparent" width="31" height="22"/>
+        <image name="location" width="18" height="27"/>
+        <image name="location_transparent" width="18" height="27"/>
+        <image name="photo" width="31" height="25"/>
+        <image name="photo_transparent" width="31" height="25"/>
+=======
         <image name="cancel" width="26" height="26"/>
-        <image name="check" width="18" height="13"/>
+        <image name="close" width="17" height="17"/>
         <image name="icon-back" width="13" height="24"/>
         <image name="icon-edit" width="23" height="23"/>
         <image name="icon-share" width="24" height="23"/>
@@ -1547,12 +1528,7 @@
         <image name="location" width="20" height="30"/>
         <image name="menu" width="26" height="14"/>
         <image name="photo" width="32" height="25"/>
-        <image name="image" width="31" height="22"/>
-        <image name="image_transparent" width="31" height="22"/>
-        <image name="location" width="60" height="60"/>
-        <image name="location_transparent" width="18" height="27"/>
-        <image name="photo" width="31" height="25"/>
-        <image name="photo_transparent" width="31" height="25"/>
+>>>>>>> Rough in menu
         <image name="plus" width="22" height="22"/>
         <image name="reminder" width="26" height="29"/>
         <image name="save_dark" width="71" height="26"/>
@@ -1567,6 +1543,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="7xJ-K1-yif"/>
         <segue reference="vuh-fa-Rs8"/>
-        <segue reference="7xJ-K1-yif"/>
     </inferredMetricsTieBreakers>
 </document>
