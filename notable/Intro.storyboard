@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -55,11 +56,10 @@
                                     <constraint firstItem="5ia-Ah-yqv" firstAttribute="top" secondItem="kSF-jz-TS7" secondAttribute="top" constant="61" id="fXd-83-J7L"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-Ug-dbO">
-                                <rect key="frame" x="111" y="254" width="152" height="160"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-Ug-dbO">
+                                <rect key="frame" x="116" y="258.5" width="143" height="151"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Kpx-r4-7qS"/>
-                                    <constraint firstAttribute="width" constant="152" id="gb4-If-ea1"/>
+                                    <constraint firstAttribute="width" secondItem="iGH-Ug-dbO" secondAttribute="height" multiplier="19:20" id="kR6-9A-i2k"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kj-LY-fvx" userLabel="Create Button BG">
@@ -117,10 +117,12 @@
                         <constraints>
                             <constraint firstItem="kSF-jz-TS7" firstAttribute="bottom" secondItem="wTL-WA-jPu" secondAttribute="top" id="47e-ic-GGZ"/>
                             <constraint firstItem="wTL-WA-jPu" firstAttribute="top" secondItem="v1h-gk-KhO" secondAttribute="bottom" constant="18" id="92Q-b4-GM9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iGH-Ug-dbO" secondAttribute="trailing" constant="100" id="9Xf-MK-oXA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Kj-LY-fvx" secondAttribute="trailing" id="Dlk-Xd-d7Q"/>
                             <constraint firstItem="kSF-jz-TS7" firstAttribute="top" secondItem="GmG-q1-tXG" secondAttribute="top" id="JO3-P5-efH"/>
                             <constraint firstAttribute="trailing" secondItem="kSF-jz-TS7" secondAttribute="trailing" id="KWe-lK-FUl"/>
                             <constraint firstItem="iGH-Ug-dbO" firstAttribute="centerX" secondItem="GmG-q1-tXG" secondAttribute="centerX" id="Mdj-mW-HPG"/>
+                            <constraint firstItem="iGH-Ug-dbO" firstAttribute="leading" secondItem="GmG-q1-tXG" secondAttribute="leadingMargin" constant="100" id="YXk-4V-dGO"/>
                             <constraint firstItem="v1h-gk-KhO" firstAttribute="centerX" secondItem="GmG-q1-tXG" secondAttribute="centerX" id="ZoN-Cj-iim"/>
                             <constraint firstItem="iGH-Ug-dbO" firstAttribute="centerY" secondItem="GmG-q1-tXG" secondAttribute="centerY" id="e3t-qP-eCG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v1h-gk-KhO" secondAttribute="trailing" id="hK9-Ir-fjx"/>
@@ -240,9 +242,13 @@
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-8O-SVx">
-                                                <rect key="frame" x="20" y="129" width="335" height="4"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mP-8O-SVx">
+                                                <rect key="frame" x="20" y="130" width="335" height="3"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="S9g-ge-Mw0"/>
+                                                    <constraint firstAttribute="height" constant="3" id="cOc-Xd-TRS"/>
+                                                </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Zh8-Ib-ysO">
                                                 <rect key="frame" x="20" y="145" width="335" height="30"/>
@@ -252,7 +258,7 @@
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f53-Nt-sQd">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f53-Nt-sQd">
                                                 <rect key="frame" x="20" y="175" width="335" height="4"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -266,7 +272,9 @@
                                             <constraint firstAttribute="trailing" secondItem="Zh8-Ib-ysO" secondAttribute="trailing" constant="20" id="IcC-Ps-LQH"/>
                                             <constraint firstAttribute="trailing" secondItem="qvw-0V-UtP" secondAttribute="trailing" constant="20" id="L4t-1E-iPu"/>
                                             <constraint firstAttribute="bottom" secondItem="Zh8-Ib-ysO" secondAttribute="bottom" constant="36" id="NRk-9H-NGX"/>
+                                            <constraint firstItem="Zh8-Ib-ysO" firstAttribute="top" secondItem="2mP-8O-SVx" secondAttribute="bottom" constant="12" id="OIg-Vt-SNX"/>
                                             <constraint firstItem="Zh8-Ib-ysO" firstAttribute="centerX" secondItem="rtI-Be-4C5" secondAttribute="centerX" id="Qmy-af-cxM"/>
+                                            <constraint firstAttribute="bottom" secondItem="f53-Nt-sQd" secondAttribute="bottom" constant="32" id="TU8-4h-s9E"/>
                                             <constraint firstItem="f53-Nt-sQd" firstAttribute="trailing" secondItem="Zh8-Ib-ysO" secondAttribute="trailing" id="dMb-XI-xgR"/>
                                             <constraint firstItem="2mP-8O-SVx" firstAttribute="trailing" secondItem="qvw-0V-UtP" secondAttribute="trailing" id="gu5-sy-htD"/>
                                             <constraint firstItem="2mP-8O-SVx" firstAttribute="leading" secondItem="qvw-0V-UtP" secondAttribute="leading" id="pWK-Ia-otv"/>
@@ -424,9 +432,12 @@
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q58-kd-4Rx">
-                                                <rect key="frame" x="20" y="129" width="335" height="4"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q58-kd-4Rx">
+                                                <rect key="frame" x="20" y="130" width="335" height="3"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="hIf-I2-uqa"/>
+                                                </constraints>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UKv-Hx-CVp">
                                                 <rect key="frame" x="20" y="149" width="335" height="30"/>
@@ -436,9 +447,12 @@
                                                 <fontDescription key="fontDescription" name="Moon-Bold" family="Moon" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gk1-Sf-cRR">
-                                                <rect key="frame" x="20" y="175" width="335" height="4"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gk1-Sf-cRR">
+                                                <rect key="frame" x="20" y="179" width="335" height="4"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="T0H-TF-eap"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -477,7 +491,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLG-db-fv3" userLabel="Sign up Button Label">
-                                                <rect key="frame" x="0.0" y="36.5" width="375" height="36"/>
+                                                <rect key="frame" x="0.0" y="36" width="375" height="36"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
                                                 <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
