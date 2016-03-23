@@ -47,6 +47,38 @@ extension UIColor {
     }
 }
 
+extension CAGradientLayer {
+    
+    func greenColorGradient() -> CAGradientLayer {
+        let topColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
+        let bottomColor = UIColor(red: 108/255, green: 160/255, blue: 163/255, alpha: 1)
+        
+        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations
+        
+        return gradientLayer
+    }
+    
+    func greenColorGradientAlpha() -> CAGradientLayer {
+        let topColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 0.9)
+        let bottomColor = UIColor(red: 108/255, green: 160/255, blue: 163/255, alpha: 0.9)
+        
+        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
+        let gradientLocations: [Float] = [0.0, 1.0]
+        
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = gradientColors
+        gradientLayer.locations = gradientLocations
+        
+        return gradientLayer
+    }
+    
+}
+
 extension UITextField
 {
     func setBottomBorder(color:String)

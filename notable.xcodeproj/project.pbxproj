@@ -38,6 +38,7 @@
 		7FB4CF4A1C9FA6B200775EA2 /* Moon-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 61DF4C761C9F167800100BCF /* Moon-Light.otf */; };
 		7FB4CF4B1C9FA6B200775EA2 /* Moon Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4CF491C9FA6A700775EA2 /* Moon Bold.otf */; };
 		7FE2EDA21C9E5F72000E7D4F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7FEE5AC91CA253B8009CDF16 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE5AC81CA253B8009CDF16 /* MenuViewController.swift */; };
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
 		DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */; };
 		DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */; };
@@ -100,6 +101,7 @@
 		7F86E61C1C90974200EF660D /* Stellar-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stellar-Bold.otf"; sourceTree = "<group>"; };
 		7F886F6E1C965B3200E61FE1 /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		7FB4CF491C9FA6A700775EA2 /* Moon Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Bold.otf"; sourceTree = "<group>"; };
+		7FEE5AC81CA253B8009CDF16 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = ../MenuViewController.swift; sourceTree = "<group>"; };
 		DD3D6A9A1C94D8EA00068252 /* notable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notable-Bridging-Header.h"; sourceTree = "<group>"; };
 		DD3D6AA11C9691AB00068252 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
 		DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
+				7FEE5AC81CA253B8009CDF16 /* MenuViewController.swift */,
 				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
 				61D3C3DD1C9F5B0500270619 /* SelectListViewController.swift */,
@@ -482,6 +485,7 @@
 				7F886F6F1C965B3200E61FE1 /* ListCell.swift in Sources */,
 				7F79DAD71C8F531B0047B115 /* FadeTransition.swift in Sources */,
 				7FE2EDA21C9E5F72000E7D4F /* (null) in Sources */,
+				7FEE5AC91CA253B8009CDF16 /* MenuViewController.swift in Sources */,
 				DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
