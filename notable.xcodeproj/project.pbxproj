@@ -41,6 +41,7 @@
 		DD3D6AA21C9691AB00068252 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3D6AA11C9691AB00068252 /* keys.plist */; };
 		DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */; };
 		DD8FEBD91C9FA425000CF092 /* NewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */; };
+		DDDBC85D1CA26691009C98D8 /* SelectListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDBC85C1CA26691009C98D8 /* SelectListCell.swift */; };
 		E2D8F2FF6C65306D0D277A11 /* Pods_notable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783D90D8AB7C07B86CF3A7AD /* Pods_notable.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		DD3D6AA11C9691AB00068252 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = keys.plist; sourceTree = "<group>"; };
 		DD40467A1C9A55D400F9AD82 /* EditListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListViewController.swift; sourceTree = "<group>"; };
+		DDDBC85C1CA26691009C98D8 /* SelectListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectListCell.swift; sourceTree = "<group>"; };
 		DE41875DE3EC2EB274AAAF8E /* Pods-notable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notable/Pods-notable.debug.xcconfig"; sourceTree = "<group>"; };
 		E10185E356CC0E459949C290 /* Pods-notable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notable.release.xcconfig"; path = "Pods/Target Support Files/Pods-notable/Pods-notable.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 				7F0E17931C961F800029F4E6 /* ListViewController.swift */,
 				7F79DAD11C8E8E860047B115 /* ListsViewController.swift */,
 				7F886F6E1C965B3200E61FE1 /* ListCell.swift */,
+				DDDBC85C1CA26691009C98D8 /* SelectListCell.swift */,
 				7F0D19351C8F58A700A76EDC /* ListsCell.swift */,
 				DD8FEBD81C9FA425000CF092 /* NewListViewController.swift */,
 				61B8D2901C99125900FC2CBF /* NoteViewController.swift */,
@@ -485,6 +488,7 @@
 				DD40467B1C9A55D400F9AD82 /* EditListViewController.swift in Sources */,
 				7F79DAA91C8E8B190047B115 /* notable.xcdatamodeld in Sources */,
 				7F0E17941C961F800029F4E6 /* ListViewController.swift in Sources */,
+				DDDBC85D1CA26691009C98D8 /* SelectListCell.swift in Sources */,
 				7F79DAD81C8F531B0047B115 /* Common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
