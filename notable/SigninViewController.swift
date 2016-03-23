@@ -19,6 +19,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var buttonParentView: UIView!
     @IBOutlet weak var signinButtonBackground: UIView!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var currentUser = PFUser.currentUser()
     
@@ -70,14 +71,13 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     var defaults = NSUserDefaults.standardUserDefaults()
     
     @IBAction func didPressSignin(sender: AnyObject) {
-        
+        self.activityIndicator.stopAnimating()
         if self.emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             self.presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
-            
         } else if self.passwordField.text!.isEmpty {
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -85,10 +85,12 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
             self.presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
         } else {
+            activityIndicator.startAnimating()
             PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 
                 if user != nil {
+                    self.activityIndicator.stopAnimating()
                     self.performSegueWithIdentifier("signedInSegue", sender: self)
                 } else {
                     print(error)
