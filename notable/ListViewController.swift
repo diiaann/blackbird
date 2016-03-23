@@ -27,7 +27,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     @IBAction func didPressBack(sender: UIButton) {
-        navigationController?.popToRootViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
+        //navigationController?.popToRootViewControllerAnimated(true)
     }
 
     
@@ -102,6 +103,23 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    @IBAction func didPressTrash(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Are you sure?", message: "This message cannot be undone."
+            , preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            self.list.deleteInBackground()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        }
+        self.presentViewController(alertController, animated: true) {}
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
