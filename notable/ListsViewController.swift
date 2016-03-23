@@ -9,29 +9,14 @@
 import UIKit
 import Parse
 
-extension CAGradientLayer {
-    
-    func greenColorGradient() -> CAGradientLayer {
-        let topColor = UIColor(red: 235/255, green: 225/255, blue: 217/255, alpha: 1)
-        let bottomColor = UIColor(red: 108/255, green: 160/255, blue: 163/255, alpha: 1)
-        
-        let gradientColors: [CGColor] = [topColor.CGColor, bottomColor.CGColor]
-        let gradientLocations: [Float] = [0.0, 1.0]
-        
-        let gradientLayer: CAGradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors
-        gradientLayer.locations = gradientLocations
-        
-        return gradientLayer
-    }
-}
-
 class ListsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
+
+    @IBOutlet weak var menuButton: UIButton!
     
     var lists: [PFObject] = [PFObject]()
     var user = PFUser.currentUser()
