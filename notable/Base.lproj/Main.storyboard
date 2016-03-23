@@ -1138,21 +1138,21 @@
                                             </constraints>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="120" id="Wj0-Qv-1yC" userLabel="ListCell" customClass="ListCell" customModule="notable" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="192" width="375" height="120"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="110" id="Wj0-Qv-1yC" userLabel="ListCell" customClass="ListCell" customModule="notable" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="192" width="375" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wj0-Qv-1yC" id="80b-Yx-3FS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-S2-u9a" userLabel="Title Label">
-                                                            <rect key="frame" x="28" y="33" width="319" height="29"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NvQ-S2-u9a" userLabel="Title Label">
+                                                            <rect key="frame" x="28" y="38" width="227" height="33"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
                                                             <color key="textColor" red="0.46666666670000001" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Note Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-Fb-n6T">
-                                                            <rect key="frame" x="28" y="68" width="319" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E30-Fb-n6T">
+                                                            <rect key="frame" x="28" y="71" width="227" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="h6Q-Sp-wrA"/>
                                                             </constraints>
@@ -1160,18 +1160,63 @@
                                                             <color key="textColor" red="0.18823529410000001" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-ha-V3m">
+                                                            <rect key="frame" x="265" y="26" width="80" height="72.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="75" id="TfI-ET-Cgy"/>
+                                                                <constraint firstAttribute="height" constant="75" id="peQ-fY-dqG"/>
+                                                                <constraint firstAttribute="width" constant="80" id="ux2-sX-c0g"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="4, 4, 0, 0"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <variation key="default">
+                                                                <mask key="constraints">
+                                                                    <exclude reference="TfI-ET-Cgy"/>
+                                                                    <exclude reference="peQ-fY-dqG"/>
+                                                                </mask>
+                                                            </variation>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="E30-Fb-n6T" firstAttribute="trailing" secondItem="NvQ-S2-u9a" secondAttribute="trailing" id="31V-kG-49a"/>
                                                         <constraint firstItem="NvQ-S2-u9a" firstAttribute="centerX" secondItem="80b-Yx-3FS" secondAttribute="centerX" id="5e8-CF-R5b"/>
                                                         <constraint firstItem="E30-Fb-n6T" firstAttribute="leading" secondItem="NvQ-S2-u9a" secondAttribute="leading" id="6GG-79-QTM"/>
-                                                        <constraint firstItem="E30-Fb-n6T" firstAttribute="top" secondItem="NvQ-S2-u9a" secondAttribute="bottom" constant="6" id="9PZ-R0-amk"/>
-                                                        <constraint firstItem="NvQ-S2-u9a" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="25" id="Hmy-99-gNS"/>
+                                                        <constraint firstItem="E30-Fb-n6T" firstAttribute="top" secondItem="NvQ-S2-u9a" secondAttribute="bottom" id="9PZ-R0-amk"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="9" id="9YC-k1-tmt"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="iBl-ha-V3m" secondAttribute="trailing" constant="30" id="9cg-T5-6bT"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="leading" secondItem="NvQ-S2-u9a" secondAttribute="trailing" constant="8" id="B5S-75-0fT"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="iBl-ha-V3m" secondAttribute="bottom" constant="14.5" id="DZk-E6-Veb"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="9" id="HDi-8J-Nm8"/>
+                                                        <constraint firstItem="NvQ-S2-u9a" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="30" id="Hmy-99-gNS"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="iBl-ha-V3m" secondAttribute="bottom" constant="3" id="b6f-Uj-uTC"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="9" id="e4u-VS-7wf"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="iBl-ha-V3m" secondAttribute="bottom" constant="9.5" id="fQ2-t3-bro"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="iBl-ha-V3m" secondAttribute="trailing" constant="22" id="gxj-yv-Xhn"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="leading" secondItem="E30-Fb-n6T" secondAttribute="trailing" constant="10" id="hUm-rd-2ls"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="leading" secondItem="NvQ-S2-u9a" secondAttribute="trailing" constant="10" id="mjf-3C-PW0"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="leading" secondItem="E30-Fb-n6T" secondAttribute="trailing" constant="8" id="nbL-aG-ESF"/>
                                                         <constraint firstItem="NvQ-S2-u9a" firstAttribute="leading" secondItem="80b-Yx-3FS" secondAttribute="leadingMargin" constant="20" id="rPC-av-SCc"/>
+                                                        <constraint firstItem="iBl-ha-V3m" firstAttribute="top" secondItem="80b-Yx-3FS" secondAttribute="topMargin" constant="18" id="uuG-dg-p0r"/>
                                                     </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="5e8-CF-R5b"/>
+                                                            <exclude reference="31V-kG-49a"/>
+                                                            <exclude reference="9YC-k1-tmt"/>
+                                                            <exclude reference="9cg-T5-6bT"/>
+                                                            <exclude reference="B5S-75-0fT"/>
+                                                            <exclude reference="DZk-E6-Veb"/>
+                                                            <exclude reference="HDi-8J-Nm8"/>
+                                                            <exclude reference="e4u-VS-7wf"/>
+                                                            <exclude reference="fQ2-t3-bro"/>
+                                                            <exclude reference="nbL-aG-ESF"/>
+                                                        </mask>
+                                                    </variation>
                                                 </tableViewCellContentView>
                                                 <gestureRecognizers/>
                                                 <connections>
+                                                    <outlet property="previewImageView" destination="iBl-ha-V3m" id="v7C-39-9kV"/>
                                                     <outlet property="subtitleLabel" destination="E30-Fb-n6T" id="99Q-1X-DgV"/>
                                                     <outlet property="titleLabel" destination="NvQ-S2-u9a" id="Vsg-kC-0Jh"/>
                                                     <outletCollection property="gestureRecognizers" destination="9wD-xD-9nA" appends="YES" id="dle-sQ-Zdf"/>
@@ -1534,6 +1579,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vuh-fa-Rs8"/>
-        <segue reference="7xJ-K1-yif"/>
+        <segue reference="cWP-is-mVy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ class ListCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var previewImageView: UIImageView!
     
     var originalCenter:CGPoint!
     var actionsOnDragRelease = false
