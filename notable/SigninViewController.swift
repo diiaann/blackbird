@@ -38,10 +38,10 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
         offsettitleLabel = -48
         
         initialYfieldParentView = fieldParentView.frame.origin.y
-        offsetfieldParentView = -83
+        offsetfieldParentView = -75
         
         initialYbuttonParentView = buttonParentView.frame.origin.y
-        offsetbuttonParentView = -113
+        offsetbuttonParentView = -200
         
         signinButtonBackground.layer.cornerRadius = signinButtonBackground.frame.height/20
         
@@ -116,7 +116,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
     
-        let transform = CGAffineTransformMakeScale(0.2, 0.2)
+        let transform = CGAffineTransformMakeScale(0.5, 0.5)
         
         titleLabel.transform = transform
         fieldParentView.transform = transform
@@ -127,7 +127,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(0.2) { () -> Void in
+        UIView.animateWithDuration(0.5) { () -> Void in
             self.fieldParentView.transform = CGAffineTransformIdentity
             self.titleLabel.transform = CGAffineTransformIdentity
             
