@@ -163,8 +163,9 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         currentNote["user"] = user
         currentNote["images"] = images
         
-        //TODO: this is hardcoded until we have a way to select a list
-        currentNote["parent"] = list
+        if (list != nil) {
+            currentNote["parent"] = list
+        }
         
         currentNote.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
