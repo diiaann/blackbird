@@ -6,15 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="BELLABOO-Regular.otf">
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-            <string>BELLABOO-Regular</string>
-        </mutableArray>
         <mutableArray key="Moon Bold.otf">
             <string>Moon-Bold</string>
             <string>Moon-Bold</string>
@@ -43,7 +34,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="ndx-wB-iGm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -67,9 +58,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kj-LY-fvx" userLabel="Create Button BG">
                                 <rect key="frame" x="16" y="451" width="343" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE AN ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-dx-Ia3" userLabel="Create Button Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CREATE AN ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zu3-dx-Ia3" userLabel="Create Button Label">
                                         <rect key="frame" x="-16" y="27" width="374" height="36"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -92,9 +83,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1h-gk-KhO" userLabel="Sign in Button BG">
                                 <rect key="frame" x="16" y="559" width="343" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN TO NOTABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-Pg-Uoc" userLabel="Sign in Button Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SIGN IN TO NOTABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-Pg-Uoc" userLabel="Sign in Button Label">
                                         <rect key="frame" x="-16" y="27" width="374" height="36"/>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -162,7 +153,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="oBV-eT-hPQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -181,7 +172,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="rzN-ee-URI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                 <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -405,7 +396,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="Q2m-97-huN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                         <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -477,7 +468,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="49" id="uCN-oS-5WB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BELLABOO-Regular" family="BELLABOO" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
                                                 <color key="textColor" red="0.16355353589999999" green="0.36912867430000001" blue="0.37424778939999997" alpha="0.80437677559999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -604,7 +595,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vRg-vh-n3h"/>
-        <segue reference="yrR-ct-YZW"/>
+        <segue reference="MIw-Fg-de7"/>
         <segue reference="aR8-Ft-Y57"/>
         <segue reference="ady-1p-FeO"/>
     </inferredMetricsTieBreakers>
