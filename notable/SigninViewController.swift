@@ -127,7 +127,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        UIView.animateWithDuration(0.5) { () -> Void in
+        UIView.animateWithDuration(0.4) { () -> Void in
             self.fieldParentView.transform = CGAffineTransformIdentity
             self.titleLabel.transform = CGAffineTransformIdentity
             
