@@ -19,6 +19,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var buttonParentView: UIView!
     @IBOutlet weak var signinButtonBackground: UIView!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var currentUser = PFUser.currentUser()
     
@@ -34,7 +35,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
         loginScrollView.contentInset.bottom = 100
         
         initialYtitleLabel = titleLabel.frame.origin.y
-        offsettitleLabel = -50
+        offsettitleLabel = -48
         
         initialYfieldParentView = fieldParentView.frame.origin.y
         offsetfieldParentView = -83
@@ -70,16 +71,13 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     var defaults = NSUserDefaults.standardUserDefaults()
     
     @IBAction func didPressSignin(sender: AnyObject) {
-        
-        print("touch")
-        
+        self.activityIndicator.stopAnimating()
         if self.emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             self.presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
-            
         } else if self.passwordField.text!.isEmpty {
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -87,13 +85,26 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
             self.presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
         } else {
+            activityIndicator.startAnimating()
             PFUser.logInWithUsernameInBackground(emailField.text!, password: passwordField.text!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 
                 if user != nil {
+                    self.activityIndicator.stopAnimating()
                     self.performSegueWithIdentifier("signedInSegue", sender: self)
                 } else {
-                    print(error)
+                    
+                    if let error = error {
+                        self.activityIndicator.stopAnimating()
+                        let errorString = error.userInfo["error"] as? NSString
+                        
+                        let alertController = UIAlertController(title: "Whoops!", message: (String(errorString)), preferredStyle: .Alert)
+                        let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                        }
+                        self.presentViewController(alertController, animated: true) {}
+                        alertController.addAction(okAction)
+                        
+                    }
                 }
             }
         }
@@ -127,12 +138,14 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
     
     func keyboardWillShow(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel + offsettitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(0.8, 0.8)
         fieldParentView.frame.origin.y = initialYfieldParentView + offsetfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView + offsetbuttonParentView
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
         fieldParentView.frame.origin.y = initialYfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView
     }

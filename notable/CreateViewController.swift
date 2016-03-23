@@ -19,6 +19,7 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var buttonParentView: UIView!
     @IBOutlet weak var signupButtonBackground: UIView!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var currentUser = PFUser.currentUser()
     
@@ -42,14 +43,13 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     var defaults = NSUserDefaults.standardUserDefaults()
 
     @IBAction func didPressSignup(sender: AnyObject) {
-        
+        self.activityIndicator.stopAnimating()
         if emailField.text!.isEmpty {
             let alertController = UIAlertController(title: "Email Required", message: "Please enter your email address", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
             }
             presentViewController(alertController, animated: true) {}
             alertController.addAction(okAction)
-            
         } else if passwordField.text!.isEmpty {
             let alertController = UIAlertController(title: "Password Required", message: "Please enter your password", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
@@ -66,7 +66,7 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
             var user = PFUser()
             user.username = emailField.text
             user.password = passwordField.text
-            
+            activityIndicator.startAnimating()
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
@@ -79,13 +79,12 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
                     alertController.addAction(okAction)
                     
                 } else {
-                    print("success")
+                    self.activityIndicator.stopAnimating()
                     self.performSegueWithIdentifier("signedUpSegue", sender: self)
                 }
             }
         }
     }
-    
     
     @IBAction func didTap(sender: AnyObject) {
         view.endEditing(true)
@@ -103,7 +102,7 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
         signupScrollView.contentInset.bottom = 100
         
         initialYtitleLabel = titleLabel.frame.origin.y
-        offsettitleLabel = -50
+        offsettitleLabel = -48
         
         initialYfieldParentView = fieldParentView.frame.origin.y
         offsetfieldParentView = -83
@@ -115,14 +114,6 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
-        // user_email = defaults.objectForKey("email") as! String
-        // user_password = defaults.objectForKey("password") as! String
-        
-        // print(user_email)
-        // print(user_password)
-        
-        // definesPresentationContext = true        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -149,12 +140,14 @@ class CreateViewController: UIViewController, UIScrollViewDelegate {
     
     func keyboardWillShow(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel + offsettitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(0.8, 0.8)
         fieldParentView.frame.origin.y = initialYfieldParentView + offsetfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView + offsetbuttonParentView
     }
     
     func keyboardWillHide(notification: NSNotification!) {
         titleLabel.frame.origin.y = initialYtitleLabel
+        titleLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
         fieldParentView.frame.origin.y = initialYfieldParentView
         buttonParentView.frame.origin.y = initialYbuttonParentView
     }
