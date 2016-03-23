@@ -35,7 +35,7 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
         loginScrollView.contentInset.bottom = 100
         
         initialYtitleLabel = titleLabel.frame.origin.y
-        offsettitleLabel = -50
+        offsettitleLabel = -48
         
         initialYfieldParentView = fieldParentView.frame.origin.y
         offsetfieldParentView = -83
