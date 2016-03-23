@@ -93,7 +93,18 @@ class SigninViewController: UIViewController, UIScrollViewDelegate {
                     self.activityIndicator.stopAnimating()
                     self.performSegueWithIdentifier("signedInSegue", sender: self)
                 } else {
-                    print(error)
+                    
+                    if let error = error {
+                        self.activityIndicator.stopAnimating()
+                        let errorString = error.userInfo["error"] as? NSString
+                        
+                        let alertController = UIAlertController(title: "Whoops!", message: (String(errorString)), preferredStyle: .Alert)
+                        let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+                        }
+                        self.presentViewController(alertController, animated: true) {}
+                        alertController.addAction(okAction)
+                        
+                    }
                 }
             }
         }
