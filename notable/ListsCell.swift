@@ -12,6 +12,7 @@ class ListsCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
     var originalCenter:CGPoint!
     var actionsOnDragRelease = false

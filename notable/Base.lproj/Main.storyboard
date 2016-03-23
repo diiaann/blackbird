@@ -38,10 +38,9 @@
                                                 <color key="textColor" red="0.64313725490196072" green="0.62745098039215685" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-T1-ORV">
-                                                <rect key="frame" x="312" y="20" width="40" height="32"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="14"/>
-                                                <state key="normal" title="+ LIST">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-T1-ORV">
+                                                <rect key="frame" x="302" y="22" width="62" height="27"/>
+                                                <state key="normal" image="add">
                                                     <color key="titleColor" red="0.6588235294117647" green="0.6470588235294118" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
@@ -113,6 +112,7 @@
                                                 </tableViewCellContentView>
                                                 <gestureRecognizers/>
                                                 <connections>
+                                                    <outlet property="countLabel" destination="Yrl-d6-aql" id="RTV-9n-0xY"/>
                                                     <outlet property="subtitleLabel" destination="2Fi-XB-5Cc" id="GOb-yj-D5I"/>
                                                     <outlet property="titleLabel" destination="LxV-wv-b4O" id="IQ2-oQ-BF8"/>
                                                     <outletCollection property="gestureRecognizers" destination="Sv6-WG-qh9" appends="YES" id="yrs-uc-L1b"/>
@@ -516,7 +516,6 @@
         <!--Edit List View Controller-->
         <scene sceneID="TwY-zz-1tW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-Yy-vcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="EditListViewController" id="H4C-Zc-bJ6" customClass="EditListViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QgN-hr-6D2"/>
@@ -591,6 +590,7 @@
                         <outlet property="listTitleInput" destination="jsM-c9-OKR" id="1jR-Kp-Xq9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-Yy-vcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1439.5" y="-467.5"/>
         </scene>
@@ -1066,6 +1066,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="62" height="27"/>
         <image name="archive_light" width="24" height="24"/>
         <image name="cancel" width="26" height="26"/>
         <image name="icon-back" width="13" height="24"/>
@@ -1082,7 +1083,7 @@
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7xJ-K1-yif"/>
         <segue reference="vuh-fa-Rs8"/>
-        <segue reference="cWP-is-mVy"/>
     </inferredMetricsTieBreakers>
 </document>
