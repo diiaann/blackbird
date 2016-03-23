@@ -19,6 +19,7 @@ class SelectListViewController: UIViewController, UITableViewDelegate, UITableVi
     var delegate: communicationNoteView?
     
     var lists: [PFObject] = [PFObject]()
+    var currentList: PFObject!
     var user = PFUser.currentUser()
     
     override func viewDidLoad() {
@@ -63,10 +64,15 @@ class SelectListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .Default, reuseIdentifier: nil)
-        let list = lists[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("SelectListCell") as! SelectListCell
         
-        cell.textLabel?.text = list["title"] as? String
+        let list = lists[indexPath.row]
+        if (currentList.objectId == list.objectId) {
+            cell.checkedImage.hidden = false
+        } else {
+            cell.checkedImage.hidden = true
+        }
+        cell.titleLabel?.text = list["title"] as? String
         
         return cell
     }
