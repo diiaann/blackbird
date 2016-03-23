@@ -202,7 +202,14 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         } else {
             descriptionTextView.textColor = UIColor(hexString: "306161")
         }
+        
         images = note["images"] as? [PFFile]
+        if images != nil {
+            
+        } else {
+            images = [PFFile]()
+        }
+        
         if images?.count > 0 {
             renderImages()
         }
