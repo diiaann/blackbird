@@ -34,6 +34,10 @@ class EditListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func didTapSave(sender: AnyObject) {
         
         //Update the existing list

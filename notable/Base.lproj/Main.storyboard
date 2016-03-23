@@ -516,6 +516,7 @@
         <!--Edit List View Controller-->
         <scene sceneID="TwY-zz-1tW">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-Yy-vcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="EditListViewController" id="H4C-Zc-bJ6" customClass="EditListViewController" customModule="notable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QgN-hr-6D2"/>
@@ -540,25 +541,47 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fr0-79-0ud">
-                                        <rect key="frame" x="0.0" y="390" width="375" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubO-3i-mza">
-                                                <rect key="frame" x="256" y="13" width="106" height="34"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                                <state key="normal" title="SAVE">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapSave:" destination="H4C-Zc-bJ6" eventType="touchUpInside" id="WWE-Xg-sAu"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.2627450980392157" green="0.4823529411764706" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfe-TO-SM3">
+                                        <rect key="frame" x="238" y="20" width="82" height="34"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapSave:" destination="B5w-ci-WA3" eventType="touchUpInside" id="xuX-p2-Dgw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.6588235294117647" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8J2-Gp-rYM">
+                                <rect key="frame" x="284" y="20" width="82" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="1t3-Uf-mGf"/>
+                                    <constraint firstAttribute="height" constant="44" id="UT8-MG-JXw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="  SAVE" image="save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSave:" destination="H4C-Zc-bJ6" eventType="touchUpInside" id="eKb-eh-cFW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHY-tp-CLo">
+                                <rect key="frame" x="10" y="20" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rs9-z7-G2k"/>
+                                    <constraint firstAttribute="width" constant="100" id="vPA-F0-TyR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="  CANCEL" image="cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="H4C-Zc-bJ6" eventType="touchUpInside" id="Xsa-GD-ZbY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -568,7 +591,6 @@
                         <outlet property="listTitleInput" destination="jsM-c9-OKR" id="1jR-Kp-Xq9"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmc-Yy-vcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1439.5" y="-467.5"/>
         </scene>
@@ -599,27 +621,45 @@
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izF-bC-Ulg">
-                                        <rect key="frame" x="0.0" y="390" width="375" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOa-Kz-HwS">
-                                                <rect key="frame" x="134" y="18" width="106" height="34"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
-                                                <state key="normal" title="SAVE">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didTapSave:" destination="B5w-ci-WA3" eventType="touchUpInside" id="7Wk-cr-kHI"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.26274509800000001" green="0.4823529412" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.6588235294" green="0.76470588240000004" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHA-wb-Ibj">
+                                <rect key="frame" x="20" y="20" width="100" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GAP-Wt-p1R"/>
+                                    <constraint firstAttribute="height" constant="44" id="dDI-Y9-oiT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="  CANCEL" image="cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="B5w-ci-WA3" eventType="touchUpInside" id="l50-Ny-hpT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ow-9t-8ED">
+                                <rect key="frame" x="284" y="20" width="82" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZjP-gz-pX3"/>
+                                    <constraint firstAttribute="width" constant="82" id="gVd-5d-71B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="  SAVE" image="save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapSave:" destination="B5w-ci-WA3" eventType="touchUpInside" id="Flj-TZ-iHH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BHA-wb-Ibj" firstAttribute="leading" secondItem="g96-bu-YjI" secondAttribute="leadingMargin" constant="4" id="7Wu-eB-peF"/>
+                            <constraint firstItem="BHA-wb-Ibj" firstAttribute="baseline" secondItem="6Ow-9t-8ED" secondAttribute="baseline" id="JZN-K2-ert"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Ow-9t-8ED" secondAttribute="trailing" constant="-7" id="ltE-8B-1qe"/>
+                            <constraint firstItem="BHA-wb-Ibj" firstAttribute="top" secondItem="AuC-MX-Mxi" secondAttribute="bottom" id="oaF-Lf-3gc"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -748,7 +788,7 @@
                                                 </constraints>
                                                 <state key="normal" image="icon-back"/>
                                                 <connections>
-                                                    <action selector="didPressBack:" destination="hSi-uR-vZZ" eventType="touchUpInside" id="Jtt-gI-1iD"/>
+                                                    <action selector="didPressBack:" destination="hSi-uR-vZZ" eventType="touchUpInside" id="yHQ-ja-xRK"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDt-B6-a3J" userLabel="Title Label">
@@ -771,6 +811,15 @@
                                                 <rect key="frame" x="335" y="22" width="30" height="30"/>
                                                 <connections>
                                                     <segue destination="H4C-Zc-bJ6" kind="presentation" identifier="editListSegue" id="udd-4z-Mqx"/>
+                                                </connections>
+                                            </button>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="trash_dark" translatesAutoresizingMaskIntoConstraints="NO" id="Qnb-Os-Lbw">
+                                                <rect key="frame" x="253" y="27" width="23" height="24"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-FM-vrF">
+                                                <rect key="frame" x="253" y="24" width="23" height="30"/>
+                                                <connections>
+                                                    <action selector="didPressTrash:" destination="hSi-uR-vZZ" eventType="touchUpInside" id="bWc-N3-PMG"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1029,10 +1078,11 @@
         <image name="reminder" width="26" height="29"/>
         <image name="save" width="26" height="26"/>
         <image name="text" width="29" height="31"/>
+        <image name="trash_dark" width="23" height="24"/>
         <image name="trash_light" width="23" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vuh-fa-Rs8"/>
-        <segue reference="7xJ-K1-yif"/>
+        <segue reference="cWP-is-mVy"/>
     </inferredMetricsTieBreakers>
 </document>
