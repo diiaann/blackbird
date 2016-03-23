@@ -360,6 +360,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             
             let destViewController = segue.destinationViewController as! SelectListViewController
             destViewController.delegate = self
+            destViewController.currentList = list
             
         }
     }
