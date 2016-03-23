@@ -232,14 +232,16 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             var calculatedHeight: CGFloat!
             imageFile.getDataInBackgroundWithBlock {
                 (imageData: NSData?, error: NSError?) -> Void in
-                let imageView = UIImageView(image: UIImage(data: imageData!))
-                print("\(self.images?.count) width is \(imageView.frame.size.width)")
-                if imageView.frame.size.width != 0 {
-                    calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
-                    imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(startingY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
-                    self.noteCardView.addSubview(imageView)
-                    startingY = startingY + calculatedHeight + 1
-                    self.noteCardViewHeight.constant = startingY - 1
+                if imageData != nil {
+                    let imageView = UIImageView(image: UIImage(data: imageData!))
+                    print("\(self.images?.count) width is \(imageView.frame.size.width)")
+                    if imageView.frame.size.width != 0 {
+                        calculatedHeight = self.noteScrollView.frame.size.width * imageView.frame.size.height/imageView.frame.size.width
+                        imageView.frame = CGRect(x: CGFloat(0), y: CGFloat(startingY), width: self.noteScrollView.frame.size.width, height: calculatedHeight)
+                        self.noteCardView.addSubview(imageView)
+                        startingY = startingY + calculatedHeight + 1
+                        self.noteCardViewHeight.constant = startingY - 1
+                    }
                 }
             }
         }

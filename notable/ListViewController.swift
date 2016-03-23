@@ -20,6 +20,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var listDesc: UILabel!
     @IBOutlet weak var smallTitle: UILabel!
     @IBOutlet weak var titleTop: NSLayoutConstraint!
+//    @IBOutlet weak var previewImageView: UIImageView!
     
     var list: PFObject!
     var notes: [PFObject] = [PFObject]()
@@ -97,6 +98,18 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.titleLabel.text = note["title"] as? String
         cell.subtitleLabel.text = note["desc"] as? String
         
+        let images = note["images"] as? [PFFile]
+        if images != nil {
+            if images?.count > 0 && images?[0] != nil {
+                images![0].getDataInBackgroundWithBlock {
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if imageData != nil {
+                        cell.previewImageView.image = UIImage(data: imageData!)
+                    }
+                }
+            }
+        }
+
         print(self.tableView.rowHeight)
         
         return cell
