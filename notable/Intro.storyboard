@@ -55,6 +55,13 @@
                                     <constraint firstItem="5ia-Ah-yqv" firstAttribute="top" secondItem="kSF-jz-TS7" secondAttribute="top" constant="61" id="fXd-83-J7L"/>
                                 </constraints>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-Ug-dbO">
+                                <rect key="frame" x="111" y="254" width="152" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Kpx-r4-7qS"/>
+                                    <constraint firstAttribute="width" constant="152" id="gb4-If-ea1"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kj-LY-fvx" userLabel="Create Button BG">
                                 <rect key="frame" x="16" y="451" width="343" height="90"/>
                                 <subviews>
@@ -113,7 +120,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5Kj-LY-fvx" secondAttribute="trailing" id="Dlk-Xd-d7Q"/>
                             <constraint firstItem="kSF-jz-TS7" firstAttribute="top" secondItem="GmG-q1-tXG" secondAttribute="top" id="JO3-P5-efH"/>
                             <constraint firstAttribute="trailing" secondItem="kSF-jz-TS7" secondAttribute="trailing" id="KWe-lK-FUl"/>
+                            <constraint firstItem="iGH-Ug-dbO" firstAttribute="centerX" secondItem="GmG-q1-tXG" secondAttribute="centerX" id="Mdj-mW-HPG"/>
                             <constraint firstItem="v1h-gk-KhO" firstAttribute="centerX" secondItem="GmG-q1-tXG" secondAttribute="centerX" id="ZoN-Cj-iim"/>
+                            <constraint firstItem="iGH-Ug-dbO" firstAttribute="centerY" secondItem="GmG-q1-tXG" secondAttribute="centerY" id="e3t-qP-eCG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v1h-gk-KhO" secondAttribute="trailing" id="hK9-Ir-fjx"/>
                             <constraint firstItem="kSF-jz-TS7" firstAttribute="leading" secondItem="GmG-q1-tXG" secondAttribute="leading" id="kDE-q6-ZKt"/>
                             <constraint firstItem="5Kj-LY-fvx" firstAttribute="leading" secondItem="GmG-q1-tXG" secondAttribute="leadingMargin" id="nST-en-YgY"/>
@@ -600,11 +609,12 @@
     </scenes>
     <resources>
         <image name="icon-back" width="13" height="24"/>
+        <image name="logo" width="152" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ady-1p-FeO"/>
-        <segue reference="YRl-1g-Qmm"/>
-        <segue reference="aR8-Ft-Y57"/>
+        <segue reference="MIw-Fg-de7"/>
         <segue reference="vRg-vh-n3h"/>
+        <segue reference="koh-DE-we8"/>
     </inferredMetricsTieBreakers>
 </document>
