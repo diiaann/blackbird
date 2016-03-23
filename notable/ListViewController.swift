@@ -28,7 +28,6 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBAction func didPressBack(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
-        //navigationController?.popToRootViewControllerAnimated(true)
     }
 
     

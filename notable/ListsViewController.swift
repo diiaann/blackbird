@@ -96,13 +96,22 @@ class ListsViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.backgroundColor = UIColor.clearColor()
         
         let list = lists[indexPath.row]
+        
+        var query = PFQuery(className: "Note")
+        query.whereKey("parent", equalTo: list)
+        
+        query.countObjectsInBackgroundWithBlock {
+            (count: Int32, error: NSError?) -> Void in
+            if error == nil {
+                cell.countLabel.text = "\(count)"
+            }
+        }
 
         cell.titleLabel.text = list["title"] as? String
 
         cell.subtitleLabel.text = list["desc"] as? String
         
-        //TODO: remove this print statement
-        print(self.tableView.rowHeight)
+
 
         return cell
     }
