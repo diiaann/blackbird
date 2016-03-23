@@ -1227,7 +1227,7 @@
         <image name="icon-share" width="24" height="23"/>
         <image name="image" width="31" height="22"/>
         <image name="image_transparent" width="31" height="22"/>
-        <image name="location" width="18" height="27"/>
+        <image name="location" width="60" height="60"/>
         <image name="location_transparent" width="18" height="27"/>
         <image name="photo" width="31" height="25"/>
         <image name="photo_transparent" width="31" height="25"/>
