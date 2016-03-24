@@ -48,6 +48,9 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
     var keyboardHeight: CGFloat!
     var editControlsOriginalBottomMargin: CGFloat!
     
+    var scrollViewTopEdit: CGFloat!
+    var scrollViewTopView: CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,6 +64,8 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         saveCancelContainer.hidden = true
         
         listBottomBorder.backgroundColor = UIColor(hexString: "D5DFDF")
+        scrollViewTopView = 3
+        scrollViewTopEdit = 43
         
         setupAlertControllers()
         editControlsOriginalBottomMargin = editControlsBottomMargin.constant
@@ -120,8 +125,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         saveCancelContainer.hidden = false
         
         editControlsBottomMargin.constant = 0
-        scrollViewTop.constant = scrollViewTop.constant + 40
-        
+        scrollViewTop.constant = scrollViewTopEdit
         UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
             self.noteControlsView.alpha = 0
             }, completion: nil)
@@ -142,7 +146,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
             descriptionTextView.textColor = UIColor.lightGrayColor()
         }
         editControlsBottomMargin.constant = 0
-        scrollViewTop.constant = 43
+        scrollViewTop.constant = scrollViewTopEdit
         images = [PFFile]()
         if image != nil {
             var newImageData = UIImageJPEGRepresentation(image!, 0.5)
@@ -187,8 +191,7 @@ class NoteViewController: UIViewController, UIAlertViewDelegate, UITextViewDeleg
         saveCancelContainer.hidden = true
         
         editControlsBottomMargin.constant = -60
-        scrollViewTop.constant = scrollViewTop.constant - 40
-        
+        scrollViewTop.constant = scrollViewTopView
         UIView.animateWithDuration(0.1, delay: 0, options: [], animations: { () -> Void in
            self.noteControlsView.alpha = 1
             }, completion: nil)
